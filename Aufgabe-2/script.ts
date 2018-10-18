@@ -19,19 +19,4 @@ document.addEventListener('DOMContentLoaded', function() {
     //        }
     //
     //    }
-    var boxNumber: string = prompt("Hier eine Zahl zwischen 10 und 108 eingeben.");
-
-    if (parseInt(boxNumber) >= 10 && (parseInt(boxNumber)) <= 108) { // Vergleichsoperator gleich bzw. drunter/drüber
-        alert("Konfetti!");
-        for (let i: number = 0; i < parseInt(boxNumber); i++) {
-            alert("Viel Spaß");
-        }
-    }
-
-    // wenn etwas falsches eingegeben wurde
-    else {
-        alert("Nochmal versuchen");
-        input();
-    }
-}
-//})
+})

@@ -3,16 +3,19 @@ document.addEventListener('DOMContentLoaded', function () {
     let cards = ["1", "2", "3", "4", "5", "6", "7", "8", "9"];
     let handCards = [];
     let filedCards = [];
-    let box = parseInt(prompt("Geben Sie eine Zahl zwischen 10 & 108 ein")); //number wird in string umgewandelt
-    function input() {
-        if (box >= 10 && box <= 108) {
-            //        createDiv();
-            alert("Viel Spa� beim Spielen");
-        }
-        else {
-            alert("Bitte nur Werte zwischen 10 und 108 eingeben"); //Wenn Bedingung nicht erf�llt wurde
-            input();
-        }
-    }
+    //    let box: number = parseInt(prompt("Geben Sie eine Zahl zwischen 10 & 108 ein")); //number wird in string umgewandelt
+    //    //    function input(): void {
+    //        if (box >= 10 && box <= 108) {
+    //        createDiv();
+    //            alert("Viel Spa� beim Spielen");
+    //    }
+    //
+    //
+    // else {
+    //            alert("Bitte nur Werte zwischen 10 und 108 eingeben"); //Wenn Bedingung nicht erf�llt wurde
+    //            input();
+    //        }
+    //
+    //    }
 });
 //# sourceMappingURL=script.js.map

@@ -9,6 +9,7 @@
   min-height: 100%;
 }
 
+/* Karten */
 div {
 	width: 10%;
 	height: 8em;
@@ -31,36 +32,35 @@ div {
 }
 
 /* Ablagestapel */
-#filed {
-	padding-top: 1em;
-	height: 11em;
-	float: left;
-	position: relative;
-	top: 3em;
-	left: 5em;
-	background-color: orange;
-/* 	border: 4px black solid; */
-	display: none;
-}
+/* #filed { */
+/* 	padding-top: 3em; */
+/* 	height: 11em; */
+/* 	float: left; */
+/* 	position: relative; */
+/* 	top: 3em; */
+/* 	left: 5em; */
+/* 	background-color: orange; */
+/* /* 	border: 4px black solid; */ */
+/* 	display: none; */
+/* } */
 
-#hand {
-	position: absolute;
-	bottom: 6em;
-	left: 3em;
-	width: auto;
-	height: auto;
-	padding: 1em 1em;
-}
+/* #hand { */
+/* 	position: absolute; */
+/* 	bottom: 6em; */
+/* 	left: 3em; */
+/* 	width: auto; */
+/* 	height: auto; */
+/* 	padding: 1em 1em; */
+/* } */
 
 .handcards { 
-/* 	border: 8px black solid; */
-	font-weight: 700;
-	display: inline;
-	float: left;
-	margin: 1em 1em;
-	cursor: pointer;
-	
-}
+/* /* 	border: 8px black solid; */ */
+/* 	font-weight: 700; */
+/* 	display: inline; */
+/* 	float: left; */
+/* 	margin: 1em 1em; */
+/* 	cursor: pointer;	 */
+/* } */
 
 /* Anpassung*/
 canvas {
