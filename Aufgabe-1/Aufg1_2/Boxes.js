@@ -6,7 +6,7 @@ var Boxes;
     let y = 0;
     for (let i = 0; i < n; i++) {
         y += (i == 2) ? 20 : 50;
-        x = (x + 170) % 400;
+        x = (x + 170) % 400; // - 1.2 Aktivit�tsdiagramm: placeDiv fehlt. y+= ist eine Exklusiv-Konditionelle Abfrage (if-else) in kurzschreibweise. endknoten an der falschen stelle. case3 macht keinen Sinn. was machen case 1&4? der zweite loop ist inkorrekt. 
         switch (i) {
             case 0:
                 c = "#ff0000";
@@ -25,18 +25,18 @@ var Boxes;
             if (i == 4)
                 break;
         }
-    }
-    function placeDiv(_color, _x, _y, _width, _height) {
-        let div = document.createElement("div");
-        document.body.appendChild(div);
-        let s = div.style;
-        s.border = "thin solid black";
-        s.position = "absolute";
-        s.backgroundColor = _color;
-        s.width = _width + "px";
-        s.height = _height + "px";
-        s.left = _x + "px";
-        s.top = _y + "px";
+        function placeDiv(_color, _x, _y, _width, _height) {
+            let div = document.createElement("div");
+            document.body.appendChild(div);
+            let s = div.style;
+            s.border = "thin solid black";
+            s.position = "absolute";
+            s.backgroundColor = _color;
+            s.width = _width + "px";
+            s.height = _height + "px";
+            s.left = _x + "px";
+            s.top = _y + "px";
+        }
     }
 })(Boxes || (Boxes = {}));
 //# sourceMappingURL=Boxes.js.map

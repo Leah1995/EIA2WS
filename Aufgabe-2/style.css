@@ -1,0 +1,85 @@
+/* Hintergrundbild */
+#bg {
+  position: fixed; 
+  top: 0; 
+  left: 0; 
+	
+  /* Preserve aspet ratio */
+  min-width: 100%;
+  min-height: 100%;
+}
+
+div {
+	width: 10%;
+	height: 8em;
+	padding-top: 2%;
+	padding-bottom: 2%;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+/* Nachziehstapel */
+#draw {
+	float: left;
+	position: relative;
+	top: 2%;
+	left: 2%;
+	background-color: black;
+	border: 2px white solid;
+	cursor: pointer;
+	color: white;
+}
+
+/* Ablagestapel */
+#filed {
+	padding-top: 1em;
+	height: 11em;
+	float: left;
+	position: relative;
+	top: 3em;
+	left: 5em;
+	background-color: orange;
+/* 	border: 4px black solid; */
+	display: none;
+}
+
+#hand {
+	position: absolute;
+	bottom: 6em;
+	left: 3em;
+	width: auto;
+	height: auto;
+	padding: 1em 1em;
+}
+
+.handcards { 
+/* 	border: 8px black solid; */
+	font-weight: 700;
+	display: inline;
+	float: left;
+	margin: 1em 1em;
+	cursor: pointer;
+	
+}
+
+/* Anpassung*/
+canvas {
+	width: 100%;
+}
+
+@media screen and (min-width: 35em) {
+	canvas {
+		width: 100%;
+	}
+	@media screen and (min-width: 48em) {
+		canvas {
+			width: 100%;
+		}
+		@media screen and (min-width: 64em) {
+			canvas {
+				width: 800px;
+				height: 600px;
+			}
+		}
+	}
+}
