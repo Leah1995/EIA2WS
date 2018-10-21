@@ -19,7 +19,7 @@ p {
 	margin: 60%;
 }
 
-/* Nachziehstapel */
+/* Nachziehstapel UNO */
 #draw {
 	text-align: center;
 	margin-top: 50%;
@@ -38,13 +38,15 @@ p {
 #filed {
 	text-align: center;
 	margin-top: 50%;
-	padding: 7%;
+	padding: 1%;
+	margin: 1%;
 	position: absolute;
 	background-color: black;
 	border: solid white;
 	color: white;
 	font-Size: 120%;
-	width: 1%;
+	left: +80%;
+	width: 8%;
 	height: 30%;
 }
 
