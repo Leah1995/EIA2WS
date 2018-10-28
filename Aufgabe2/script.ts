@@ -1,4 +1,4 @@
-namespace UnoSpiel {
+namespace UnoSpiel { // Speicher-Sektion
     interface Unocard {
         color: string;
         value: string;
@@ -22,7 +22,7 @@ namespace UnoSpiel {
     function Input(): void {
         var cardnumber: string = prompt("Bitte eine Zahl angeben"); //promptCards cardnumber zugwiesen
         alert("Viel Spass beim Spielen!");
-        let n: number = parseInt(cardnumber);
+        let n: number = parseInt(cardnumber); // string in Zahl ändern
         
 
         // Random
@@ -36,7 +36,7 @@ namespace UnoSpiel {
 
         for (let b: number = 0; b < handcards.length; b++) {
             let div: HTMLElement = document.createElement("div");
-            document.getElementById("Handcards").appendChild(div); // lade Karte vom Elternteil
+            document.getElementById("Handcards").appendChild(div); // lade Karte vom Elternteil, durchsuche nach id
             div.innerHTML = handcards[b].value;
             div.classList.add("Handcards"); // Handkarten aufrufen aus dem div
             div.classList.add(handcards[b].color); // füge Farbe hinzu

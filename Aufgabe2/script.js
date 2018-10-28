@@ -15,7 +15,7 @@ var UnoSpiel;
     function Input() {
         var cardnumber = prompt("Bitte eine Zahl angeben"); //promptCards cardnumber zugwiesen
         alert("Viel Spass beim Spielen!");
-        let n = parseInt(cardnumber);
+        let n = parseInt(cardnumber); // string in Zahl �ndern
         // Random
         for (let anz = n; anz > 0; anz--) {
             let random = Math.floor(Math.random() * (cards.length - 1));
@@ -25,7 +25,7 @@ var UnoSpiel;
         console.log("prompt and random");
         for (let b = 0; b < handcards.length; b++) {
             let div = document.createElement("div");
-            document.getElementById("Handcards").appendChild(div); // lade Karte vom Elternteil
+            document.getElementById("Handcards").appendChild(div); // lade Karte vom Elternteil, durchsuche nach id
             div.innerHTML = handcards[b].value;
             div.classList.add("Handcards"); // Handkarten aufrufen aus dem div
             div.classList.add(handcards[b].color); // f�ge Farbe hinzu
