@@ -4,8 +4,8 @@ namespace UnoSpiel { // Speicher-Sektion
         value: string;
     }
 
-    let colors: string[] = ["green", "yellow", "red", "blue"];
     let values: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "Draw Two", "Skip"];
+     let colors: string[] = ["green", "yellow", "red", "blue"];
     let cards: Unocard[] = [{ color: "blue", value: "0" }, { color: "red", value: "0" }, { color: "green", value: "0" }, { color: "yellow", value: "0" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Wild" }, { color: "black", value: "Wild" }, { color: "black", value: "Wild" }, { color: "black", value: "Wild" }];
 
     for (let i: number = 0; i < colors.length; i++) {
@@ -45,4 +45,5 @@ namespace UnoSpiel { // Speicher-Sektion
     } // function Ende
     
     document.addEventListener("DOMContentLoaded", Input); //sobald DOM geladen ist, wird Funktion Input ausgeführt
-}
+
+} // namespace Ende

@@ -1,8 +1,8 @@
 /* Schriftart */
 @import
-	url('https://fonts.googleapis.com/css?family=Press+Start+2P|VT323');
+	url('https://fonts.googleapis.com/css?family=Press+Start+2P');
 html {
-	font-family: 'VT323', monospace;
+	font-family: 'Press Start 2P', cursive;
 	color: white;
 	
 }
@@ -46,7 +46,7 @@ canvas {
 	position: absolute;
 	background-color: black;
 	border: solid white;
-	font-Size: 250%;
+	font-Size: 100%;
 	left: +80%;
 	width: 8%;
 	height: 30%;
@@ -60,7 +60,7 @@ canvas {
 	position: absolute;
 	background-color: black;
 	border: solid white;
-	font-Size: 250%;
+	font-Size: 150%;
 	width: 8%;
 	height: 30%;
 }
@@ -74,8 +74,8 @@ canvas {
 
 .Handcards {
 	display: inline-table;
-	bottom: 0px;
-	margin: 5px;
+	bottom: 0%;
+	margin: 1%;
 }
 
 .red {
@@ -83,7 +83,8 @@ canvas {
 	background: #F2071F;
 	width: 11%;
 	height: 90%;
-	font-size: 500%;
+	font-size: 150%;
+	padding: 1%;
 	border: solid white;
 }
 
@@ -92,7 +93,8 @@ canvas {
 	background: #2B07F6;
 	width: 11%;
 	height: 90%;
-	font-size: 500%;
+	font-size: 150%;
+	padding: 1%;
 	border: solid white;
 }
 
@@ -101,7 +103,8 @@ canvas {
 	background: #6DF207;
 	width: 11%;
 	height: 90%;
-	font-size: 500%;
+	font-size: 150%;
+	padding: 1%;
 	border: solid white;
 }
 
@@ -110,7 +113,8 @@ canvas {
 	background: #F2B407;
 	width: 11%;
 	height: 90%;
-	font-size: 500%;
+	font-size: 150%;
+	padding: 1%;
 	border: solid white;
 }
 
@@ -119,6 +123,7 @@ canvas {
 	background: black;
 	width: 11%;
 	height: 90%;
-	font-size: 500%;
+	padding: 1%;
+	font-size: 150%;
 	border: solid white;
 }
