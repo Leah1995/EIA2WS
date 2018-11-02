@@ -2,6 +2,7 @@ var UnoSpiel;
 (function (UnoSpiel) {
     let values = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "Draw Two", "Skip"];
     let colors = ["green", "yellow", "red", "blue"];
+    // Assoziatives Array
     let cards = [{ color: "blue", value: "0" }, { color: "red", value: "0" }, { color: "green", value: "0" }, { color: "yellow", value: "0" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Wild" }, { color: "black", value: "Wild" }, { color: "black", value: "Wild" }, { color: "black", value: "Wild" }];
     for (let i = 0; i < colors.length; i++) {
         for (let a = 0; a < values.length; a++) {
@@ -10,7 +11,7 @@ var UnoSpiel;
                 cards.push(card);
             }
         }
-    } // Ende for Schleife
+    } // Ende for Schleifen
     let handcards = [];
     function Input() {
         var cardnumber = prompt("Bitte eine Zahl angeben"); //promptCards cardnumber zugwiesen

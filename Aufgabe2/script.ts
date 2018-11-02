@@ -5,7 +5,9 @@ namespace UnoSpiel { // Speicher-Sektion
     }
 
     let values: string[] = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "Draw Two", "Skip"];
-     let colors: string[] = ["green", "yellow", "red", "blue"];
+    let colors: string[] = ["green", "yellow", "red", "blue"];
+
+    // Assoziatives Array
     let cards: Unocard[] = [{ color: "blue", value: "0" }, { color: "red", value: "0" }, { color: "green", value: "0" }, { color: "yellow", value: "0" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Draw Four" }, { color: "black", value: "Wild" }, { color: "black", value: "Wild" }, { color: "black", value: "Wild" }, { color: "black", value: "Wild" }];
 
     for (let i: number = 0; i < colors.length; i++) {
@@ -15,7 +17,7 @@ namespace UnoSpiel { // Speicher-Sektion
                 cards.push(card);
             }
         }
-    } // Ende for Schleife
+    } // Ende for Schleifen
 
     let handcards: Unocard[] = [];
 
@@ -23,7 +25,7 @@ namespace UnoSpiel { // Speicher-Sektion
         var cardnumber: string = prompt("Bitte eine Zahl angeben"); //promptCards cardnumber zugwiesen
         alert("Viel Spass beim Spielen!");
         let n: number = parseInt(cardnumber); // string in Zahl ändern
-        
+
 
         // Random
         for (let anz: number = n; anz > 0; anz--) {
@@ -43,7 +45,7 @@ namespace UnoSpiel { // Speicher-Sektion
         } // for Schleife Ende
 
     } // function Ende
-    
+
     document.addEventListener("DOMContentLoaded", Input); //sobald DOM geladen ist, wird Funktion Input ausgeführt
 
 } // namespace Ende
