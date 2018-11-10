@@ -1,0 +1,39 @@
+/* Schriftart */
+@import
+	url('https://fonts.googleapis.com/css?family=Press+Start+2P');
+html {
+	font-family: 'Press Start 2P', cursive;
+	color: white;
+	
+}
+
+/* Anpassung*/
+canvas {
+	width: 100%;
+}
+
+@media screen and (min-width: 35em) {
+	canvas {
+		width: 100%;
+	}
+	@media screen and (min-width: 48em) {
+		canvas {
+			width: 100%;
+		}
+		@media screen and (min-width: 64em) {
+			canvas {
+				width: 800px;
+				height: 600px;
+			}
+		}
+	}
+}
+
+/* Hintergrundbild */
+#bg {
+	position: fixed;
+	top: 0;
+	left: 0;
+	min-width: 100%;
+	min-height: 100%;
+}
