@@ -2,11 +2,12 @@ namespace uno {
     window.addEventListener("load", init);
     document.addEventListener("DOMContentLoaded", main);
 
-    let cards: string[] = ["r0", "r1", "r1", "r2", "r2", "r3", "r3", "r4", "r4", "r5", "r5", "r6", "r6", "r7", "r7", "r8", "r8", "r9", "r9",
-        "b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9",
-        "g0", "g1", "g1", "g2", "g2", "g3", "g3", "g4", "g4", "g5", "g5", "g6", "g6", "g7", "g7", "g8", "g8", "g9", "g9",
-        "y0", "y1", "y1", "y2", "y2", "y3", "y3", "y4", "y4", "y5", "y5", "y6", "y6", "y7", "y7", "y8", "y8", "y9", "y9",
-        "p2", "p2", "w", "w", "s", "s"];
+    let cards: string[] = [];
+    let bluecards: string[] = ["b0", "b1", "b1", "b2", "b2", "b3", "b3", "b4", "b4", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b9", "b9"];
+    let greencards: string[] = ["g0", "g1", "g1", "g2", "g2", "g3", "g3", "g4", "g4", "g5", "g5", "g6", "g6", "g7", "g7", "g8", "g8", "g9", "g9"];
+    let redcards: string[] = ["r0", "r1", "r1", "r2", "r2", "r3", "r3", "r4", "r4", "r5", "r5", "r6", "r6", "r7", "r7", "r8", "r8", "r9", "r9"];
+    let yellowcards: string[] = ["y0", "y1", "y1", "y2", "y2", "y3", "y3", "y4", "y4", "y5", "y5", "y6", "y6", "y7", "y7", "y8", "y8", "y9", "y9"];
+    let blackcards: string[] = ["p2", "p2", "w", "w", "s", "s"];
     let handcards: string[] = [];
     let filedcards: string[] = [];
     let deck: string[] = [];
@@ -58,13 +59,61 @@ namespace uno {
                 if (colortype(clickedCard) = colortype(filedCards(lastCard))) { // finde die oberste Karte des Spielfelds heraus
                     filedCards.push(handCards[clickedCard]);
                     handCards.splice(clickedCard);
-                }
-                function colortype(a: string): void {
                     
+                    else if (colortype(clickedCard = "black")) {
+                        filedCards.push(handCards[clickedCard]);
+                        handCards.splice(clickedCard);
                     }
+
+                    else if (colortype(filedCards(lastCard))) {
+                        filedCards.push(handCards[clickedCard]);
+                        handCards.splice(clickedCard);
+                    }
+
+                }
+
+                function sort(event: Event): void {
+                    
+
+                }
+
+
+
+                function colortype(a: string): string {
+                    for (let i: number; i > bluecards.length - 1; i++) {
+                        if (a == bluecards[i]) {
+                            return "blue";
+                        }
+                    }
+
+                    for (let i: number; i > redcards.length - 1; i++) {
+                        if (a == redcards[i]) {
+                            return "red";
+                        }
+                    }
+
+                    for (let i: number; i > greencards.length - 1; i++) {
+                        if (a == greencards[i]) {
+                            return "green";
+                        }
+                    }
+
+                    for (let i: number; i > yellowcards.length - 1; i++) {
+                        if (a == yellowcards[i]) {
+                            return "yellow";
+                        }
+                    }
+
+                    for (let i: number; i > blackcards.length - 1; i++) {
+                        if (a == blackcards[i]) {
+                            return "black";
+                        }
+                    }
+
+                } // Function Colortype Ende
             }
 
-            
+
 
 
             //
@@ -99,3 +148,4 @@ namespace uno {
         } // Ende Function createCard 
 
     }
+}
