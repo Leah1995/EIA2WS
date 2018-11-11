@@ -27,7 +27,7 @@ var uno;
             handcards.push(deck[deck.length - 1]);
             let div = document.createElement("div");
             div.innerText = deck[deck.length - 1];
-            div.setAttribute("class", "hand");
+            div.setAttribute("class", colortype(deck[deck.length - 1]));
             div.addEventListener("click", fieldCards);
             document.getElementById("handcards").appendChild(div);
             deck.splice(deck.length - 1, 1);
@@ -35,55 +35,61 @@ var uno;
         let drawDeck = document.getElementById("deck");
         drawDeck.addEventListener("click", drawCard);
         function drawCard() {
-            for (let i = 0; i > cardNumber; i++) {
-                handcards.push(deck[deck.length - 1]);
-                deck.splice(deck.length, 1);
-            }
+            handcards.push(deck[deck.length - 1]);
+            let div = document.createElement("div");
+            div.innerText = deck[deck.length - 1];
+            div.setAttribute("class", colortype(deck[deck.length - 1]));
+            div.addEventListener("click", fieldCards);
+            document.getElementById("handcards").appendChild(div);
+            deck.splice(deck.length - 1, 1);
+        }
+        function moveToFiled(card, cardHTML) {
+            filedcards.push(card);
+            handcards.splice(handcards.indexOf(card), 1);
+            let filed = document.getElementById("filed");
+            filed.replaceChild(cardHTML, filed.childNodes[0]);
         }
         function fieldCards(event) {
+            let clickedCardHTML = event.target;
             let clickedCard = event.target.innerText;
             if (colortype(clickedCard) == colortype(filedcards[filedcards.length - 1])) {
-                filedcards.push(clickedCard);
-                handcards.splice(handcards.indexOf(clickedCard), 1);
+                moveToFiled(clickedCard, clickedCardHTML);
             }
             else if (colortype(clickedCard) == "black") {
-                filedcards.push(clickedCard);
-                handcards.splice(handcards.indexOf(clickedCard), 1);
+                moveToFiled(clickedCard, clickedCardHTML);
             }
             else if (colortype(filedcards[filedcards.length - 1]) == "black") {
-                filedcards.push(clickedCard);
-                handcards.splice(handcards.indexOf(clickedCard), 1);
+                moveToFiled(clickedCard, clickedCardHTML);
             }
         }
+        let sortButton = document.getElementById("button");
+        sortButton.addEventListener("click", sort);
         function sort(event) {
+            let handcardsHTML = document.getElementById("handcards");
             handcards.sort();
+            // Alte Handkarten entfernen
+            while (handcardsHTML.hasChildNodes())
+                handcardsHTML.removeChild(handcardsHTML.childNodes[0]);
+            // Handkarten neu einf�gen
+            for (let i = 0; i < handcards.length; i++) {
+                let div = document.createElement("div");
+                div.innerText = handcards[i];
+                div.setAttribute("class", colortype(handcards[i]));
+                div.addEventListener("click", fieldCards);
+                handcardsHTML.appendChild(div);
+            }
         }
         function colortype(a) {
-            for (let i; i < bluecards.length; i++) {
-                if (a == bluecards[i]) {
-                    return "blue";
-                }
-            }
-            for (let i; i < redcards.length; i++) {
-                if (a == redcards[i]) {
-                    return "red";
-                }
-            }
-            for (let i; i < greencards.length; i++) {
-                if (a == greencards[i]) {
-                    return "green";
-                }
-            }
-            for (let i; i < yellowcards.length; i++) {
-                if (a == yellowcards[i]) {
-                    return "yellow";
-                }
-            }
-            for (let i; i > blackcards.length - 1; i++) {
-                if (a == blackcards[i]) {
-                    return "black";
-                }
-            }
+            if (bluecards.indexOf(a) >= 0)
+                return "blue";
+            if (redcards.indexOf(a) >= 0)
+                return "red";
+            if (greencards.indexOf(a) >= 0)
+                return "green";
+            if (yellowcards.indexOf(a) >= 0)
+                return "yellow";
+            if (blackcards.indexOf(a) >= 0)
+                return "black";
         } // Function Colortype Ende
         function createCard() {
             //  let random: number = Math.floor(Math.random() * (cards.length - 1));
