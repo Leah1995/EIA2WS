@@ -34,4 +34,10 @@ var UnoSpiel;
     } // function Ende
     document.addEventListener("DOMContentLoaded", Input); //sobald DOM geladen ist, wird Funktion Input ausgef�hrt
 })(UnoSpiel || (UnoSpiel = {})); // namespace Ende
+// du musst hier eig nur schreiben das   handcards.push(cards[random]);
+//  cards.splice(random, 1); sowas in der art nur das anstelle von random card eben die currentTarget karte genommen wird
+//            und die stelle dann auch raus genommen wird
+//deshalb wollte ich das du dir das mit currentTarget genauer ansiehst wie wir das benutzen k�nnen welche werte wir da bekommen
+//            die wir greifen und verschieben k�nnen 
+// das alles ist nur eine Idee von mir das k�nnen wir bestimmt anders machen ich bin auch nicht besonders gut darin  
 //# sourceMappingURL=script.js.map

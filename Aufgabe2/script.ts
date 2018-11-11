@@ -49,3 +49,12 @@ namespace UnoSpiel { // Speicher-Sektion
     document.addEventListener("DOMContentLoaded", Input); //sobald DOM geladen ist, wird Funktion Input ausgeführt
 
 } // namespace Ende
+
+
+      // du musst hier eig nur schreiben das   handcards.push(cards[random]);
+          //  cards.splice(random, 1); sowas in der art nur das anstelle von random card eben die currentTarget karte genommen wird
+//            und die stelle dann auch raus genommen wird
+            //deshalb wollte ich das du dir das mit currentTarget genauer ansiehst wie wir das benutzen können welche werte wir da bekommen
+//            die wir greifen und verschieben können 
+
+            // das alles ist nur eine Idee von mir das können wir bestimmt anders machen ich bin auch nicht besonders gut darin 
