@@ -64,13 +64,13 @@ canvas {
 	height: 30%;
 }
 
-#instructions {
+#instructions { 
 	width: 60%;
 	height: 50%;
 	text-align: center;
 	padding: 1%;
 	margin: 1%;
-	background-color: #ff00ff;
+	background-color: #00ff40;
 	font-size: 70%;
 }
 

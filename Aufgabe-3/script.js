@@ -28,7 +28,7 @@ var uno;
             let div = document.createElement("div");
             div.innerText = deck[deck.length - 1];
             div.setAttribute("class", colortype(deck[deck.length - 1]));
-            div.addEventListener("click", fieldCards);
+            div.addEventListener("click", playCards);
             document.getElementById("handcards").appendChild(div);
             deck.splice(deck.length - 1, 1);
         } // Ende for Schleife
@@ -39,9 +39,9 @@ var uno;
             let div = document.createElement("div");
             div.innerText = deck[deck.length - 1];
             div.setAttribute("class", colortype(deck[deck.length - 1]));
-            div.addEventListener("click", fieldCards);
+            div.addEventListener("click", playCards);
             document.getElementById("handcards").appendChild(div);
-            deck.splice(deck.length - 1, 1);
+            deck.splice(deck.length - 1, 1); // 1 l�scht das letzte Element aus dem Array, 
         }
         function moveToFiled(card, cardHTML) {
             filedcards.push(card);
@@ -49,18 +49,21 @@ var uno;
             let filed = document.getElementById("filed");
             filed.replaceChild(cardHTML, filed.childNodes[0]);
         }
-        function fieldCards(event) {
-            let clickedCardHTML = event.target;
+        function playCards(event) {
+            let clickedCardHTML = event.target; // angeklicktes Element nimmt inner Text und speichert ihn auf clickedCard Variable
             let clickedCard = event.target.innerText;
-            if (colortype(clickedCard) == colortype(filedcards[filedcards.length - 1])) {
-                moveToFiled(clickedCard, clickedCardHTML);
-            }
-            else if (colortype(clickedCard) == "black") {
-                moveToFiled(clickedCard, clickedCardHTML);
-            }
-            else if (colortype(filedcards[filedcards.length - 1]) == "black") {
-                moveToFiled(clickedCard, clickedCardHTML);
-            }
+            moveToFiled(clickedCard, clickedCardHTML);
+            //            if (colortype(clickedCard) == colortype(filedcards[filedcards.length - 1])) { // finde die oberste Karte des Spielfelds heraus
+            //                moveToFiled(clickedCard, clickedCardHTML);
+            //            }
+            //
+            //            else if (colortype(clickedCard) == "black") {
+            //                moveToFiled(clickedCard, clickedCardHTML);
+            //            }
+            //
+            //            else if (colortype(filedcards[filedcards.length - 1]) == "black") {
+            //                moveToFiled(clickedCard, clickedCardHTML);
+            //            }
         }
         let sortButton = document.getElementById("button");
         sortButton.addEventListener("click", sort);
@@ -75,7 +78,7 @@ var uno;
                 let div = document.createElement("div");
                 div.innerText = handcards[i];
                 div.setAttribute("class", colortype(handcards[i]));
-                div.addEventListener("click", fieldCards);
+                div.addEventListener("click", playCards);
                 handcardsHTML.appendChild(div);
             }
         }
@@ -96,30 +99,8 @@ var uno;
             let random = cards[Math.floor(Math.random() * cards.length)];
             let position = cards.indexOf(random);
             deck.push(cards[position]);
-            //
-            //            let colorClass: string = colortype(cards[random]);
-            //            let div: HTMLDivElement = document.createElement("div");
-            //
-            //            div.innerText = cards[random];
-            //            div.setAttribute("class", "hand" + colorClass);
-            //            div.addEventListener("click", fieldCards);
-            //            document.getElementById("deck").appendChild(div);
             cards.splice(position, 1); // Eintrag im Array gel�scht?
         } // Ende Function createCard 
-        //
-        //        let colordiv: string;
-        //        if (color == "r") {
-        //            colordiv = " #F2071F";
-        //        }
-        //        else if (color == "g") {
-        //            colordiv = "#6DF207";
-        //        }
-        //        else if (color == "b") {
-        //            colordiv = "#2B07F6";
-        //        }
-        //        else if (color == "y") {
-        //            colordiv = "#F2B407";
-        //        }
     }
     ; // Ende Input Function
 })(uno || (uno = {}));

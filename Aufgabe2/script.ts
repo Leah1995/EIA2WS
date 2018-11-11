@@ -34,7 +34,7 @@ namespace UnoSpiel { // Speicher-Sektion
             cards.splice(random, 1);
         } // Ende for Schleife
 
-        console.log("prompt and random")
+        console.log("prompt and random");
 
         for (let b: number = 0; b < handcards.length; b++) {
             let div: HTMLElement = document.createElement("div");
