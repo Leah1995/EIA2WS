@@ -39,6 +39,7 @@ var uno;
             //
         }
         function filedCards(event) {
+            //
         }
         //
         //        let colordiv: string;
