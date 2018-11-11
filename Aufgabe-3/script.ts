@@ -56,16 +56,16 @@ namespace uno {
 
             function filedCards(event: Event): void {
                 let clickedCard: string = "r1";
-                if (colortype(clickedCard) = colortype(filedCards(lastCard))) { // finde die oberste Karte des Spielfelds heraus
+                if (colortype(clickedCard) = colortype(filedCards(filedCards.length - 1))) { // finde die oberste Karte des Spielfelds heraus
                     filedCards.push(handCards[clickedCard]);
                     handCards.splice(clickedCard);
                     
-                    else if (colortype(clickedCard = "black")) {
+                    else if (colortype(clickedCards(clickedCards.length - 1))) {
                         filedCards.push(handCards[clickedCard]);
                         handCards.splice(clickedCard);
                     }
 
-                    else if (colortype(filedCards(lastCard))) {
+                    else if (colortype(filedCards(lastCards(lastCards.length - 1)))) {
                         filedCards.push(handCards[clickedCard]);
                         handCards.splice(clickedCard);
                     }
@@ -73,7 +73,7 @@ namespace uno {
                 }
 
                 function sort(event: Event): void {
-                    
+                    handCards.sort();
 
                 }
 
