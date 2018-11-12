@@ -51,40 +51,80 @@ canvas {
 	height: 30%;
 }
 
+#Handcards {
+	width: 90%;
+	height: 35%;
+	bottom: 20%;
+	position: fixed;
+	display: inline-table;
+	bottom: 0%;
+	margin: 1%;
+}
+
 #deck {
 	text-align: center;
 	margin-top: 50%;
 	padding: 1%;
 	margin: 1%;
-	position: absolute;
 	background-color: black;
 	border: solid white;
 	font-Size: 150%;
-	width: 8%;
-	height: 30%;
+	width: 70px;
+	height: 130px;
 }
 
-#instructions { 
+#instructions {
 	width: 60%;
-	height: 50%;
+	height: 20%;
 	text-align: center;
 	padding: 1%;
 	margin: 1%;
 	background-color: #00ff40;
 	font-size: 70%;
-}
-
-cards {
-	width: 90%;
-	height: 35%;
-	bottom: 20%;
 	position: fixed;
+	left: 50%;
+	top: 20%;
+	transform: translate(-50%, -50%);
 }
 
-.Handcards {
-	display: inline-table;
-	bottom: 0%;
-	margin: 1%;
+#button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 28px;
+  padding: 20px;
+  width: 200px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 5px;
+}
+
+#button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+#button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -20px;
+  transition: 0.5s;
+}
+
+#button:hover span {
+  padding-right: 25px;
+}
+
+#button:hover span:after {
+  opacity: 1;
+  right: 0;
 }
 
 .hand {
@@ -94,46 +134,60 @@ cards {
 	font-size: 150%;
 	padding: 1%;
 	border: solid white;
-	right: +80%;
 	background: #00ff00;
+}
+
+.red {
+	text-align: center;
+	background: #F2071F;
+	width: 70px;
+	height: 130px;
+	font-size: 150%;
+	padding: 1%;
+	border: solid white;
+	height: 130px;
 }
 
 .blue {
 	text-align: center;
 	background: #2B07F6;
-	width: 11%;
-	height: 90%;
+	width: 70px;
+	height: 130px;
 	font-size: 150%;
 	padding: 1%;
 	border: solid white;
+	height: 130px;
 }
 
 .green {
 	text-align: center;
 	background: #6DF207;
-	width: 11%;
-	height: 90%;
+	width: 70px;
+	height: 130px;
 	font-size: 150%;
 	padding: 1%;
 	border: solid white;
+	height: 130px;
 }
 
 .yellow {
 	text-align: center;
 	background: #F2B407;
-	width: 11%;
-	height: 90%;
+	width: 70px;
+	height: 130px;
 	font-size: 150%;
 	padding: 1%;
 	border: solid white;
+	height: 130px;
 }
 
 .black {
 	text-align: center;
 	background: black;
-	width: 11%;
-	height: 90%;
+	width: 70px;
+	height: 130px;
 	padding: 1%;
 	font-size: 150%;
 	border: solid white;
+	height: 130px;
 }
