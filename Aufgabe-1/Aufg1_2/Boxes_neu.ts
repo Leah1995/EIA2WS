@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener("DOMContentLoaded", function(): void {
     let n: number = 5;
     let c: string;
     let x: number = 0;

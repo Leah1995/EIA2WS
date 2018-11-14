@@ -1,0 +1,80 @@
+<!--
+Aufgabe: Aufgabe 4 FormElements: Weihnachtsbaumkonfigurator
+Name: Leah Kappelmann
+Matrikel: 254908
+Datum: 14.11.18
+	
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+  -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<title>Weihnachtsbaumkonfigurator</title>
+<link rel="stylesheet" href="Aufg4.css">
+<script type="text/javascript" src="Aufg4.js"></script>
+</head>
+<body>
+
+	<header>
+		<h1>Dein Traum-Baum</h1>
+		<img src="douglasie.jpg" alt="Baum">
+		<img src="grunfichte.jpg" alt="Baum">
+		<img src="weissfichte.jpg" alt="Baum">
+		<img src="blaufichte.jpg" alt="Baum">
+	</header>
+	<hr>
+
+	<div id="main">
+	</div>
+ 
+	<aside>
+		<fieldset id="cart">
+			<legend>Warenkorb</legend>
+			<hr>
+			<span>HALTERUNG</span>
+			<div id="container"></div>
+			<span>SCHMUCK</span>
+			<div id="schmuckOutput"></div>
+			<span>BAUMART</span>
+			<div id="treetype"></div>
+			<div id="topping"></div>
+			<span>Summe + Standardpreis von 50€ </span>
+			<div id="total"></div>
+			<hr>
+		</fieldset>
+		<fieldset id="delivery">
+			<legend>Lieferoptionen</legend>
+			<input type="radio" name="Delivery" value="Express" id="radio1" />
+			<label for="radio1">Express (kommt in zwei Tagen)</label> 
+			<input type="radio"
+				name="Delivery" value="Premium Shipping" id="radio2" /> 
+					<label for="radio2">Prime (kommt am nächsten Werktag)</label> 
+				<input type="radio" name="Delivery" value="Standard Shipping"
+				id="radio3" /> <label for="radio3">Standard (kommt innerhalb von 3 Tagen)</label>				
+			<hr>
+		</fieldset>
+		<fieldset id="address">
+			<legend> Addresse </legend>
+			Vorname  <input type="text" name="FirstName" required />
+			<br>
+			Nachname  <input type="text" name="LastName" required />
+			<br>
+			Straße und Hausnummer  <input type="text" name="Addresse" required />
+			<br>
+			Ort  <input type="text" name="Town" required />
+			<br>
+			Postleitzahl <input type="text" name="PostalCode" pattern="[0-9, A-Z]{5}" required />
+			<br>
+			Email <input type="email" name="Email" required/>
+			<hr>
+		</fieldset>
+		
+		<button id="button" style="vertical-align:middle"><span>Bestellen </span></button>
+		
+		
+	</aside>
+</body>
+</html>

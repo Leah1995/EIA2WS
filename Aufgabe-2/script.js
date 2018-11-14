@@ -25,7 +25,7 @@ var DynHTML_Uno;
             blue: 2,
             red: 2,
             green: 2,
-            yellow: 2,
+            yellow: 2
         };
         let c3 = {
             name: "3",
@@ -77,21 +77,21 @@ var DynHTML_Uno;
             yellow: 2
         };
         // Bonuskarten
-        let c_skip = {
+        let cSkip = {
             name: "Skip",
             blue: 1,
             red: 1,
             green: 1,
             yellow: 1
         };
-        let c_draw2 = {
+        let cardDraw2 = {
             name: "Draw Two",
             blue: 1,
             red: 1,
             green: 1,
             yellow: 1
         };
-        let c_wild = {
+        let cWild = {
             name: "Wild",
             blue: 1,
             red: 1,
@@ -99,7 +99,7 @@ var DynHTML_Uno;
             yellow: 1
         };
         // Karten im Array speichern
-        let allCards = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c_skip, c_draw2, c_wild];
+        let allCards = [c1, c2, c3, c4, c5, c6, c7, c8, c9, cSkip, cardDraw2, cWild];
         let s1 = 1;
         let s2 = 1;
         let c = "";
@@ -107,7 +107,6 @@ var DynHTML_Uno;
         function random1(x) {
             return Math.floor(Math.random() * Math.floor(x));
         }
-        ;
         // Handkarten
         function placeDiv(_color, _v, _y) {
             let div = document.createElement("div");

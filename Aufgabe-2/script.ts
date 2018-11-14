@@ -1,8 +1,8 @@
 namespace DynHTML_Uno {
-    document.addEventListener("DOMContentLoaded", (cards))
+    document.addEventListener("DOMContentLoaded", (cards));
 
     // Funktion deklarieren
-    function cards() {
+    function cards(): void {
 
         // erstelle Interface mit Karten
         interface Cards {
@@ -13,14 +13,14 @@ namespace DynHTML_Uno {
             green: number;
         }
 
-//        // Ziehstapel
-//        let c0: Cards = {
-//            name: "0",
-//            blue: 0,
-//            yellow: 0,
-//            red: 0,
-//            green: 0
-//        }
+        //        // Ziehstapel
+        //        let c0: Cards = {
+        //            name: "0",
+        //            blue: 0,
+        //            yellow: 0,
+        //            red: 0,
+        //            green: 0
+        //        }
         // console.log(Ziehkarten)
 
         // Karten von 1 - 9
@@ -30,16 +30,16 @@ namespace DynHTML_Uno {
             red: 2,
             green: 2,
             yellow: 2
-        }
+        };
 
         let c2: Cards = {
             name: "2",
             blue: 2,
             red: 2,
             green: 2,
-            yellow: 2,
+            yellow: 2
 
-        }
+        };
 
         let c3: Cards = {
             name: "3",
@@ -47,7 +47,7 @@ namespace DynHTML_Uno {
             red: 2,
             green: 2,
             yellow: 2
-        }
+        };
 
         let c4: Cards = {
             name: "4",
@@ -55,7 +55,7 @@ namespace DynHTML_Uno {
             red: 2,
             green: 2,
             yellow: 2
-        }
+        };
 
         let c5: Cards = {
             name: "5",
@@ -64,7 +64,7 @@ namespace DynHTML_Uno {
             green: 2,
             yellow: 2
 
-        }
+        };
 
         let c6: Cards = {
             name: "6",
@@ -72,7 +72,7 @@ namespace DynHTML_Uno {
             red: 2,
             green: 2,
             yellow: 2
-        }
+        };
 
         let c7: Cards = {
             name: "7",
@@ -80,7 +80,7 @@ namespace DynHTML_Uno {
             red: 2,
             green: 2,
             yellow: 2
-        }
+        };
 
         let c8: Cards = {
             name: "8",
@@ -88,7 +88,7 @@ namespace DynHTML_Uno {
             red: 2,
             green: 2,
             yellow: 2
-        }
+        };
 
         let c9: Cards = {
             name: "9",
@@ -96,43 +96,43 @@ namespace DynHTML_Uno {
             red: 2,
             green: 2,
             yellow: 2
-        }
+        };
 
         // Bonuskarten
-        let c_skip: Cards = {
+        let cSkip: Cards = {
             name: "Skip",
             blue: 1,
             red: 1,
             green: 1,
             yellow: 1
-        }
+        };
 
-        let c_draw2: Cards = {
+        let cardDraw2: Cards = {
             name: "Draw Two",
             blue: 1,
             red: 1,
             green: 1,
             yellow: 1
-        }
+        };
 
-        let c_wild: Cards = {
+        let cWild: Cards = {
             name: "Wild",
             blue: 1,
             red: 1,
             green: 1,
             yellow: 1
-        }
+        };
 
         // Karten im Array speichern
-        let allCards: Cards[] = [c1, c2, c3, c4, c5, c6, c7, c8, c9, c_skip, c_draw2, c_wild]
-        let s1: number = 1
-        let s2: number = 1
+        let allCards: Cards[] = [c1, c2, c3, c4, c5, c6, c7, c8, c9, cSkip, cardDraw2, cWild];
+        let s1: number = 1;
+        let s2: number = 1;
         let c: string = "";
 
         // Zufallsfunktion
-        function random1(x: number) {
-            return Math.floor(Math.random() * Math.floor(x))
-        };
+        function random1(x: number): number {
+            return Math.floor(Math.random() * Math.floor(x));
+        }
 
         // Handkarten
         function placeDiv(_color: string, _v: string, _y: number): void {
@@ -167,14 +167,14 @@ namespace DynHTML_Uno {
 
 
         for (let d: number = 0; d < z; d++) { //Begin der For-Schleife
-            let l = random1(8);
+            let l: number = random1(8);
             if (l == 6 && s1 > 0) {
                 c = "#000000";
                 s1--;
                 placeDiv(c, "draw Two", d);
 
                 // Beginn der Vorschleife von vorne
-                
+
                 continue;
             } // If-Schleife Ende
 
@@ -240,7 +240,7 @@ namespace DynHTML_Uno {
 
                             else {
                                 d--;
-                                continue
+                                continue;
                             }
 
                     } // switch Ende

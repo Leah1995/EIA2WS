@@ -1,4 +1,4 @@
-document.addEventListener('DOMContentLoaded', function () {
+document.addEventListener("DOMContentLoaded", function () {
     var name;
     name = prompt("Wie hei�t du?");
     document.getElementById("greeting").innerHTML += name;

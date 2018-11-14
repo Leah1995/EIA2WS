@@ -1,0 +1,306 @@
+/* Schriftart */
+@import
+	url('https://fonts.googleapis.com/css?family=Montserrat:700|Playball|Quicksand|Sacramento');
+
+
+header{
+	text-align:center;
+	font-family: 'Playball', cursive;
+	float: left;
+    width: 100%;
+    margin-bottom:10px;
+}
+
+body{
+	font-family: 'Quicksand', sans-serif;
+    margin: 4%;
+	
+}
+
+legend{
+	font-size:24px;
+}
+aside legend{
+	font-size:20px;
+}
+
+header img{
+	height: 50px;
+}
+
+
+input[type="radio"] {
+	display: inline;
+}
+
+
+label::after {
+	content:"";
+	display: block;
+}
+
+head {
+	display: none;
+}
+input:invalid {
+	background: #C3E3D2;
+}
+input:valid {
+	background: white;
+}
+input:required {
+	background: #C3E3D2;
+}
+
+svg, figure, button, option {
+	display: inline;
+	margin: 6px;
+	padding: 6px;
+}
+
+#main{
+	float:left;
+	width:30%;
+	margin-right: 5%;
+}
+
+aside{
+	float:left;
+	width: 50%;
+	font-size:15px;	
+}
+
+#main fieldset, aside fieldset {
+	margin-bottom: 20px;
+	padding: 20px;
+	
+	
+}
+#main fieldset{
+	border: none
+}
+
+aside fieldset{
+	border: none
+	
+}
+
+#flavors select, #flavors input{
+	display:inline;
+}
+
+/*Buttons*/
+button{ 
+	width: 100px;
+    height: 25px;
+    display:block;
+	margin:auto;
+	margin-top: 20px;
+    background-color: #0F924A;
+    font-weight:bold;
+    
+}
+
+button:hover{
+	border: none
+}
+
+#check{
+	background-Color: #0F924A;
+    border: none;
+    display:inline;
+    margin-right: 40px;
+}
+
+#check:hover{ 
+	border: none
+}
+
+#checkImg {
+	display:none;
+	margin: 2px;
+    height: 25px;
+   
+}
+
+
+#toppings label{
+	display:inline;
+}
+
+#container label{
+	display:inline;
+}
+
+#address {
+	line-height: 2em;
+}
+#address input{
+	float:right;
+}
+select, number, checkbox, radio {
+	display:block;
+	
+}
+
+span {
+	font-size:20px;
+
+}@import url('https://fonts.googleapis.com/css?family=Playball');
+
+{
+	display: block;
+	vertical-align: top
+}
+
+
+header{
+	text-align:center;
+	font-family: 'Playball', cursive;
+	float: left;
+    width: 100%;
+    margin-bottom:10px;
+}
+
+body{
+	font-family: 'Montserrat', sans-serif;
+    margin: 4%;
+	
+}
+
+legend{
+	font-size:24px;
+}
+aside legend{
+	font-size:20px;
+}
+
+header img{
+	height: 200px;
+}
+
+
+input[type="radio"] {
+	display: inline;
+}
+
+
+label::after {
+	content:"";
+	display: block;
+}
+
+head {
+	display: none;
+}
+input:invalid {
+	background:   #C3E3D2;
+}
+input:valid {
+	background: grey;
+}
+input:required {
+	background:  #C3E3D2;
+}
+
+svg, figure, button, option {
+	display: inline;
+	margin: 0px;
+	padding: 0px;
+}
+
+#main{
+	float:left;
+	width:30%;
+	margin-right:2%;
+}
+
+aside{
+	float:left;
+	width:35%;
+	font-size:15px;
+	
+}
+
+#main fieldset, aside fieldset {
+	margin-bottom:15px;
+	padding:15px;
+	
+	
+}
+#main fieldset{
+	border: none
+}
+
+aside fieldset{
+	border: none
+	
+}
+
+#flavors select, #flavors input{
+	display:inline;
+}
+
+/*Buttons*/
+button{ 
+	width: 100px;
+    height: 30px;
+    display:block;
+	margin:auto;
+	margin-top:15px;
+	border: none;
+    background-color: #0F924A;
+    font-weight:bold;
+    
+}
+
+button:hover{
+	border: none
+}
+
+#check{
+	background-Color: #0F924A;
+    border: none;
+    display:inline;
+    margin-right: 40px;
+}
+    
+    
+}
+
+#check:hover{ 
+	border: none
+}
+
+#checkImg {
+	display:none;
+	margin: 2px;
+
+    height: 22px;
+   
+}
+
+
+#toppings label{
+	display:inline;
+}
+
+#container label{
+	display:inline;
+}
+
+#address {
+	line-height: 1.5em;
+}
+#address input{
+	float:right;
+}
+select, number, checkbox, radio {
+	display:block;
+	
+}
+
+span {
+	font-size:20px;
+
+}
