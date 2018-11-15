@@ -15,11 +15,13 @@ var uno;
     let deck = [];
     let cardNumber;
     let decksize;
+    // Initialisieren
     function init(_event) {
         decksize = cards.length; // Anzahl Eintr�ge im Cards Array
         for (let i = 0; i < decksize; i++) {
             createCard();
-        }
+        } // Ende for Schleife
+        // Nutzer muss Kartenanzahl angeben
         do {
             let getcardnumber = prompt("Bitte eine Zahl angeben"); //promptCards cardnumber zugwiesen
             cardNumber = Number.parseInt(getcardnumber);
@@ -27,7 +29,7 @@ var uno;
         } while (isNaN(cardNumber));
         // Handkarten
         for (let i = 0; i < cardNumber; i++) {
-            handcards.push(deck[deck.length - 1]);
+            handcards.push(deck[deck.length - 1]); // eine Karte vom Deck abziehen
             let div = document.createElement("div");
             div.innerText = deck[deck.length - 1];
             div.setAttribute("class", colortype(deck[deck.length - 1]));
@@ -37,6 +39,7 @@ var uno;
         } // Ende for Schleife
         let drawDeck = document.getElementById("deck");
         drawDeck.addEventListener("click", drawCard);
+        // Karte ziehen
         function drawCard() {
             handcards.push(deck[deck.length - 1]);
             let div = document.createElement("div");
@@ -45,13 +48,14 @@ var uno;
             div.addEventListener("click", playCards);
             document.getElementById("handcards").appendChild(div);
             deck.splice(deck.length - 1, 1); // 1 l�scht das letzte Element aus dem Array, 
-        }
+        } // Ende Function drawCard
+        // Auf Ablagestapel verschieben
         function moveToFiled(card, cardHTML) {
             filedcards.push(card);
             handcards.splice(handcards.indexOf(card), 1);
             let filed = document.getElementById("filed");
             filed.replaceChild(cardHTML, filed.childNodes[0]);
-        }
+        } // Ende function moveToFiled
         function playCards(event) {
             let clickedCardHTML = event.target; // angeklicktes Element nimmt inner Text und speichert ihn auf clickedCard Variable
             let clickedCard = event.target.innerText;
@@ -67,15 +71,16 @@ var uno;
             //            else if (colortype(filedcards[filedcards.length - 1]) == "black") {
             //                moveToFiled(clickedCard, clickedCardHTML);
             //            }
-        }
+        } // Ende function playCards
         let sortButton = document.getElementById("button");
         sortButton.addEventListener("click", sort);
+        // Sortierung
         function sort(event) {
             let handcardsHTML = document.getElementById("handcards");
             handcards.sort();
             // Alte Handkarten entfernen
             while (handcardsHTML.hasChildNodes())
-                handcardsHTML.removeChild(handcardsHTML.childNodes[0]);
+                handcardsHTML.removeChild(handcardsHTML.childNodes[0]); // Die childNodes-Eigenschaft gibt eine Auflistung der untergeordneten Knoten eines Knotens als NodeList-Objekt zur�ck.
             // Handkarten neu einf�gen
             for (let i = 0; i < handcards.length; i++) {
                 let div = document.createElement("div");
@@ -83,8 +88,8 @@ var uno;
                 div.setAttribute("class", colortype(handcards[i]));
                 div.addEventListener("click", playCards);
                 handcardsHTML.appendChild(div);
-            }
-        }
+            } // Ende for Schleife
+        } // Ende function sort
         function colortype(a) {
             if (bluecards.indexOf(a) >= 0)
                 return "blue";

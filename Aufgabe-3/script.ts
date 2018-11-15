@@ -18,38 +18,39 @@ namespace uno {
     let cardNumber: number;
     let decksize: number;
 
+    // Initialisieren
     function init(_event: Event): void {
         decksize = cards.length; // Anzahl Einträge im Cards Array
+        
         for (let i: number = 0; i < decksize; i++) {
             createCard();
-        }
+        } // Ende for Schleife
 
+        
+        // Nutzer muss Kartenanzahl angeben
         do {
             let getcardnumber: string = prompt("Bitte eine Zahl angeben"); //promptCards cardnumber zugwiesen
             cardNumber = Number.parseInt(getcardnumber);
             alert("Viel Spass beim Spielen!");
-
         }
+        
         while (isNaN(cardNumber));
 
         // Handkarten
         for (let i: number = 0; i < cardNumber; i++) {
-
-            handcards.push(deck[deck.length - 1]);
-
+            handcards.push(deck[deck.length - 1]); // eine Karte vom Deck abziehen
             let div: HTMLDivElement = document.createElement("div");
-
             div.innerText = deck[deck.length - 1];
             div.setAttribute("class", colortype(deck[deck.length - 1]));
             div.addEventListener("click", playCards);
             document.getElementById("handcards").appendChild(div);
-
             deck.splice(deck.length - 1, 1);
         }// Ende for Schleife
 
         let drawDeck: HTMLElement = document.getElementById("deck");
         drawDeck.addEventListener("click", drawCard);
 
+        // Karte ziehen
         function drawCard(): void {
             handcards.push(deck[deck.length - 1]);
 
@@ -61,16 +62,18 @@ namespace uno {
             document.getElementById("handcards").appendChild(div);
 
             deck.splice(deck.length - 1, 1); // 1 löscht das letzte Element aus dem Array, 
-        }
+        } // Ende Function drawCard
 
+        // Auf Ablagestapel verschieben
         function moveToFiled(card: string, cardHTML: HTMLDivElement): void {
             filedcards.push(card);
             handcards.splice(handcards.indexOf(card), 1);
 
             let filed: HTMLElement = document.getElementById("filed");
             filed.replaceChild(cardHTML, filed.childNodes[0]);
-
-        }
+        } // Ende function moveToFiled
+        
+        
         function playCards(event: Event): void { // Methodenaufruf
             let clickedCardHTML: HTMLDivElement = <HTMLDivElement>event.target; // angeklicktes Element nimmt inner Text und speichert ihn auf clickedCard Variable
             let clickedCard: string = (<HTMLDivElement>event.target).innerText;
@@ -87,29 +90,30 @@ namespace uno {
             //                moveToFiled(clickedCard, clickedCardHTML);
             //            }
 
-        }
+        } // Ende function playCards
 
         let sortButton: HTMLElement = document.getElementById("button");
         sortButton.addEventListener("click", sort);
+        
+        // Sortierung
         function sort(event: Event): void {
             let handcardsHTML: HTMLElement = document.getElementById("handcards");
-            handcards.sort();
+            handcards.sort(); 
 
             // Alte Handkarten entfernen
-            while (handcardsHTML.hasChildNodes()) handcardsHTML.removeChild(handcardsHTML.childNodes[0]);
+            while (handcardsHTML.hasChildNodes()) handcardsHTML.removeChild(handcardsHTML.childNodes[0]); // Die childNodes-Eigenschaft gibt eine Auflistung der untergeordneten Knoten eines Knotens als NodeList-Objekt zurück.
+
 
             // Handkarten neu einfügen
             for (let i: number = 0; i < handcards.length; i++) {
                 let div: HTMLDivElement = document.createElement("div");
 
-
                 div.innerText = handcards[i];
                 div.setAttribute("class", colortype(handcards[i]));
                 div.addEventListener("click", playCards);
                 handcardsHTML.appendChild(div);
-            }
-
-        }
+            } // Ende for Schleife
+        } // Ende function sort
 
         function colortype(a: string): string {
             if (bluecards.indexOf(a) >= 0) return "blue";
