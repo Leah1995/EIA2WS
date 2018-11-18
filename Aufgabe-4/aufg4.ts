@@ -3,17 +3,17 @@ namespace christmastree {
     window.addEventListener("load", init);
 
     // Weihnachtsbaum 
-    let christmastree: string[] = ["Nordmanntanne", "Blaufichte", "GrÃ¼nfichte", "Douglasie"];
+    let christmastree: string[] = ["Nordmanntanne", "Blaufichte", "Grünfichte", "Douglasie"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputChristmastree: HTMLInputElement[] = [];
 
     // Halterung
-    let treestand: string[] = ["GrÃ¼ne Metallhalterung", "Gold Metallhalterung", "Braune Messinghalterung", "Silber Messinghalterung"];
+    let treestand: string[] = ["Grüne Metallhalterung", "Gold Metallhalterung", "Braune Messinghalterung", "Silber Messinghalterung"];
     // Leeres HTMLInputElement Array um Artikel abzuspeichern
     let inputTreestand: HTMLInputElement[] = [];
 
     // Dekoration 
-    let decoration: string[] = ["Glitzerkugeln", "Glaskugeln", "Lametta", "GlÃ¶ckchen", "Schneeflocken", "Tanzende Figuren"];
+    let decoration: string[] = ["Glitzerkugeln", "Glaskugeln", "Lametta", "Glöckchen", "Schneeflocken", "Tanzende Figuren"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputDecoration: HTMLInputElement[] = [];
 
@@ -40,9 +40,9 @@ namespace christmastree {
     function init(): void {
 
         // Die erstellten Variablen werden der Id im HTML-Dokument zugewiesen
-        productTree = document.getElementById("baum");           // Variable erhÃ¤lt zugriff auf ID im HTML
-        productTree.addEventListener("change", changeOrder);     //EventListener Change wird bei erfolgter Ã„nderung ausgelÃ¶st
-        //Wenn Wert verÃ¤ndert wird, wird EventListener aktiviert
+        productTree = document.getElementById("baum");           // Variable erhält zugriff auf ID im HTML
+        productTree.addEventListener("change", changeOrder);     //EventListener Change wird bei erfolgter Änderung ausgelöst
+        //Wenn Wert verändert wird, wird EventListener aktiviert
 
         productStand = document.getElementById("halterung");
         productStand.addEventListener("change", changeOrder);
@@ -77,7 +77,7 @@ namespace christmastree {
     } // Ende function createTree
 
     // Input und Label werden erzeugt 
-    function createInputTree(_baum: string): void { // FÃ¼r den Artikel werden Input & Label erzeugt
+    function createInputTree(_baum: string): void { // Für den Artikel werden Input & Label erzeugt
 
         let label: HTMLLabelElement = document.createElement("label"); //Create Label 
         let input: HTMLInputElement = document.createElement("input"); // Create Input 
@@ -102,7 +102,7 @@ namespace christmastree {
         } // Ende for Schleife
     } // Ende function create Treestand
 
-    function createInputStand(_halterung: string): void {   // FÃ¼r den Artikel werden Input & Label erzeugt
+    function createInputStand(_halterung: string): void {   // Für den Artikel werden Input & Label erzeugt
 
         let label: HTMLLabelElement = document.createElement("label"); //label wird erzeugt
         let input: HTMLInputElement = document.createElement("input"); // input wird erzeugt
@@ -128,7 +128,7 @@ namespace christmastree {
     } // Ende function createDecoration
 
 
-    function createInputDecoration(_decoration: string): void { //FÃ¼r den Artikel werden Input & Label erzeugt
+    function createInputDecoration(_decoration: string): void { //Für den Artikel werden Input & Label erzeugt
 
         let label: HTMLLabelElement = document.createElement("label"); //label wird erzeugt
         let input: HTMLInputElement = document.createElement("input"); // input wird erzeugt
@@ -154,7 +154,7 @@ namespace christmastree {
         }
     }
 
-    function createInputLights(_lights: string): void {   // FÃ¼r den Artikel werden Input und Label erzeugt
+    function createInputLights(_lights: string): void {   // Für den Artikel werden Input und Label erzeugt
 
         let label: HTMLLabelElement = document.createElement("label"); // label wird erzeugt
         let input: HTMLInputElement = document.createElement("input"); //  input wird erzeugt
@@ -166,7 +166,7 @@ namespace christmastree {
         input.name = "NameDecoration";
         input.value = "0"; // Wert 0 
         input.min = "0"; // mindestwert
-        input.max = "50"; // hÃ¶chstwert  
+        input.max = "50"; // höchstwert  
         productLights.appendChild(label); // Append label to Beleuchtung
         inputLights.push(input); // Input wird ins leere Array gepusht
     } // Ende Function 
@@ -179,7 +179,7 @@ namespace christmastree {
         } // Ende for Schleife
     } // Ende function createDelivery
 
-    function createInputDelivery(_lieferung: string): void {   // FÃ¼r den Artikel werden Input und Label erzeugt
+    function createInputDelivery(_lieferung: string): void {   // Für den Artikel werden Input und Label erzeugt
 
         let label: HTMLLabelElement = document.createElement("label"); //label wird erzeugt
         let input: HTMLInputElement = document.createElement("input"); // input wird erzeugt
@@ -194,25 +194,25 @@ namespace christmastree {
         inputDelivery.push(input);     //Input wird ins leere Array gepusht
     } // Ende function create
 
-    function changeOrder(): void {  //Funktion changeOrder wird bei erfolgter Ã„nderung aufgerufen  
+    function changeOrder(): void {  //Funktion changeOrder wird bei erfolgter Änderung aufgerufen  
 
         let summe: number = 0;  //Warenkorb leer 
 
         for (let i: number = 0; i < inputChristmastree.length; i++) { //Artikel werden druchlaufen
-            if (inputChristmastree[i].checked) { //boolean bei mehrerer AuswahlmÃ¶glichkeit
+            if (inputChristmastree[i].checked) { //boolean bei mehrerer Auswahlmöglichkeit
                 summe += 60;    //summe + 60
             }
         } // Ende for Schleife
 
 
         for (let i: number = 0; i < inputTreestand.length; i++) {
-            if (inputTreestand[i].checked) {    //boolean bei mehrerer AuswahlmÃ¶glichkeit
+            if (inputTreestand[i].checked) {    //boolean bei mehrerer Auswahlmöglichkeit
                 summe += 25;
             }
         } // Ende for Schleife
 
         for (let i: number = 0; i < inputDelivery.length; i++) {
-            if (inputDelivery[i].checked) {    //boolean bei mehrerer AuswahlmÃ¶glichkeit
+            if (inputDelivery[i].checked) {    //boolean bei mehrerer Auswahlmöglichkeit
                 summe += 7;
             }
         }  // Ende for Schleife
@@ -232,7 +232,7 @@ namespace christmastree {
     // Warenkorb 
     function handleChange(_summe: number): void {  //Funktion gibt Gesamtsumme aus 
 
-        //Greift auf Element Id im Html zu & fÃ¼gt einen Text ein 
+        //Greift auf Element Id im Html zu & fügt einen Text ein 
         document.getElementById("productTrees").innerText = " ";
         document.getElementById("productStand").innerText = " ";
         document.getElementById("productDec").innerText = " ";
@@ -278,7 +278,7 @@ namespace christmastree {
 
     } // Ende function handleChane
 
-    // Bestellung wird geprÃ¼ft 
+    // Bestellung wird geprüft 
     function checkOrder(): void {
 
         let nachname: HTMLInputElement = <HTMLInputElement>document.getElementById("nachname");
@@ -288,7 +288,7 @@ namespace christmastree {
         let postleitzahl: HTMLInputElement = <HTMLInputElement>document.getElementById("postleitzahl");
         let ort: HTMLInputElement = <HTMLInputElement>document.getElementById("ort");
 
-        // Ã¼berprÃ¼fe, ob etwas eingegeben wurde
+        // überprüfe, ob etwas eingegeben wurde
         // checkValidity = boolean 
         if (nachname.checkValidity() == false || vorname.checkValidity() == false || email.checkValidity() == false || strasse.checkValidity() == false || postleitzahl.checkValidity() == false || ort.checkValidity() == false) {
 
