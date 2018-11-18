@@ -2,15 +2,15 @@ var christmastree;
 (function (christmastree_1) {
     window.addEventListener("load", init);
     // Weihnachtsbaum 
-    let christmastree = ["Nordmanntanne", "Blaufichte", "Grünfichte", "Douglasie"];
+    let christmastree = ["Nordmanntanne", "Blaufichte", "Gr�nfichte", "Douglasie"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputChristmastree = [];
     // Halterung
-    let treestand = ["Grüne Metallhalterung", "Gold Metallhalterung", "Braune Messinghalterung", "Silber Messinghalterung"];
+    let treestand = ["Gr�ne Metallhalterung", "Gold Metallhalterung", "Braune Messinghalterung", "Silber Messinghalterung"];
     // Leeres HTMLInputElement Array um Artikel abzuspeichern
     let inputTreestand = [];
     // Dekoration 
-    let decoration = ["Glitzerkugeln", "Glaskugeln", "Lametta", "Glöckchen", "Schneeflocken", "Tanzende Figuren"];
+    let decoration = ["Glitzerkugeln", "Glaskugeln", "Lametta", "Gl�ckchen", "Schneeflocken", "Tanzende Figuren"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputDecoration = [];
     // Beleuchtung
@@ -25,9 +25,9 @@ var christmastree;
     let cartButton;
     function init() {
         // Die erstellten Variablen werden der Id im HTML-Dokument zugewiesen
-        christmastree_1.productTree = document.getElementById("baum"); // Variable erhält zugriff auf ID im HTML
-        christmastree_1.productTree.addEventListener("change", changeOrder); //EventListener Change wird bei erfolgter Änderung ausgelöst
-        //Wenn Wert verändert wird, wird EventListener aktiviert
+        christmastree_1.productTree = document.getElementById("baum"); // Variable erh�lt zugriff auf ID im HTML
+        christmastree_1.productTree.addEventListener("change", changeOrder); //EventListener Change wird bei erfolgter �nderung ausgel�st
+        //Wenn Wert ver�ndert wird, wird EventListener aktiviert
         christmastree_1.productStand = document.getElementById("halterung");
         christmastree_1.productStand.addEventListener("change", changeOrder);
         christmastree_1.productDecoration = document.getElementById("dekoration");
@@ -120,7 +120,7 @@ var christmastree;
         input.name = "NameDecoration";
         input.value = "0"; // Wert 0 
         input.min = "0"; // mindestwert
-        input.max = "50"; // höchstwert  
+        input.max = "50"; // h�chstwert  
         christmastree_1.productLights.appendChild(label); // Append label to Beleuchtung
         inputLights.push(input); // Input wird ins leere Array gepusht
     } // Ende Function 
@@ -169,7 +169,7 @@ var christmastree;
     } // Ende function changeOrder
     // Warenkorb 
     function handleChange(_summe) {
-        //Greift auf Element Id im Html zu & fügt einen Text ein 
+        //Greift auf Element Id im Html zu & f�gt einen Text ein 
         document.getElementById("productTrees").innerText = " ";
         document.getElementById("productStand").innerText = " ";
         document.getElementById("productDec").innerText = " ";
@@ -202,7 +202,7 @@ var christmastree;
         } // Ende for Schleife
         document.getElementById("gesamtsumme").innerText = _summe.toString() + " Euro"; // wandelt Zahl in einen String 
     } // Ende function handleChane
-    // Bestellung wird geprüft 
+    // Bestellung wird gepr�ft 
     function checkOrder() {
         let nachname = document.getElementById("nachname");
         let vorname = document.getElementById("vorname");
@@ -210,7 +210,7 @@ var christmastree;
         let strasse = document.getElementById("strasse");
         let postleitzahl = document.getElementById("postleitzahl");
         let ort = document.getElementById("ort");
-        // überprüfe, ob etwas eingegeben wurde
+        // �berpr�fe, ob etwas eingegeben wurde
         // checkValidity = boolean 
         if (nachname.checkValidity() == false || vorname.checkValidity() == false || email.checkValidity() == false || strasse.checkValidity() == false || postleitzahl.checkValidity() == false || ort.checkValidity() == false) {
             //Wenn Fehlerhaft 
@@ -227,4 +227,4 @@ var christmastree;
         }
     } // Ende function checkOrder
 })(christmastree || (christmastree = {})); // Ende Namespace
-//# sourceMappingURL=Aufg4.js.map
+//# sourceMappingURL=aufg4.js.map
