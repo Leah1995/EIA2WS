@@ -2,27 +2,27 @@ namespace christmastree {
 
     window.addEventListener("load", init);
 
-    // ARRAY Weihnachtsbaum 
+    // Weihnachtsbaum 
     let christmastree: string[] = ["Nordmanntanne", "Blaufichte", "Grünfichte", "Douglasie"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputChristmastree: HTMLInputElement[] = [];
 
-    // ARRAY Halterung
+    // Halterung
     let treestand: string[] = ["Grüne Metallhalterung", "Gold Metallhalterung", "Braune Messinghalterung", "Silber Messinghalterung"];
     // Leeres HTMLInputElement Array um Artikel abzuspeichern
     let inputTreestand: HTMLInputElement[] = [];
 
-    // ARRAY Dekoration 
+    // Dekoration 
     let decoration: string[] = ["Glitzerkugeln", "Glaskugeln", "Lametta", "Glöckchen", "Schneeflocken", "Tanzende Figuren"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputDecoration: HTMLInputElement[] = [];
 
-    //Array Beleuchtung
+    // Beleuchtung
     let lights: string[] = ["Lichterketten", "Echtwachs-Kerzen", "Kunststoffkerzen"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputLights: HTMLInputElement[] = [];
 
-    // ARRAY Lieferung
+    // Lieferung
     let delivery: string[] = ["Standard", "Express", "Prime"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputDelivery: HTMLInputElement[] = [];
