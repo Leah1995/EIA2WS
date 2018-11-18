@@ -1,80 +1,71 @@
-<!--
-Aufgabe: Aufgabe 4 FormElements: Weihnachtsbaumkonfigurator
-Name: Leah Kappelmann
-Matrikel: 254908
-Datum: 14.11.18
-	
-Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
-  -->
-
-
 <!DOCTYPE html>
-<html lang="en">
+<html lang="de">
 <head>
 <meta charset="utf-8" />
 <title>Weihnachtsbaumkonfigurator</title>
-<link rel="stylesheet" href="Aufg4.css">
-<script type="text/javascript" src="Aufg4.js"></script>
+<link rel="stylesheet" href="aufg4.css" type="text/css" media="screen" />
+<script src="aufg4.js" type="text/javascript" charset="utf-8"></script>
 </head>
 <body>
 
 	<header>
 		<h1>Dein Traum-Baum</h1>
-		<img src="douglasie.jpg" alt="Baum">
-		<img src="grunfichte.jpg" alt="Baum">
-		<img src="weissfichte.jpg" alt="Baum">
-		<img src="blaufichte.jpg" alt="Baum">
+		<img src="tree.jpg" alt="Baum">
 	</header>
 	<hr>
 
-	<div id="main">
-	</div>
- 
-	<aside>
-		<fieldset id="cart">
-			<legend>Warenkorb</legend>
-			<hr>
-			<span>HALTERUNG</span>
-			<div id="container"></div>
-			<span>SCHMUCK</span>
-			<div id="schmuckOutput"></div>
-			<span>BAUMART</span>
-			<div id="treetype"></div>
-			<div id="topping"></div>
-			<span>Summe + Standardpreis von 50€ </span>
-			<div id="total"></div>
-			<hr>
-		</fieldset>
-		<fieldset id="delivery">
-			<legend>Lieferoptionen</legend>
-			<input type="radio" name="Delivery" value="Express" id="radio1" />
-			<label for="radio1">Express (kommt in zwei Tagen)</label> 
-			<input type="radio"
-				name="Delivery" value="Premium Shipping" id="radio2" /> 
-					<label for="radio2">Prime (kommt am nächsten Werktag)</label> 
-				<input type="radio" name="Delivery" value="Standard Shipping"
-				id="radio3" /> <label for="radio3">Standard (kommt innerhalb von 3 Tagen)</label>				
-			<hr>
-		</fieldset>
-		<fieldset id="address">
-			<legend> Addresse </legend>
-			Vorname  <input type="text" name="FirstName" required />
-			<br>
-			Nachname  <input type="text" name="LastName" required />
-			<br>
-			Straße und Hausnummer  <input type="text" name="Addresse" required />
-			<br>
-			Ort  <input type="text" name="Town" required />
-			<br>
-			Postleitzahl <input type="text" name="PostalCode" pattern="[0-9, A-Z]{5}" required />
-			<br>
-			Email <input type="email" name="Email" required/>
-			<hr>
-		</fieldset>
-		
-		<button id="button" style="vertical-align:middle"><span>Bestellen </span></button>
-		
-		
-	</aside>
+	<fieldset id="warenkorb">
+		<legend> Warenkorb </legend>
+		<p id="productTrees"></p>
+		<p id="productStand"></p>
+		<p id="productDec"></p>
+		<p id="productLight"></p>
+		<p id="warenLieferung"></p>
+
+		<h3>Gesamtbetrag:</h3>
+		<p id="gesamtsumme"></p>
+
+		<button id="warenkorbbutton">Bestellung prüfen</button>
+	</fieldset>
+
+	<fieldset id="baum">
+		<legend> Weihnachtsbaum </legend>
+	</fieldset>
+
+	<fieldset id="halterung">
+		<legend> Halterung </legend>
+	</fieldset>
+
+	<fieldset id="dekoration">
+		<legend> Baumdekoration </legend>
+	</fieldset>
+
+	<fieldset id="beleuchtung">
+		<legend> Beleuchtung </legend>
+	</fieldset>
+
+	<hr>
+
+	<fieldset id="lieferung">
+		<legend> Lieferung </legend>
+	</fieldset>
+
+	<hr>
+
+	<fieldset id="text">
+		<legend> Liefer-Adresse </legend>
+
+		<input required id="nachname" type="text" name="Text"
+			placeholder="Nachname" /> <br> <input required id="vorname"
+			type="text" name="Text" placeholder="Vorname" /> <br> <input
+			required id="email" type="email" name="text"
+			placeholder="Mustermann@gmx.de" /> <br> <input required
+			id="strasse" type="text" name="text"
+			placeholder="Straße & Hausnummer" /> <br> <input required
+			id="postleitzahl" type="text" name="Mail" placeholder="Postleitzahl" />
+		<br> <input required id="ort" type="text" name="text"
+			placeholder="Ort" />
+	</fieldset>
+
 </body>
 </html>
