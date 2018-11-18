@@ -1,23 +1,23 @@
 var christmastree;
 (function (christmastree_1) {
     window.addEventListener("load", init);
-    // ARRAY Weihnachtsbaum 
+    // Weihnachtsbaum 
     let christmastree = ["Nordmanntanne", "Blaufichte", "Grünfichte", "Douglasie"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputChristmastree = [];
-    // ARRAY Halterung
+    // Halterung
     let treestand = ["Grüne Metallhalterung", "Gold Metallhalterung", "Braune Messinghalterung", "Silber Messinghalterung"];
     // Leeres HTMLInputElement Array um Artikel abzuspeichern
     let inputTreestand = [];
-    // ARRAY Dekoration 
+    // Dekoration 
     let decoration = ["Glitzerkugeln", "Glaskugeln", "Lametta", "Glöckchen", "Schneeflocken", "Tanzende Figuren"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputDecoration = [];
-    //Array Beleuchtung
+    // Beleuchtung
     let lights = ["Lichterketten", "Echtwachs-Kerzen", "Kunststoffkerzen"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputLights = [];
-    // ARRAY Lieferung
+    // Lieferung
     let delivery = ["Standard", "Express", "Prime"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputDelivery = [];
