@@ -6,4 +6,4 @@ var christmastree;
     christmastree_1.lights = [{ name: "Lichterketten" }, { name: "Echtwachs-Kerzen" }, { name: "Kunststoffkerzen" }];
     christmastree_1.delivery = [{ name: "Standard" }, { name: "Express" }, { name: "Prime" }];
 })(christmastree || (christmastree = {}));
-//# sourceMappingURL=Aufg40.js.map
+//# sourceMappingURL=aufg40.js.map
