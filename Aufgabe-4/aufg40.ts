@@ -9,5 +9,4 @@ namespace christmastree {
     export let decoration: ProductsShop[] = [{ name: "Glitzerkugeln"}, { name: "Glaskugeln"}, { name: "Lametta"}, { name: "Glöckchen"}, { name: "Schneeflocken"}, { name: "Tanzende Figuren"}];
     export let lights: ProductsShop[] = [{ name: "Lichterketten"}, { name: "Echtwachs-Kerzen"}, { name: "Kunststoffkerzen"}];
     export let delivery: ProductsShop[] = [{ name: "Standard"}, { name: "Express"}, { name: "Prime"}];
-
 }

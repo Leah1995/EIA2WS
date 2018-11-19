@@ -28,7 +28,7 @@ namespace christmastree {
     let inputDelivery: HTMLInputElement[] = [];
 
     // Erstellte Variablen sollen HTML-Element sein
-    export let productTree: HTMLElement;
+    let productTree: HTMLElement;
     export let productStand: HTMLElement;
     export let productDecoration: HTMLElement;
     export let productLights: HTMLElement;

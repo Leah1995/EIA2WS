@@ -21,12 +21,14 @@ var christmastree;
     let delivery = ["Standard", "Express", "Prime"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
     let inputDelivery = [];
+    // Erstellte Variablen sollen HTML-Element sein
+    let productTree;
     let productCart;
     let cartButton;
     function init() {
         // Die erstellten Variablen werden der Id im HTML-Dokument zugewiesen
-        christmastree_1.productTree = document.getElementById("baum"); // Variable erh�lt zugriff auf ID im HTML
-        christmastree_1.productTree.addEventListener("change", changeOrder); //EventListener Change wird bei erfolgter �nderung ausgel�st
+        productTree = document.getElementById("baum"); // Variable erh�lt zugriff auf ID im HTML
+        productTree.addEventListener("change", changeOrder); //EventListener Change wird bei erfolgter �nderung ausgel�st
         //Wenn Wert ver�ndert wird, wird EventListener aktiviert
         christmastree_1.productStand = document.getElementById("halterung");
         christmastree_1.productStand.addEventListener("change", changeOrder);
@@ -63,7 +65,7 @@ var christmastree;
         input.name = "Radiogroup";
         input.value = "radioboxes";
         input.id = "radio";
-        christmastree_1.productTree.appendChild(label); // Append Label to Tree 
+        productTree.appendChild(label); // Append Label to Tree 
         inputChristmastree.push(input); // input wird in das leere Array gepusht
     } // Ende function createInputTree
     //For-Schleife zur Erzeugnung der Baumhalterung
