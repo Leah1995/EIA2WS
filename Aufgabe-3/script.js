@@ -30,10 +30,10 @@ var uno;
         } while (isNaN(cardNumber));
         // Handkarten
         for (let i = 0; i < cardNumber; i++) {
-            handcards.push(deck[deck.length - 1]); // eine Karte vom Deck abziehen
+            handcards.push(deck[deck.length - 1]);
             let div = document.createElement("div");
             div.innerText = deck[deck.length - 1];
-            div.setAttribute("class", colortype(deck[deck.length - 1]));
+            div.setAttribute("class", colortype(deck[deck.length - 1])); // setzt neuen Attributswert
             div.addEventListener("click", playCards);
             document.getElementById("handcards").appendChild(div);
             deck.splice(deck.length - 1, 1);
@@ -61,17 +61,6 @@ var uno;
             let clickedCardHTML = event.target; // angeklicktes Element nimmt inner Text und speichert ihn auf clickedCard Variable
             let clickedCard = event.target.innerText;
             moveToFiled(clickedCard, clickedCardHTML);
-            //            if (colortype(clickedCard) == colortype(filedcards[filedcards.length - 1])) { // finde die oberste Karte des Spielfelds heraus
-            //                moveToFiled(clickedCard, clickedCardHTML);
-            //            }
-            //
-            //            else if (colortype(clickedCard) == "black") {
-            //                moveToFiled(clickedCard, clickedCardHTML);
-            //            }
-            //
-            //            else if (colortype(filedcards[filedcards.length - 1]) == "black") {
-            //                moveToFiled(clickedCard, clickedCardHTML);
-            //            }
         } // Ende function playCards
         let sortButton = document.getElementById("button");
         sortButton.addEventListener("click", sort);
@@ -104,11 +93,10 @@ var uno;
                 return "black";
         } // Function Colortype Ende
         function createCard() {
-            //  let random: number = Math.floor(Math.random() * (cards.length - 1));
             let random = cards[Math.floor(Math.random() * cards.length)];
             let position = cards.indexOf(random);
             deck.push(cards[position]);
-            cards.splice(position, 1); // Eintrag im Array gel�scht?
+            cards.splice(position, 1); // Eintrag im Array gel�scht
         } // Ende Function createCard 
     }
     ; // Ende Input Function

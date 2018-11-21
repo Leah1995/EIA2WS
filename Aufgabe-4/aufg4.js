@@ -1,6 +1,11 @@
 var christmastree;
 (function (christmastree_1) {
     window.addEventListener("load", init);
+    let treePrice = 0;
+    let treestandPrice = 0;
+    let decorationPrice = 0;
+    let lightPrice = 0;
+    let deliveryPrice = 0;
     // Weihnachtsbaum 
     let christmastree = ["Nordmanntanne", "Blaufichte", "Gr�nfichte", "Douglasie"];
     // Leeres HTMLInputElement Array um  Artikel abzuspeichern
@@ -23,6 +28,11 @@ var christmastree;
     let inputDelivery = [];
     // Erstellte Variablen sollen HTML-Element sein
     let productTree;
+    let productStand;
+    let productDecoration;
+    let productLights;
+    let productDelivery;
+    let price;
     let productCart;
     let cartButton;
     function init() {
@@ -30,14 +40,14 @@ var christmastree;
         productTree = document.getElementById("baum"); // Variable erh�lt zugriff auf ID im HTML
         productTree.addEventListener("change", changeOrder); //EventListener Change wird bei erfolgter �nderung ausgel�st
         //Wenn Wert ver�ndert wird, wird EventListener aktiviert
-        christmastree_1.productStand = document.getElementById("halterung");
-        christmastree_1.productStand.addEventListener("change", changeOrder);
-        christmastree_1.productDecoration = document.getElementById("dekoration");
-        christmastree_1.productDecoration.addEventListener("change", changeOrder);
-        christmastree_1.productDelivery = document.getElementById("lieferung");
-        christmastree_1.productDelivery.addEventListener("change", changeOrder);
-        christmastree_1.productLights = document.getElementById("beleuchtung");
-        christmastree_1.productLights.addEventListener("change", changeOrder);
+        productStand = document.getElementById("halterung");
+        productStand.addEventListener("change", changeOrder);
+        productDecoration = document.getElementById("dekoration");
+        productDecoration.addEventListener("change", changeOrder);
+        productDelivery = document.getElementById("lieferung");
+        productDelivery.addEventListener("change", changeOrder);
+        productLights = document.getElementById("beleuchtung");
+        productLights.addEventListener("change", changeOrder);
         productCart = document.getElementById("warenkorb");
         cartButton = document.getElementById("warenkorbbutton");
         cartButton.addEventListener("click", checkOrder);
@@ -83,7 +93,7 @@ var christmastree;
         input.type = "radio"; // Input vom Typ Radio
         input.name = "NameHalterung";
         input.value = "radioboxes";
-        christmastree_1.productStand.appendChild(label); // Append Label to Halterung
+        productStand.appendChild(label); // Append Label to Halterung
         inputTreestand.push(input); // Input wird ins leere Array gepusht
     } // Ende function createInputStand
     // For-Schleife zur Erzeugung Dekoration 
@@ -97,13 +107,13 @@ var christmastree;
         let label = document.createElement("label"); //label wird erzeugt
         let input = document.createElement("input"); // input wird erzeugt
         label.innerText = _decoration; //Artikel
-        label.appendChild(input); //Append Input to Label 
+        label.appendChild(input); // Append Input to Label 
         input.type = "number"; //Input vom Typ Number
         input.name = "NameDecoration";
         input.value = "0"; // Wert 0 
         input.min = "0"; // mindestwert
         input.max = "50"; // maximal
-        christmastree_1.productDecoration.appendChild(label); // Append label to Dekoration 
+        productDecoration.appendChild(label); // Append label to Dekoration 
         inputDecoration.push(input); //Input wird ins leere Array gepusht
     } // Ende function createInputDecoration
     //For-Schleife zur Erzeugung Beleuchtung
@@ -123,7 +133,7 @@ var christmastree;
         input.value = "0"; // Wert 0 
         input.min = "0"; // mindestwert
         input.max = "50"; // h�chstwert  
-        christmastree_1.productLights.appendChild(label); // Append label to Beleuchtung
+        productLights.appendChild(label); // Append label to Beleuchtung
         inputLights.push(input); // Input wird ins leere Array gepusht
     } // Ende Function 
     // For-Schleife zur Erzeugung Lieferung
@@ -134,40 +144,34 @@ var christmastree;
         } // Ende for Schleife
     } // Ende function createDelivery
     function createInputDelivery(_lieferung) {
-        let label = document.createElement("label"); //label wird erzeugt
+        let label = document.createElement("label"); // label wird erzeugt
         let input = document.createElement("input"); // input wird erzeugt
         label.innerText = _lieferung; //Artikel
         label.appendChild(input); //Append Input to Label
         input.type = "radio"; //Input vom Typ Radio
         input.name = "NameLieferung";
         input.value = "radioboxes";
-        christmastree_1.productDelivery.appendChild(label); //Append label to Lieferung
-        inputDelivery.push(input); //Input wird ins leere Array gepusht
+        productDelivery.appendChild(label); //Append label to Lieferung
+        inputDelivery.push(input); // Input wird ins leere Array gepusht
     } // Ende function create
     function changeOrder() {
-        let summe = 0; //Warenkorb leer 
+        let sum = 0; //Warenkorb leer 
         for (let i = 0; i < inputChristmastree.length; i++) {
             if (inputChristmastree[i].checked) {
-                summe += 60; //summe + 60
+                sum += 60; //summe + 60
             }
         } // Ende for Schleife
         for (let i = 0; i < inputTreestand.length; i++) {
             if (inputTreestand[i].checked) {
-                summe += 25;
-            }
-        } // Ende for Schleife
-        for (let i = 0; i < inputDelivery.length; i++) {
-            if (inputDelivery[i].checked) {
-                summe += 7;
+                sum += 25;
             }
         } // Ende for Schleife
         for (let i = 0; i < inputDecoration.length; i++) {
-            summe += (parseInt(inputDecoration[i].value) * 2.5); //liest string ein und wird in number umgewandelt
-        } // Ende for Schleife                                                    // value = string
+        } // Ende for Schleife                                                    
         for (let i = 0; i < inputLights.length; i++) {
-            summe += (parseInt(inputLights[i].value) * 7); //liest string ein und wird in number umgewandelt 
-        } // Ende for Schleife                                                  // value = string             
-        handleChange(summe); //Funktion handleChange wird aufgerufen 
+            sum += (parseInt(inputLights[i].value) * 7); //liest string ein und wird in number umgewandelt 
+        } // Ende for Schleife
+        handleChange(sum); //Funktion handleChange wird aufgerufen 
     } // Ende function changeOrder
     // Warenkorb 
     function handleChange(_summe) {
@@ -189,7 +193,8 @@ var christmastree;
         } // Ende for Schleife
         for (let i = 0; i < inputDelivery.length; i++) {
             if (inputDelivery[i].checked) {
-                document.getElementById("warenLieferung").innerText += delivery[i] + " " + " 7 Euro" + "\n"; //Innertext = Artikel und Summe 
+                //                document.getElementById("warenLieferung").innerText += delivery[i] + " " + " 7 Euro" + "\n"; //Innertext = Artikel und Summe 
+                inputDelivery[0] = delivery[i] + price + "\n";
             }
         } // Ende for Schleife
         for (let i = 0; i < inputDecoration.length; i++) {
@@ -219,12 +224,12 @@ var christmastree;
             alert("Achtung! Bitte in allen Feldern Daten eingeben.");
         }
         else {
-            nachname.style.backgroundColor = "lightgreen";
-            vorname.style.backgroundColor = "lightgreen";
-            email.style.backgroundColor = "lightgreen";
-            strasse.style.backgroundColor = "lightgreen";
-            postleitzahl.style.backgroundColor = "lightgreen";
-            ort.style.backgroundColor = "lightgreen";
+            //            nachname.style.backgroundColor = "lightgreen";
+            //            vorname.style.backgroundColor = "lightgreen";
+            //            email.style.backgroundColor = "lightgreen";
+            //            strasse.style.backgroundColor = "lightgreen";
+            //            postleitzahl.style.backgroundColor = "lightgreen";
+            //            ort.style.backgroundColor = "lightgreen";
             alert("Ihre Bestellung wurde erfolgreich abgeschickt");
         }
     } // Ende function checkOrder

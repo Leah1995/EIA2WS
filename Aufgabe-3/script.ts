@@ -4,7 +4,7 @@ namespace uno {
     let cards: string[] = ["b0", "b1", "b1", "b1", "b2", "b2", "b2", "b3", "b3", "b3", "b4", "b4", "b4", "b5", "b5", "b6", "b6", "b6", "b7", "b7", "b7", "b8", "b8", "b8", "b9", "b9", "yplus 2", "yplus 2", "b<->", "b<->",
         "g0", "g1", "g1", "g1", "g2", "g2", "g3", "g3", "g3", "g4", "g4", "g4", "g5", "g5", "g5", "g6", "g6", "g6", "g7", "g7", "g7", "g8", "g8", "g8", "g9", "g9", "g9", "gplus 2", "gplus 2", "g<->", "g<->", "gskip", "gskip",
         "r0", "r1", "r1", "r1", "r2", "r2", "r3", "r3", "r3", "r4", "r4", "r5", "r5", "r5", "r6", "r6", "r7", "r7", "r7", "r8", "r8", "r9", "r9", "r9", "rskip", "rskip", "rplus 2", "rplus 2", "r<->", "r<->", "rskip", "rskip",
-        "y0", "y1", "y1", "y2", "y2", "y2", "y3", "y3", "y4", "y4", "y4", "y5", "y5", "y6", "y6", "y6", "y7", "y7", "y8", "y8", "y8", "y9", "y9", "yplus 2", "yplus 2", "yskip", "yskip", 
+        "y0", "y1", "y1", "y2", "y2", "y2", "y3", "y3", "y4", "y4", "y4", "y5", "y5", "y6", "y6", "y6", "y7", "y7", "y8", "y8", "y8", "y9", "y9", "yplus 2", "yplus 2", "yskip", "yskip",
         "wild", "wild", "wild", "wild", "plus 4", "plus 4", "plus 4", "plus 4"];
 
     let bluecards: string[] = ["b0", "b1", "b1", "b1", "b2", "b2", "b2", "b3", "b3", "b3", "b4", "b4", "b4", "b5", "b5", "b5", "b6", "b6", "b7", "b7", "b8", "b8", "b8", "b9", "b9", "b9", "bplus 2", "bplus 2", "b<->", "b<->", "bskip", "bskip"];
@@ -39,10 +39,10 @@ namespace uno {
 
         // Handkarten
         for (let i: number = 0; i < cardNumber; i++) {
-            handcards.push(deck[deck.length - 1]); // eine Karte vom Deck abziehen
+            handcards.push(deck[deck.length - 1]);
             let div: HTMLDivElement = document.createElement("div");
             div.innerText = deck[deck.length - 1];
-            div.setAttribute("class", colortype(deck[deck.length - 1]));
+            div.setAttribute("class", colortype(deck[deck.length - 1])); // setzt neuen Attributswert
             div.addEventListener("click", playCards);
             document.getElementById("handcards").appendChild(div);
             deck.splice(deck.length - 1, 1);
@@ -74,22 +74,11 @@ namespace uno {
             filed.replaceChild(cardHTML, filed.childNodes[0]);
         } // Ende function moveToFiled
 
-
         function playCards(event: Event): void { // Methodenaufruf
             let clickedCardHTML: HTMLDivElement = <HTMLDivElement>event.target; // angeklicktes Element nimmt inner Text und speichert ihn auf clickedCard Variable
             let clickedCard: string = (<HTMLDivElement>event.target).innerText;
             moveToFiled(clickedCard, clickedCardHTML);
-            //            if (colortype(clickedCard) == colortype(filedcards[filedcards.length - 1])) { // finde die oberste Karte des Spielfelds heraus
-            //                moveToFiled(clickedCard, clickedCardHTML);
-            //            }
-            //
-            //            else if (colortype(clickedCard) == "black") {
-            //                moveToFiled(clickedCard, clickedCardHTML);
-            //            }
-            //
-            //            else if (colortype(filedcards[filedcards.length - 1]) == "black") {
-            //                moveToFiled(clickedCard, clickedCardHTML);
-            //            }
+           
 
         } // Ende function playCards
 
@@ -103,7 +92,6 @@ namespace uno {
 
             // Alte Handkarten entfernen
             while (handcardsHTML.hasChildNodes()) handcardsHTML.removeChild(handcardsHTML.childNodes[0]); // Die childNodes-Eigenschaft gibt eine Auflistung der untergeordneten Knoten eines Knotens als NodeList-Objekt zurück.
-
 
             // Handkarten neu einfügen
             for (let i: number = 0; i < handcards.length; i++) {
@@ -125,12 +113,11 @@ namespace uno {
         } // Function Colortype Ende
 
         function createCard(): void {
-            //  let random: number = Math.floor(Math.random() * (cards.length - 1));
             let random: string = cards[Math.floor(Math.random() * cards.length)];
             let position: number = cards.indexOf(random);
             deck.push(cards[position]);
 
-            cards.splice(position, 1); // Eintrag im Array gelöscht?
+            cards.splice(position, 1); // Eintrag im Array gelöscht
         } // Ende Function createCard 
 
     }; // Ende Input Function
