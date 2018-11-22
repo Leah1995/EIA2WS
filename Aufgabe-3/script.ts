@@ -66,19 +66,23 @@ namespace uno {
         } // Ende Function drawCard
 
         // Auf Ablagestapel verschieben
-        function moveToFiled(card: string, cardHTML: HTMLDivElement): void {
-            filedcards.push(card);
-            handcards.splice(handcards.indexOf(card), 1);
+        function moveToFiled(cardHTML: HTMLDivElement): void {
+            filedcards.push(cardHTML.innerText);
 
             let filed: HTMLElement = document.getElementById("filed");
-            filed.replaceChild(cardHTML, filed.childNodes[0]);
+            if (cardHTML != filed.childNodes[0]) {
+                handcards.splice(handcards.indexOf(cardHTML.innerText), 1);
+            }
+
+            filed.replaceChild(cardHTML, filed.childNodes[0]); // mit childNodes[0] erstes HTMLDivElement aufrufen
+
         } // Ende function moveToFiled
 
         function playCards(event: Event): void { // Methodenaufruf
-            let clickedCardHTML: HTMLDivElement = <HTMLDivElement>event.target; // angeklicktes Element nimmt inner Text und speichert ihn auf clickedCard Variable
-            let clickedCard: string = (<HTMLDivElement>event.target).innerText;
-            moveToFiled(clickedCard, clickedCardHTML);
-           
+            let clickedCardHTML: HTMLDivElement = <HTMLDivElement>event.target; // 
+//            let clickedCard: string = (<HTMLDivElement>event.target).innerText;
+//            let clickedCard: string = clickedCardHTML.innerText;
+            moveToFiled(clickedCardHTML);
 
         } // Ende function playCards
 
