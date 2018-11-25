@@ -22,5 +22,11 @@ var Aufgabe5;
         { art: "Lieferung", name: "Express-Lieferung", preis: 2.99 }
     ];
     Aufgabe5.b = [];
+    for (var i = 0; i < Aufgabe5.posten.length; i++) {
+        if (Aufgabe5.posten[i].art == "Beleuchtung") {
+            var preisname = [Aufgabe5.posten[i].name, Aufgabe5.posten[i].preis];
+            Aufgabe5.b.push(preisname);
+        }
+    }
 })(Aufgabe5 || (Aufgabe5 = {}));
 //# sourceMappingURL=Aufg50.js.map

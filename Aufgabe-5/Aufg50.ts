@@ -30,5 +30,12 @@ namespace Aufgabe5 {
     
       export let b: string[][] = [];
     
+    for (var i: number = 0; i < posten.length; i++) {
+        
 
+        if (posten[i].art == "Beleuchtung") {
+           var preisname: any = [posten[i].name, posten[i].preis]; 
+           b.push(preisname);
+        }
+    }
 }
