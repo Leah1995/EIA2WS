@@ -56,13 +56,14 @@ var uno;
             let filed = document.getElementById("filed");
             if (cardHTML != filed.childNodes[0]) {
                 handcards.splice(handcards.indexOf(cardHTML.innerText), 1);
-            }
+            } // oder �ber removeEventListener
             filed.replaceChild(cardHTML, filed.childNodes[0]); // mit childNodes[0] erstes HTMLDivElement aufrufen
         } // Ende function moveToFiled
         function playCards(event) {
             let clickedCardHTML = event.target; // 
             //            let clickedCard: string = (<HTMLDivElement>event.target).innerText;
             //            let clickedCard: string = clickedCardHTML.innerText;
+            // Abfrage hierhin
             moveToFiled(clickedCardHTML);
         } // Ende function playCards
         let sortButton = document.getElementById("button");

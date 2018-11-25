@@ -72,7 +72,7 @@ namespace uno {
             let filed: HTMLElement = document.getElementById("filed");
             if (cardHTML != filed.childNodes[0]) {
                 handcards.splice(handcards.indexOf(cardHTML.innerText), 1);
-            }
+            } // oder über removeEventListener
 
             filed.replaceChild(cardHTML, filed.childNodes[0]); // mit childNodes[0] erstes HTMLDivElement aufrufen
 
@@ -82,6 +82,7 @@ namespace uno {
             let clickedCardHTML: HTMLDivElement = <HTMLDivElement>event.target; // 
 //            let clickedCard: string = (<HTMLDivElement>event.target).innerText;
 //            let clickedCard: string = clickedCardHTML.innerText;
+            // Abfrage hierhin
             moveToFiled(clickedCardHTML);
 
         } // Ende function playCards

@@ -208,7 +208,6 @@ namespace christmastree {
             }
         } // Ende for Schleife
 
-
         for (let i: number = 0; i < inputTreestand.length; i++) {
             if (inputTreestand[i].checked) {    //boolean bei mehrerer Auswahlmöglichkeit
                 sum += 25;
