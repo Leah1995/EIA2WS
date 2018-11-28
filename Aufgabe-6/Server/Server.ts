@@ -7,13 +7,13 @@ namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder 
     if (port == undefined) // if Abfrage, bei der mit dem Vergleichsoperator untersucht wird ob port undefined ist
         port = 8100; // wenn ja, wird port 8100 zugewiesen
 
-    let server: Http.Server = Http.createServer(); // es wird die Variable namens server vom Typ Http.Server deklariert und ihr wird Http.createServer zugewiesen, dabei wird ein Http Server Objekt erstellt
-    server.addListener("request", handleRequest);
-    server.addListener("listening", handleListen);
-    server.listen(port);
+    let server: Http.Server = Http.createServer(); // erstellt einen Server und die übergebene Rückruffunktion wird automatisch als Ereignishandler für das Anforderungsereignis registriert, lässt Anwendung http requests empfangen und senden
+    server.addListener("request", handleRequest); // es wird ein Listener hinzugefügt, der bei request die Funktion handleRequest ausführt
+    server.addListener("listening", handleListen); // weiterer Listener, der bei listening die Funktion handleListen ausführt
+    server.listen(port); // Methode, bei der Listener auf festgelegten Port kreiert wird
 
-    function handleListen(): void {
-        console.log("Listening");
+    function handleListen(): void { // deklariere Function handleListen vom Typ void
+        console.log("Listening"); // Konsole gibt "Listening" aus
     }
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void {
