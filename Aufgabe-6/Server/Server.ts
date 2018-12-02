@@ -14,18 +14,20 @@ namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder 
 
     function handleListen(): void { // deklariere Function handleListen vom Typ void
         console.log("Listening"); // Konsole gibt "Listening" aus
-    
+
     } // Ende Function handleListen
 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { // Parameter _request und _response wird an Function handleRequest übergeben 
         console.log("I hear voices!"); // Konsole gibt "I hear voices!" aus
+        console.log(_request.url); // damit im Terminal bzw in der Konsole der Text des Nutzers auftaucht
+       
 
         _response.setHeader("content-type", "text/html; charset=utf-8"); // Parameter _response gibt den Header mit Text zurück
         _response.setHeader("Access-Control-Allow-Origin", "*"); // Access-Control-Allow-Origin lässt Nutzer wissen, ob es erlaubt ist, Zielressource zu verwenden
 
         _response.write(_request.url); // mit dem Parameter _response.write auf URL von _request zugreifen
-        
+
         _response.end(); // Ende Response
-  
+
     } // Ende Function handleRequest
 } // Ende Namespace

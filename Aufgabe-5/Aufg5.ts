@@ -12,6 +12,8 @@ namespace Aufgabe5 {
     var zusatz: HTMLTextAreaElement;
     var label: HTMLLabelElement;
 
+    console.log("HALLO");
+    
     var cartTree: string[] = ["bitte Baumart auswählen", "0"];
     var cartTreestand: string[] = ["bitte Ständer auswählen", "0"];
     var cartLights: string[] = [b[0][0], "" + b[0][1]];
