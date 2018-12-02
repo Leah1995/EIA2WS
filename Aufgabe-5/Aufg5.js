@@ -258,16 +258,16 @@ var Aufgabe5;
     function handleMouseDown(_event) {
         let feedback = document.createElement("div");
         feedback.style.paddingBottom = "1em";
-        //        if (name.checkValidity() == false || strasse.checkValidity() == false || hausnummer.checkValidity() == false || ort.checkValidity() == false || plz.checkValidity() == false || mail.checkValidity() == false) {
-        //            feedback.innerText = "Du hast deine Daten nicht richtig angegeben. Bitte überprüfe sie nocheinmal.";
-        //            feedback.style.color = "red";
-        //            document.body.appendChild(feedback);
-        //        } // Ende if-Bedingung
-        //        else {
-        //            feedback.innerText = "Deine Daten wurden korrekt angegeben, vielen Dank für deine Bestellung.";
-        //            feedback.style.color = "green";
-        //            document.body.appendChild(feedback);
-        //        }
+        if (name.checkValidity() == false || strasse.checkValidity() == false || hausnummer.checkValidity() == false || ort.checkValidity() == false || plz.checkValidity() == false || mail.checkValidity() == false) {
+            feedback.innerText = "Du hast deine Daten nicht richtig angegeben. Bitte überprüfe sie nochmal.";
+            feedback.style.color = "red";
+            document.body.appendChild(feedback);
+        } // Ende if-Bedingung
+        else {
+            feedback.innerText = "Deine Daten wurden korrekt angegeben, vielen Dank für deine Bestellung.";
+            feedback.style.color = "green";
+            document.body.appendChild(feedback);
+        }
     } // Ende function handleMouseDown
 })(Aufgabe5 || (Aufgabe5 = {})); // Ende Namespace
 //# sourceMappingURL=Aufg5.js.map
