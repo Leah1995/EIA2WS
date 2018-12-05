@@ -23,7 +23,7 @@ var L06_SendData;
         _response.setHeader("Access-Control-Allow-Origin", "*"); //gibt an, ob die Antwort mit dem anfordernden Code des angegebenen Ursprungs gemeinsam genutzt werden kann
         for (let key in query) {
             console.log(query[key]);
-            _response.write(key + " = " + query[key] + "<br>");
+            _response.write(key + ": " + query[key] + "<br>");
         }
         _response.end(); // Ende Response, Server bekommt gesagt, dass alles gesendet wurde und Nachricht komplett ist
     } // Ende Function handleRequest
