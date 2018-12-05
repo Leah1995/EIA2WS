@@ -1,7 +1,7 @@
 namespace Aufgabe5 {
-    
+
     window.addEventListener("load", createElements);
-    window.addEventListener("change", warenkorb); 
+    window.addEventListener("change", warenkorb);
 
     var name: HTMLInputElement;
     var strasse: HTMLInputElement;
@@ -12,8 +12,6 @@ namespace Aufgabe5 {
     var zusatz: HTMLTextAreaElement;
     var label: HTMLLabelElement;
 
-    console.log("HALLO");
-    
     var cartTree: string[] = ["bitte Baumart auswählen", "0"];
     var cartTreestand: string[] = ["bitte Ständer auswählen", "0"];
     var cartLights: string[] = [b[0][0], "" + b[0][1]];
@@ -23,9 +21,9 @@ namespace Aufgabe5 {
     function createElements(): void {
 
         let christmastree: HTMLDivElement = <HTMLDivElement>document.getElementById("baumart");
-        
+
         for (let i: number = 0; i < posten.length; i++) {
-            
+
             if (posten[i].art == "Baumart") {
                 var radioB3: HTMLInputElement = document.createElement("input");
                 radioB3.type = "radio";
@@ -137,7 +135,7 @@ namespace Aufgabe5 {
 
         //Deine Daten:
         let daten: HTMLDivElement = <HTMLDivElement>document.getElementById("daten");
-        //daten let für zugriff auf id in html 
+        //daten let für zugriff auf id in html
         //Daten anhängen für einzelne eingabefelder
         name = document.createElement("input");
         name.type = "text";

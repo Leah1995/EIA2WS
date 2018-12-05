@@ -10,7 +10,6 @@ var Aufgabe5;
     var mail;
     var zusatz;
     var label;
-    console.log("HALLO");
     var cartTree = ["bitte Baumart auswählen", "0"];
     var cartTreestand = ["bitte Ständer auswählen", "0"];
     var cartLights = [Aufgabe5.b[0][0], "" + Aufgabe5.b[0][1]];

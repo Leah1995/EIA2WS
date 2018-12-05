@@ -6,8 +6,10 @@ namespace Aufgabe5 {
         preis: number;
     }
 
+
+
     export let posten: Bestellposten[] = [
-        { art: "Baumart", name: "Nordmanntanne", preis: 20.00 }, 
+        { art: "Baumart", name: "Nordmanntanne", preis: 20.00 },
         { art: "Baumart", name: "Rotfichte", preis: 22.00 },
         { art: "Baumart", name: "Douglasie", preis: 26.00 },
         { art: "Halter", name: "Holz-Ständer", preis: 13.95 },
@@ -27,15 +29,15 @@ namespace Aufgabe5 {
         { art: "Lieferung", name: "Standard-Lieferung", preis: 0.0 },
         { art: "Lieferung", name: "Express-Lieferung", preis: 2.99 }
     ];
-    
-      export let b: string[][] = [];
-    
+
+    export let b: string[][] = [];
+
     for (var i: number = 0; i < posten.length; i++) {
-        
+
 
         if (posten[i].art == "Beleuchtung") {
-           var preisname: any = [posten[i].name, posten[i].preis]; 
-           b.push(preisname);
+            var preisname: any = [posten[i].name, posten[i].preis];
+            b.push(preisname);
         }
     }
 }
