@@ -21,10 +21,9 @@ var L06_SendData;
         let query = Url.parse(_request.url, true).query;
         _response.setHeader("content-type", "text/html; charset=utf-8"); // Parameter _response wird mit Wert und Name in den Header gesetzt
         _response.setHeader("Access-Control-Allow-Origin", "*"); //gibt an, ob die Antwort mit dem anfordernden Code des angegebenen Ursprungs gemeinsam genutzt werden kann
-        _response.write("ausgabe");
         for (let key in query) {
             console.log(query[key]);
-            _response.write("ausgabe");
+            _response.write(key + " = " + query[key] + "<br>");
         }
         _response.end(); // Ende Response, Server bekommt gesagt, dass alles gesendet wurde und Nachricht komplett ist
     } // Ende Function handleRequest
