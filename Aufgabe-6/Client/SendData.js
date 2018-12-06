@@ -4,7 +4,8 @@ var L06_SendData;
     let address = "http://localhost:8100";
     //let address: string = "https://eia2-nodetest.herokuapp.com";
     function init(_event) {
-        setupColorDivs();
+        setupAsyncForm();
+        //        setupColorDivs();
     }
     function setupAsyncForm() {
         let button = document.querySelector("[type=button]");
@@ -14,19 +15,19 @@ var L06_SendData;
         let color = document.querySelector(":checked").value;
         sendRequestWithCustomData(color);
     }
-    function setupColorDivs() {
-        let colors = ["red", "green", "blue"];
-        let divs = document.getElementsByTagName("div");
-        for (let i = 0; i < divs.length; i++) {
-            divs[i].style.backgroundColor = colors[i];
-            divs[i].addEventListener("click", handleClickOnDiv);
-        }
-    }
-    function handleClickOnDiv(_event) {
-        let style = _event.target.style;
-        console.log(style.backgroundColor);
-        sendRequestWithCustomData(style.backgroundColor);
-    }
+    //    function setupColorDivs(): void {
+    //        let colors: string[] = ["red", "green", "blue"];
+    //        let divs: NodeListOf<HTMLDivElement> = document.getElementsByTagName("div");
+    //        for (let i: number = 0; i < divs.length; i++) {
+    //            divs[i].style.backgroundColor = colors[i];
+    //            divs[i].addEventListener("click", handleClickOnDiv);
+    //        }
+    //    }
+    //    function handleClickOnDiv(_event: Event): void {
+    //        let style: CSSStyleDeclaration = (<HTMLElement>_event.target).style;
+    //        console.log(style.backgroundColor);
+    //        sendRequestWithCustomData(style.backgroundColor);
+    //    }
     function sendRequestWithCustomData(_color) {
         let xhr = new XMLHttpRequest();
         xhr.open("GET", address + "?color=" + _color, true);

@@ -4,7 +4,8 @@ namespace L06_SendData {
     //let address: string = "https://eia2-nodetest.herokuapp.com";
 
     function init(_event: Event): void {
-        setupColorDivs();
+        setupAsyncForm();
+//        setupColorDivs();
     }
     
         function setupAsyncForm(): void {
