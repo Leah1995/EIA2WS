@@ -4,34 +4,23 @@ namespace L06_SendData {
     //let address: string = "https://eia2-nodetest.herokuapp.com";
 
     function init(_event: Event): void {
-        setupAsyncForm();
-//        setupColorDivs();
-    }
-    
-        function setupAsyncForm(): void {
-        let button: Element = document.querySelector("[type=button]");
-        button.addEventListener("click", handleClickOnAsync);
+        setupColorDivs();
     }
 
-    function handleClickOnAsync(_event: Event): void {
-        let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
-        sendRequestWithCustomData(color);
+    function setupColorDivs(): void {
+        let colors: string[] = ["red", "green", "blue"];
+        let divs: NodeListOf<HTMLDivElement> = document.getElementsByTagName("div");
+        for (let i: number = 0; i < divs.length; i++) {
+            divs[i].style.backgroundColor = colors[i];
+            divs[i].addEventListener("click", handleClickOnDiv);
+        }
     }
 
-//    function setupColorDivs(): void {
-//        let colors: string[] = ["red", "green", "blue"];
-//        let divs: NodeListOf<HTMLDivElement> = document.getElementsByTagName("div");
-//        for (let i: number = 0; i < divs.length; i++) {
-//            divs[i].style.backgroundColor = colors[i];
-//            divs[i].addEventListener("click", handleClickOnDiv);
-//        }
-//    }
-
-//    function handleClickOnDiv(_event: Event): void {
-//        let style: CSSStyleDeclaration = (<HTMLElement>_event.target).style;
-//        console.log(style.backgroundColor);
-//        sendRequestWithCustomData(style.backgroundColor);
-//    }
+    function handleClickOnDiv(_event: Event): void {
+        let style: CSSStyleDeclaration = (<HTMLElement>_event.target).style;
+        console.log(style.backgroundColor);
+        sendRequestWithCustomData(style.backgroundColor);
+    }
 
     function sendRequestWithCustomData(_color: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
