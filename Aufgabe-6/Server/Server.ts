@@ -1,7 +1,11 @@
 import * as Http from "http"; // kreiert http Objekt im Code, dann sucht der Interpreter nach jedem möglichen Import im http-Modul und fügt ihn nacheinander dem http Objekt im Code hinzu
 // "http"-Objekte werden deklariert, das Modul HTTP wird aus der node.d.ts Datei importiert
-
+import * as Url from "url";
 namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder Speicherung um Daten als Variablen, Funktionen, Arrays, Objekte usw abzuspeichern
+
+    interface Bestellposten {
+        [key: string]: string;
+    }
 
     console.log("Starting server"); // Konsole gibt "Starting Server" aus
     let port: number = process.env.PORT; // es wird eine Variable deklariert namens port und ihr wird der Typ number zugewiesen  und die process.env- Eigenschaft gibt ein Objekt zurück, das die Benutzerumgebung enthält 
@@ -21,12 +25,20 @@ namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder 
     function handleRequest(_request: Http.IncomingMessage, _response: Http.ServerResponse): void { // Parameter _request und _response wird an Function handleRequest übergeben, request: eingehendes Nachrichtenobjekt, response: Antwort, die vom Server kommt
         console.log("I hear voices!"); // Konsole gibt "I hear voices!" aus
         console.log(_request.url); // damit im Terminal bzw in der Konsole der Text des Nutzers auftaucht
-       
 
+        let query: Bestellposten = Url.parse(_request.url, true).query;
         _response.setHeader("content-type", "text/html; charset=utf-8"); // Parameter _response wird mit Wert und Name in den Header gesetzt
         _response.setHeader("Access-Control-Allow-Origin", "*"); //gibt an, ob die Antwort mit dem anfordernden Code des angegebenen Ursprungs gemeinsam genutzt werden kann
 
-        _response.write(_request.url); // mit dem Parameter _response.write auf URL von _request zugreifen
+
+
+        for (let key in query) {
+            console.log(query[key]);
+
+            _response.write(key + " = " + query[key] + "<br>");
+            //_response.write(_request.url); // mit dem Parameter _response.write auf URL von _request zugreifen
+        }
+
 
         _response.end(); // Ende Response, Server bekommt gesagt, dass alles gesendet wurde und Nachricht komplett ist
 
