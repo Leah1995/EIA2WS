@@ -17,20 +17,20 @@ namespace L06_SendData {
         sendRequestWithCustomData(color);
     }
 
-    function setupColorDivs(): void {
-        let colors: string[] = ["red", "green", "blue"];
-        let divs: NodeListOf<HTMLDivElement> = document.getElementsByTagName("div");
-        for (let i: number = 0; i < divs.length; i++) {
-            divs[i].style.backgroundColor = colors[i];
-            divs[i].addEventListener("click", handleClickOnDiv);
-        }
-    }
+//    function setupColorDivs(): void {
+//        let colors: string[] = ["red", "green", "blue"];
+//        let divs: NodeListOf<HTMLDivElement> = document.getElementsByTagName("div");
+//        for (let i: number = 0; i < divs.length; i++) {
+//            divs[i].style.backgroundColor = colors[i];
+//            divs[i].addEventListener("click", handleClickOnDiv);
+//        }
+//    }
 
-    function handleClickOnDiv(_event: Event): void {
-        let style: CSSStyleDeclaration = (<HTMLElement>_event.target).style;
-        console.log(style.backgroundColor);
-        sendRequestWithCustomData(style.backgroundColor);
-    }
+//    function handleClickOnDiv(_event: Event): void {
+//        let style: CSSStyleDeclaration = (<HTMLElement>_event.target).style;
+//        console.log(style.backgroundColor);
+//        sendRequestWithCustomData(style.backgroundColor);
+//    }
 
     function sendRequestWithCustomData(_color: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
