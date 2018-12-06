@@ -34,7 +34,7 @@ namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder 
             console.log(query[key]);
 
             _response.write(key + ": " + query[key] + "<br>");
-            _response.write(_request.url); // mit dem Parameter _response.write auf URL von _request zugreifen
+//            _response.write(_request.url); // mit dem Parameter _response.write auf URL von _request zugreifen
         }
 
 

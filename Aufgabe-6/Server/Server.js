@@ -24,7 +24,6 @@ var L06_SendData;
         for (let key in query) {
             console.log(query[key]);
             _response.write(key + ": " + query[key] + "<br>");
-            _response.write(_request.url); // mit dem Parameter _response.write auf URL von _request zugreifen
         }
         _response.end(); // Ende Response, Server bekommt gesagt, dass alles gesendet wurde und Nachricht komplett ist
     } // Ende Function handleRequest
