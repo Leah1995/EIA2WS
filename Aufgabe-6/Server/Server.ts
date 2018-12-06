@@ -30,11 +30,13 @@ namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder 
         _response.setHeader("content-type", "text/html; charset=utf-8"); // Parameter _response wird mit Wert und Name in den Header gesetzt
         _response.setHeader("Access-Control-Allow-Origin", "*"); //gibt an, ob die Antwort mit dem anfordernden Code des angegebenen Ursprungs gemeinsam genutzt werden kann
 
+
+
         for (let key in query) {
             console.log(query[key]);
 
             _response.write(key + ": " + query[key] + "<br>");
-            _response.write(_request.url); // mit dem Parameter _response.write auf URL von _request zugreifen
+            //_response.write(_request.url); // mit dem Parameter _response.write auf URL von _request zugreifen
         }
 
 
