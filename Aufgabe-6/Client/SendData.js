@@ -6,6 +6,14 @@ var L06_SendData;
     function init(_event) {
         setupColorDivs();
     }
+    function setupAsyncForm() {
+        let button = document.querySelector("[type=button]");
+        button.addEventListener("click", handleClickOnAsync);
+    }
+    function handleClickOnAsync(_event) {
+        let color = document.querySelector(":checked").value;
+        sendRequestWithCustomData(color);
+    }
     function setupColorDivs() {
         let colors = ["red", "green", "blue"];
         let divs = document.getElementsByTagName("div");

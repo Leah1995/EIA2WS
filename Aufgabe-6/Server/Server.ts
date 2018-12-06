@@ -3,7 +3,7 @@ import * as Http from "http"; // kreiert http Objekt im Code, dann sucht der Int
 import * as Url from "url";
 namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder Speicherung um Daten als Variablen, Funktionen, Arrays, Objekte usw abzuspeichern
 
-    interface Bestellposten {
+    interface Bestellposten { 
         [key: string]: string;
     }
 
@@ -29,8 +29,6 @@ namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder 
         let query: Bestellposten = Url.parse(_request.url, true).query;
         _response.setHeader("content-type", "text/html; charset=utf-8"); // Parameter _response wird mit Wert und Name in den Header gesetzt
         _response.setHeader("Access-Control-Allow-Origin", "*"); //gibt an, ob die Antwort mit dem anfordernden Code des angegebenen Ursprungs gemeinsam genutzt werden kann
-
-
 
         for (let key in query) {
             console.log(query[key]);

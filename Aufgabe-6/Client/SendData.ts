@@ -6,6 +6,16 @@ namespace L06_SendData {
     function init(_event: Event): void {
         setupColorDivs();
     }
+    
+        function setupAsyncForm(): void {
+        let button: Element = document.querySelector("[type=button]");
+        button.addEventListener("click", handleClickOnAsync);
+    }
+
+    function handleClickOnAsync(_event: Event): void {
+        let color: string = (<HTMLInputElement>document.querySelector(":checked")).value;
+        sendRequestWithCustomData(color);
+    }
 
     function setupColorDivs(): void {
         let colors: string[] = ["red", "green", "blue"];
