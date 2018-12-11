@@ -25,7 +25,7 @@ var Aufgabe5;
                 radioB3.value = "radio3." + i;
                 radioB3.id = "radio3." + i;
                 christmastree.appendChild(radioB3);
-                // durch Label kann man auch auf text drücken
+                // durch Label kann man auch auf den Text drücken
                 var label4 = document.createElement("label");
                 label4.id = "label" + i;
                 label4.htmlFor = radioB3.id;

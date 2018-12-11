@@ -3,8 +3,8 @@ import * as Http from "http"; // kreiert http Objekt im Code, dann sucht der Int
 import * as Url from "url";
 namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder Speicherung um Daten als Variablen, Funktionen, Arrays, Objekte usw abzuspeichern
 
-    interface Bestellposten {
-        [key: string]: string;
+    interface Bestellposten { 
+        [key: string]: string; // Assoziatives Array, wie Array aber werden nicht mit Nummer angesprochen, meistens ist der Key vom Typ string
     }
 
     console.log("Starting server"); // Konsole gibt "Starting Server" aus

@@ -1,0 +1,45 @@
+<!--
+Aufgabe: 7.2 ClientServer: Ajax
+Name: Leah Kappelmann
+Matrikel: 254908
+Datum: 10. Dezember 2018
+	
+Hiermit versichere ich, dass ich diesen Code selbst geschrieben habe. Er wurde nicht kopiert und auch nicht diktiert.
+-->
+
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8">
+<title>WBK einseitig</title>
+<link rel="stylesheet" type="text/css" href="Aufg7.css" media="screen" />
+<script src="Aufg70.js" type="text/javascript" charset="utf-8"></script>
+<script src="Aufg7.js" type="text/javascript" charset="utf-8"></script>
+</head>
+<body>
+
+	<form action="https://eia2ws.herokuapp.com" method="get">
+
+		<section>
+			<h1>Dein Traum-Baum</h1>
+			<img src="tree.jpg" alt="Baum">
+			<fieldset id="fieldset"></fieldset>
+
+			<hr>
+			<fieldset id="adress">
+				<h2>Liefer-Adresse</h2>
+			</fieldset>
+
+			<h2>Warenkorb</h2>
+			<section id="zusammenfassung"></section>
+			<div id="div"></div>
+
+			<button type="submit" id="button">Weiterleiten auf
+				Heroku-Seite</button>
+
+			<button id="send" type="button">Bleibe auf dieser Seite</button>
+		</section>
+
+	</form>
+</body>
+</html>

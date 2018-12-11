@@ -6,8 +6,6 @@ namespace Aufgabe5 {
         preis: number;
     }
 
-
-
     export let posten: Bestellposten[] = [
         { art: "Baumart", name: "Nordmanntanne", preis: 20.00 },
         { art: "Baumart", name: "Rotfichte", preis: 22.00 },
@@ -33,7 +31,6 @@ namespace Aufgabe5 {
     export let b: string[][] = [];
 
     for (var i: number = 0; i < posten.length; i++) {
-
 
         if (posten[i].art == "Beleuchtung") {
             var preisname: any = [posten[i].name, posten[i].preis];
