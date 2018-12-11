@@ -49,6 +49,10 @@ button {
     width: 50%;
 }
 
+button#button {
+	display: none;
+}
+
 #zusammenfassung {
 	position: fixed;
 	right: 0em;
