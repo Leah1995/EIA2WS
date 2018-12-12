@@ -239,7 +239,6 @@ namespace Aufgabe7 {
         button.addEventListener("click", handleClickOnAsync);
     }
 
-
     function handleQuery(): void {
         let button: Element = document.querySelector("[type=button]");
         button.addEventListener("click", onSite);
