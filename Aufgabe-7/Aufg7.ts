@@ -272,7 +272,7 @@ namespace Aufgabe7 {
         var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let test: string = JSON.stringify(xhr.response);
-            alert(xhr.response);
+            alert(test);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
         } // Ende if Bedingung

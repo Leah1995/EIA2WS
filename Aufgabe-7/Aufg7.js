@@ -229,7 +229,7 @@ var Aufgabe7;
         var xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let test = JSON.stringify(xhr.response);
-            alert(xhr.response);
+            alert(test);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
         } // Ende if Bedingung
