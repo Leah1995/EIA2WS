@@ -2,8 +2,8 @@
 const Http = require("http"); // kreiert http Objekt im Code, dann sucht der Interpreter nach jedem m�glichen Import im http-Modul und f�gt ihn nacheinander dem http Objekt im Code hinzu
 // "http"-Objekte werden deklariert, das Modul HTTP wird aus der node.d.ts Datei importiert
 const Url = require("url");
-var L06_SendData;
-(function (L06_SendData) {
+var Aufgabe7;
+(function (Aufgabe7) {
     console.log("Starting server"); // Konsole gibt "Starting Server" aus
     let port = process.env.PORT; // es wird eine Variable deklariert namens port und ihr wird der Typ number zugewiesen  und die process.env- Eigenschaft gibt ein Objekt zur�ck, das die Benutzerumgebung enth�lt 
     if (port == undefined)
@@ -27,5 +27,5 @@ var L06_SendData;
         }
         _response.end(); // Ende Response, Server bekommt gesagt, dass alles gesendet wurde und Nachricht komplett ist
     } // Ende Function handleRequest
-})(L06_SendData || (L06_SendData = {})); // Ende Namespace
+})(Aufgabe7 || (Aufgabe7 = {})); // Ende Namespace
 //# sourceMappingURL=Server.js.map

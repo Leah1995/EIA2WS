@@ -1,7 +1,7 @@
 import * as Http from "http"; // kreiert http Objekt im Code, dann sucht der Interpreter nach jedem möglichen Import im http-Modul und fügt ihn nacheinander dem http Objekt im Code hinzu
 // "http"-Objekte werden deklariert, das Modul HTTP wird aus der node.d.ts Datei importiert
 import * as Url from "url";
-namespace L06_SendData { // Namespace definiert die Sektion einer Lagerung oder Speicherung um Daten als Variablen, Funktionen, Arrays, Objekte usw abzuspeichern
+namespace Aufgabe7 { // Namespace definiert die Sektion einer Lagerung oder Speicherung um Daten als Variablen, Funktionen, Arrays, Objekte usw abzuspeichern
 
     interface Bestellposten { 
         [key: string]: string; // Assoziatives Array, wie Array aber werden nicht mit Nummer angesprochen, meistens ist der Key vom Typ string
