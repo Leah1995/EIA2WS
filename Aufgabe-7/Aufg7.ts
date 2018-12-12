@@ -254,14 +254,14 @@ namespace Aufgabe7 {
 
     function handleClickOnAsync(_event: Event): void {
         let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
-        let convert: string = JSON.stringify(name);
-        console.log(convert);
-        sendRequestWithCustomData(convert);
+        let test: string = JSON.stringify(name);
+        console.log(test);
+        sendRequestWithCustomData(name);
     }
 
     function sendRequestWithCustomData(_convert: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", address + _convert, true);
+        xhr.open("GET", address + "?name=" + _convert, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }

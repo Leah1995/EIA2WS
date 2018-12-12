@@ -216,13 +216,13 @@ var Aufgabe7;
     } // Ende function onSite
     function handleClickOnAsync(_event) {
         let name = document.querySelector("#zusammenfassung").innerText;
-        let convert = JSON.stringify(name);
-        console.log(convert);
-        sendRequestWithCustomData(convert);
+        let test = JSON.stringify(name);
+        console.log(test);
+        sendRequestWithCustomData(name);
     }
     function sendRequestWithCustomData(_convert) {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", address + _convert, true);
+        xhr.open("GET", address + "?name=" + _convert, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
