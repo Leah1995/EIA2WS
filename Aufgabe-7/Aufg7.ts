@@ -256,6 +256,7 @@ namespace Aufgabe7 {
         //        let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
 
         let name: string = JSON.stringify((<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText);
+        console.log(name);
         sendRequestWithCustomData(name);
     }
 

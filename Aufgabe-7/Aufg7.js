@@ -217,6 +217,7 @@ var Aufgabe7;
     function handleClickOnAsync(_event) {
         //        let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
         let name = JSON.stringify(document.querySelector("#zusammenfassung").innerText);
+        console.log(name);
         sendRequestWithCustomData(name);
     }
     function sendRequestWithCustomData(_name) {
