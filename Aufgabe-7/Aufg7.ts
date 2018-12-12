@@ -228,8 +228,8 @@ namespace Aufgabe7 {
     function checkOut(_event: Event): void {
         //            handleStateChange;
         console.log(handleClickOnAsync);
-//        handleClickOnAsync;
-//        handleStateChange;
+        handleClickOnAsync;
+        //        handleStateChange;
     } // Ende functionCheckout
 
     function handleQuery(): void {

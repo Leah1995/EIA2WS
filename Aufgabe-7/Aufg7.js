@@ -198,7 +198,7 @@ var Aufgabe7;
     function checkOut(_event) {
         //            handleStateChange;
         console.log(handleClickOnAsync);
-        //        handleClickOnAsync;
+        handleClickOnAsync;
         //        handleStateChange;
     } // Ende functionCheckout
     function handleQuery() {
