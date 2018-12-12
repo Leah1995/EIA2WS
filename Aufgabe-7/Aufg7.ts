@@ -262,8 +262,7 @@ namespace Aufgabe7 {
     function sendRequestWithCustomData(_name: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
         let test: string = JSON.stringify(_name);
-        console.log(test);
-        xhr.open("GET", address + "?name=" + _name, true);
+        xhr.open("GET", address + "?name=" + test, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }

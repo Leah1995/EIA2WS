@@ -221,8 +221,7 @@ var Aufgabe7;
     function sendRequestWithCustomData(_name) {
         let xhr = new XMLHttpRequest();
         let test = JSON.stringify(_name);
-        console.log(test);
-        xhr.open("GET", address + "?name=" + _name, true);
+        xhr.open("GET", address + "?name=" + test, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
