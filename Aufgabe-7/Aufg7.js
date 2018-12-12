@@ -210,11 +210,16 @@ var Aufgabe7;
     // bleibe auf dieser Seite
     function onSite(_event) {
         let name = document.querySelector("#zusammenfassung").innerText;
-        alert(name);
+        // alert(name); -> hier lag der Fehler
     } // Ende function onSite
     // bei Ver�nderung
     function handleStateChange(_event) {
         var xhr = _event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            alert(xhr.response);
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+        } // Ende if Bedingung
     } // Ende function handleStateChange
 })(Aufgabe7 || (Aufgabe7 = {})); // Ende namespace
 //# sourceMappingURL=Aufg7.js.map

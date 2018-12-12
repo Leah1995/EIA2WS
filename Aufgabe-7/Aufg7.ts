@@ -5,14 +5,14 @@ namespace Aufgabe7 {
 
     // Event-Listener hinzufügen
     document.addEventListener("DOMContentLoaded", init); // init versieht Seite mit Startwerten und initialisiert
-    
+
     // Adress-Fieldsets
     document.addEventListener("DOMContentLoaded", fillFieldset2); // DOMContentLoaded wird ausgelöst, wenn das initiale HTML-Dokument vollständig geladen und geparst ist.
     document.addEventListener("DOMContentLoaded", fillFieldset3);
     document.addEventListener("DOMContentLoaded", fillFieldset4);
     document.addEventListener("DOMContentLoaded", fillFieldset5);
     document.addEventListener("DOMContentLoaded", fillFieldset6);
-    
+
     // Listener
     document.addEventListener("DOMContentLoaded", changeListener);
 
@@ -204,7 +204,7 @@ namespace Aufgabe7 {
                         checkLieferart = 1;
                     } // Ende if Bedingung Lieferoptionen
                 } // Ende if Bedingung item.checked == treu
-                
+
                 else if (item.checked == false) {
                     item.setAttribute("value", "0");
                 } // Ende else if Bedingung
@@ -242,12 +242,17 @@ namespace Aufgabe7 {
     // bleibe auf dieser Seite
     function onSite(_event: Event): void {
         let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
-        alert(name);
+        // alert(name); -> hier lag der Fehler
     } // Ende function onSite
 
     // bei Veränderung
     function handleStateChange(_event: ProgressEvent): void {
         var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
+        if (xhr.readyState == XMLHttpRequest.DONE) {
+            alert(xhr.response);
+            console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
+            console.log("response: " + xhr.response);
+        } // Ende if Bedingung
     } // Ende function handleStateChange
 
 } // Ende namespace
