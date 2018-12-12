@@ -201,6 +201,7 @@ var Aufgabe7;
         }
         else {
             document.getElementById("fehlend").innerHTML = "";
+            handleStateChange;
         }
     } // Ende functionCheckout
     function handleQuery() {

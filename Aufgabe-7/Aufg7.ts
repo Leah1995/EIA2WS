@@ -218,7 +218,6 @@ namespace Aufgabe7 {
             if (anzahlItems > 0) {
                 p.innerText += keyItems + ": " + anzahlItems + " " + itemTitle + " " + preis + " Euro";
             } // Ende if Bedingung
-
             section.appendChild(p);
         } // Ende for Schleife
     } // Ende function handleChange
@@ -231,6 +230,7 @@ namespace Aufgabe7 {
         }
         else {
             document.getElementById("fehlend").innerHTML = "";
+            handleStateChange;
         }
     } // Ende functionCheckout
 
