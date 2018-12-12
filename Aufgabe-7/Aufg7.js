@@ -222,7 +222,7 @@ var Aufgabe7;
     }
     function sendRequestWithCustomData(_convert) {
         let xhr = new XMLHttpRequest();
-        xhr.open("GET", address + "?command=insert&data=" + _convert, true);
+        xhr.open("GET", address + _convert, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
