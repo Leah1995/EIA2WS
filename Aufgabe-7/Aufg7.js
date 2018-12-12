@@ -228,9 +228,9 @@ var Aufgabe7;
     function handleStateChange(_event) {
         var xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.responseText);
+            alert(xhr.response);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
-            console.log("response: " + xhr.responseText);
+            console.log("response: " + xhr.response);
         } // Ende if Bedingung
     } // Ende function handleStateChange
 })(Aufgabe7 || (Aufgabe7 = {})); // Ende namespace
