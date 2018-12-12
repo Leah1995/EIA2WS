@@ -231,7 +231,7 @@ namespace Aufgabe7 {
         else {
             document.getElementById("fehlend").innerHTML = "";
             //            handleStateChange;
-            handleClickOnAsync;
+            console.log(handleClickOnAsync);
         }
     } // Ende functionCheckout
 
