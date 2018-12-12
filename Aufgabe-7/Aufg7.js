@@ -198,11 +198,11 @@ var Aufgabe7;
     function checkOut(_event) {
         if (adress == "" || checkBaum == 0 || checkHalterung == 0 || checkLieferart == 0) {
             document.getElementById("fehlend").innerHTML = "fehlende Angaben";
+            //            handleStateChange;
+            console.log(handleClickOnAsync);
         }
         else {
             document.getElementById("fehlend").innerHTML = "";
-            //            handleStateChange;
-            console.log(handleClickOnAsync);
         }
     } // Ende functionCheckout
     function handleQuery() {
