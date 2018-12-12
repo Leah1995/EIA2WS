@@ -256,12 +256,12 @@ namespace Aufgabe7 {
         let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
         let convert: string = JSON.stringify(name);
         console.log(convert);
-        sendRequestWithCustomData(name);
+        sendRequestWithCustomData(convert);
     }
 
-    function sendRequestWithCustomData(_name: string): void {
+    function sendRequestWithCustomData(_convert: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", address + "?name=" + _name, true);
+        xhr.open("GET", address + "?name=" + _convert, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
