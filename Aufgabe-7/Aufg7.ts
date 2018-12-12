@@ -254,6 +254,7 @@ namespace Aufgabe7 {
 
     function handleClickOnAsync(_event: Event): void {
         let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
+        console.log(name);
         sendRequestWithCustomData(name);
     }
 
