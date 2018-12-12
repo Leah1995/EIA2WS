@@ -216,7 +216,8 @@ var Aufgabe7;
     } // Ende function onSite
     function handleClickOnAsync(_event) {
         let name = document.querySelector("#zusammenfassung").innerText;
-        console.log(name);
+        let convert = JSON.stringify(name);
+        console.log(convert);
         sendRequestWithCustomData(name);
     }
     function sendRequestWithCustomData(_name) {
