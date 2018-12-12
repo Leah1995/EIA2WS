@@ -228,14 +228,7 @@ namespace Aufgabe7 {
     function checkOut(_event: Event): void {
           //            handleStateChange;
             console.log(handleClickOnAsync);
-        if (adress == "" || checkBaum == 0 || checkHalterung == 0 || checkLieferart == 0) {
-           
-                          handleClickOnAsync;
-        }
-        else {
-            console.log("else");
-          
-        }
+    handleClickOnAsync;
     } // Ende functionCheckout
 
     function handleQuery(): void {
