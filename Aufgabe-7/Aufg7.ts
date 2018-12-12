@@ -228,9 +228,17 @@ namespace Aufgabe7 {
     function checkOut(_event: Event): void {
         //            handleStateChange;
         console.log(handleClickOnAsync);
-        handleClickOnAsync;
+        setupAsyncForm();
+
         //        handleStateChange;
     } // Ende functionCheckout
+
+
+    function setupAsyncForm(): void {
+        let button: Element = document.querySelector("[type=button]");
+        button.addEventListener("click", handleClickOnAsync);
+    }
+
 
     function handleQuery(): void {
         let button: Element = document.querySelector("[type=button]");
@@ -243,6 +251,7 @@ namespace Aufgabe7 {
         let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
         // alert(name); -> hier lag der Fehler
     } // Ende function onSite
+
 
     function handleClickOnAsync(_event: Event): void {
         let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;

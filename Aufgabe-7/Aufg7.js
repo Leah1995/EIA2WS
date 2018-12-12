@@ -198,9 +198,13 @@ var Aufgabe7;
     function checkOut(_event) {
         //            handleStateChange;
         console.log(handleClickOnAsync);
-        handleClickOnAsync;
+        setupAsyncForm();
         //        handleStateChange;
     } // Ende functionCheckout
+    function setupAsyncForm() {
+        let button = document.querySelector("[type=button]");
+        button.addEventListener("click", handleClickOnAsync);
+    }
     function handleQuery() {
         let button = document.querySelector("[type=button]");
         button.addEventListener("click", onSite);
