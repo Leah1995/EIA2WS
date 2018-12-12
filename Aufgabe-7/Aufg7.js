@@ -198,7 +198,8 @@ var Aufgabe7;
     function checkOut(_event) {
         //            handleStateChange;
         console.log(handleClickOnAsync);
-        handleClickOnAsync;
+        //        handleClickOnAsync;
+        //        handleStateChange;
     } // Ende functionCheckout
     function handleQuery() {
         let button = document.querySelector("[type=button]");
@@ -210,7 +211,7 @@ var Aufgabe7;
         // alert(name); -> hier lag der Fehler
     } // Ende function onSite
     function handleClickOnAsync(_event) {
-        let name = document.querySelector("#warenkorb").innerText;
+        let name = document.querySelector("#zusammenfassung").innerText;
         sendRequestWithCustomData(name);
     }
     function sendRequestWithCustomData(_name) {

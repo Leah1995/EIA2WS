@@ -54,7 +54,7 @@ namespace Aufgabe7 {
     function fillFieldsetCheck(_products: Bestellposten, i: number, key: string): void {
         let node: HTMLElement = document.getElementById("fieldset");
         document.getElementById("send").addEventListener("click", checkOut);
-  
+
         let childNodeHTML: string;
 
         // Anhängen der Auswahl
@@ -226,9 +226,10 @@ namespace Aufgabe7 {
 
     // Überprüfe, ob alles stimmt
     function checkOut(_event: Event): void {
-          //            handleStateChange;
-            console.log(handleClickOnAsync);
-    handleClickOnAsync;
+        //            handleStateChange;
+        console.log(handleClickOnAsync);
+//        handleClickOnAsync;
+//        handleStateChange;
     } // Ende functionCheckout
 
     function handleQuery(): void {
@@ -244,7 +245,7 @@ namespace Aufgabe7 {
     } // Ende function onSite
 
     function handleClickOnAsync(_event: Event): void {
-        let name: string = (<HTMLInputElement>document.querySelector("#warenkorb")).innerText;
+        let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
         sendRequestWithCustomData(name);
     }
 
