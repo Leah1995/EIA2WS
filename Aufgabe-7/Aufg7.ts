@@ -274,7 +274,7 @@ namespace Aufgabe7 {
             alert(ausgabe);
             //   alert(xhr.response);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
-            console.log("response: " + xhr.response);
+            console.log("response: " + ausgabe);
         } // Ende if Bedingung
     } // Ende function handleStateChange
 
