@@ -220,8 +220,7 @@ var Aufgabe7;
     }
     function sendRequestWithCustomData(_name) {
         let xhr = new XMLHttpRequest();
-        let test = JSON.stringify(_name);
-        xhr.open("GET", address + "?name=" + test, true);
+        xhr.open("GET", address + "?name=" + _name, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
@@ -229,6 +228,7 @@ var Aufgabe7;
     function handleStateChange(_event) {
         var xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
+            let test = JSON.stringify(xhr.response);
             alert(xhr.response);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
