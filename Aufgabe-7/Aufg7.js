@@ -201,7 +201,6 @@ var Aufgabe7;
         }
         else {
             document.getElementById("fehlend").innerHTML = "";
-            handleStateChange;
         }
     } // Ende functionCheckout
     function handleQuery() {
@@ -213,6 +212,16 @@ var Aufgabe7;
         let name = document.querySelector("#zusammenfassung").innerText;
         // alert(name); -> hier lag der Fehler
     } // Ende function onSite
+    function handleClickOnAsync(_event) {
+        let name = document.querySelector("#warenkorb").innerText;
+        sendRequestWithCustomData(name);
+    }
+    function sendRequestWithCustomData(_name) {
+        let xhr = new XMLHttpRequest();
+        xhr.open("GET", address + "?name=" + _name, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
     // bei Ver�nderung
     function handleStateChange(_event) {
         var xhr = _event.target;

@@ -230,13 +230,14 @@ namespace Aufgabe7 {
         }
         else {
             document.getElementById("fehlend").innerHTML = "";
-            handleStateChange;
+            //            handleStateChange;
         }
     } // Ende functionCheckout
 
     function handleQuery(): void {
         let button: Element = document.querySelector("[type=button]");
         button.addEventListener("click", onSite);
+
     } // Ende function handleQuery
 
     // bleibe auf dieser Seite
@@ -244,6 +245,18 @@ namespace Aufgabe7 {
         let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
         // alert(name); -> hier lag der Fehler
     } // Ende function onSite
+
+    function handleClickOnAsync(_event: Event): void {
+        let name: string = (<HTMLInputElement>document.querySelector("#warenkorb")).innerText;
+        sendRequestWithCustomData(name);
+    }
+
+    function sendRequestWithCustomData(_name: string): void {
+        let xhr: XMLHttpRequest = new XMLHttpRequest();
+        xhr.open("GET", address + "?name=" + _name, true);
+        xhr.addEventListener("readystatechange", handleStateChange);
+        xhr.send();
+    }
 
     // bei Veränderung
     function handleStateChange(_event: ProgressEvent): void {
