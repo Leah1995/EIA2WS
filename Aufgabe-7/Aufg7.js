@@ -228,8 +228,7 @@ var Aufgabe7;
     function handleStateChange(_event) {
         var xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let ausgabe = JSON.stringify(xhr.response);
-            alert(xhr.response);
+            alert(xhr.responseText);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.responseText);
         } // Ende if Bedingung

@@ -270,9 +270,7 @@ namespace Aufgabe7 {
     function handleStateChange(_event: ProgressEvent): void {
         var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let ausgabe: string = JSON.stringify(xhr.response);
-         
-            alert(xhr.response);
+            alert(xhr.responseText);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.responseText);
         } // Ende if Bedingung
