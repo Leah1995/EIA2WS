@@ -253,9 +253,9 @@ namespace Aufgabe7 {
 
 
     function handleClickOnAsync(_event: Event): void {
-        //        let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
+                let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
 
-        let name: string = JSON.stringify((<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText);
+      
         console.log(name);
         sendRequestWithCustomData(name);
     }
@@ -272,7 +272,9 @@ namespace Aufgabe7 {
     function handleStateChange(_event: ProgressEvent): void {
         var xhr: XMLHttpRequest = <XMLHttpRequest>_event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.response);
+            let ausgabe: string = JSON.stringify(xhr.response);
+            alert(ausgabe);
+         //   alert(xhr.response);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
         } // Ende if Bedingung

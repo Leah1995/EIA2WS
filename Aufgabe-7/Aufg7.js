@@ -215,8 +215,7 @@ var Aufgabe7;
         // alert(name); -> hier lag der Fehler
     } // Ende function onSite
     function handleClickOnAsync(_event) {
-        //        let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
-        let name = JSON.stringify(document.querySelector("#zusammenfassung").innerText);
+        let name = document.querySelector("#zusammenfassung").innerText;
         console.log(name);
         sendRequestWithCustomData(name);
     }
@@ -230,7 +229,9 @@ var Aufgabe7;
     function handleStateChange(_event) {
         var xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            alert(xhr.response);
+            let ausgabe = JSON.stringify(xhr.response);
+            alert(ausgabe);
+            //   alert(xhr.response);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
             console.log("response: " + xhr.response);
         } // Ende if Bedingung
