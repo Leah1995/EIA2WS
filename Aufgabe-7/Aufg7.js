@@ -229,10 +229,9 @@ var Aufgabe7;
         var xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
             let ausgabe = JSON.stringify(xhr.response);
-            alert(ausgabe);
-            //   alert(xhr.response);
+            alert(xhr.response);
             console.log("ready: " + xhr.readyState, " | type: " + xhr.responseType, " | status:" + xhr.status, " | text:" + xhr.statusText);
-            console.log("response: " + ausgabe);
+            console.log("response: " + xhr.responseText);
         } // Ende if Bedingung
     } // Ende function handleStateChange
 })(Aufgabe7 || (Aufgabe7 = {})); // Ende namespace
