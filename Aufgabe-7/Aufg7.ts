@@ -15,7 +15,7 @@ namespace Aufgabe7 {
 
     // Listener
     document.addEventListener("DOMContentLoaded", changeListener);
- 
+
     // initialisiere Seite bei event
     function init(_event: Event): void {
         showAssocarray(associativeItem);
@@ -254,14 +254,16 @@ namespace Aufgabe7 {
 
     function handleClickOnAsync(_event: Event): void {
         let name: string = (<HTMLInputElement>document.querySelector("#zusammenfassung")).innerText;
-        let test: string = JSON.stringify(name);
-        console.log(test);
+
+
         sendRequestWithCustomData(name);
     }
 
-    function sendRequestWithCustomData(_convert: string): void {
+    function sendRequestWithCustomData(_name: string): void {
         let xhr: XMLHttpRequest = new XMLHttpRequest();
-        xhr.open("GET", address + "?name=" + _convert, true);
+        let test: string = JSON.stringify(_name);
+        console.log(test);
+        xhr.open("GET", address + "?name=" + _name, true);
         xhr.addEventListener("readystatechange", handleStateChange);
         xhr.send();
     }
