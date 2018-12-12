@@ -44,7 +44,7 @@ var Aufgabe7;
     let checkLieferart = 0;
     function fillFieldsetCheck(_products, i, key) {
         let node = document.getElementById("fieldset");
-        document.getElementById("button").addEventListener("click", checkOut);
+        document.getElementById("send").addEventListener("click", checkOut);
         let childNodeHTML;
         // Anh�ngen der Auswahl
         if (i == 0) {
@@ -196,13 +196,13 @@ var Aufgabe7;
     } // Ende function handleChange
     // �berpr�fe, ob alles stimmt
     function checkOut(_event) {
+        //            handleStateChange;
+        console.log(handleClickOnAsync);
         if (adress == "" || checkBaum == 0 || checkHalterung == 0 || checkLieferart == 0) {
-            document.getElementById("fehlend").innerHTML = "fehlende Angaben";
-            //            handleStateChange;
-            console.log(handleClickOnAsync);
+            handleClickOnAsync;
         }
         else {
-            document.getElementById("fehlend").innerHTML = "";
+            console.log("else");
         }
     } // Ende functionCheckout
     function handleQuery() {

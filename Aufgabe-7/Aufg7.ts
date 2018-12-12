@@ -53,7 +53,8 @@ namespace Aufgabe7 {
 
     function fillFieldsetCheck(_products: Bestellposten, i: number, key: string): void {
         let node: HTMLElement = document.getElementById("fieldset");
-        document.getElementById("button").addEventListener("click", checkOut);
+        document.getElementById("send").addEventListener("click", checkOut);
+  
         let childNodeHTML: string;
 
         // Anhängen der Auswahl
@@ -225,13 +226,14 @@ namespace Aufgabe7 {
 
     // Überprüfe, ob alles stimmt
     function checkOut(_event: Event): void {
-        if (adress == "" || checkBaum == 0 || checkHalterung == 0 || checkLieferart == 0) {
-            document.getElementById("fehlend").innerHTML = "fehlende Angaben";
-              //            handleStateChange;
+          //            handleStateChange;
             console.log(handleClickOnAsync);
+        if (adress == "" || checkBaum == 0 || checkHalterung == 0 || checkLieferart == 0) {
+           
+                          handleClickOnAsync;
         }
         else {
-            document.getElementById("fehlend").innerHTML = "";
+            console.log("else");
           
         }
     } // Ende functionCheckout
