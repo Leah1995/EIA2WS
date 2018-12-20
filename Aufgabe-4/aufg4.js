@@ -78,7 +78,7 @@ var christmastree;
         productTree.appendChild(label); // Append Label to Tree 
         inputChristmastree.push(input); // input wird in das leere Array gepusht
     } // Ende function createInputTree
-    //For-Schleife zur Erzeugnung der Baumhalterung
+    // For-Schleife zur Erzeugnung der Baumhalterung
     function createTreestand() {
         //erstellt pro Halterung einen Input
         for (let i = 0; i < treestand.length; i++) {
@@ -86,7 +86,7 @@ var christmastree;
         } // Ende for Schleife
     } // Ende function create Treestand
     function createInputStand(_halterung) {
-        let label = document.createElement("label"); //label wird erzeugt
+        let label = document.createElement("label"); // label wird erzeugt
         let input = document.createElement("input"); // input wird erzeugt
         label.innerText = _halterung; // Artikel
         label.appendChild(input); // Append Input to Label
@@ -104,9 +104,9 @@ var christmastree;
         } // Ende for Schleife
     } // Ende function createDecoration
     function createInputDecoration(_decoration) {
-        let label = document.createElement("label"); //label wird erzeugt
+        let label = document.createElement("label"); // label wird erzeugt
         let input = document.createElement("input"); // input wird erzeugt
-        label.innerText = _decoration; //Artikel
+        label.innerText = _decoration; // Artikel
         label.appendChild(input); // Append Input to Label 
         input.type = "number"; //Input vom Typ Number
         input.name = "NameDecoration";
