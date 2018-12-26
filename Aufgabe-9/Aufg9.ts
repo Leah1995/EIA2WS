@@ -383,25 +383,25 @@ namespace Aufgabe9 {
         function drawFlocke(_x: number, _y: number): void {
             // gerade Linie
             crc2.beginPath();
-            crc2.moveTo(_x, _y - 15);
-            crc2.lineTo(_x, _y + 10);
+            crc2.moveTo(_x, _y - 12);
+            crc2.lineTo(_x, _y + 7);
             crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
+            crc2.lineWidth = 2;
             crc2.stroke();
 
             // schiefe Linien
             crc2.beginPath();
-            crc2.moveTo(_x - 12, _y + 5);
-            crc2.lineTo(_x + 12, _y - 10);
+            crc2.moveTo(_x - 7, _y + 3);
+            crc2.lineTo(_x + 7, _y - 7);
             crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
+            crc2.lineWidth = 2;
             crc2.stroke();
 
             crc2.beginPath();
-            crc2.moveTo(_x + 12, _y + 5);
-            crc2.lineTo(_x - 12, _y - 10);
+            crc2.moveTo(_x + 7, _y + 3);
+            crc2.lineTo(_x - 7, _y - 7);
             crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
+            crc2.lineWidth = 2;
             crc2.stroke();
         } // Ende function drawFlocke
 
@@ -419,7 +419,7 @@ namespace Aufgabe9 {
         } // Ende for Schleife
 
         // Schneeflocken zufällig platzieren
-        for (let i: number = 0; i < 200; i++) {
+        for (let i: number = 0; i < 300; i++) {
             let randomX: number = (Math.random() * (400 - 1)) + 1;
             let randomY: number = (Math.random() * (600 - 1)) + 1;
             let randomFlocke: number = Math.floor((Math.random() * 2)) + 1;

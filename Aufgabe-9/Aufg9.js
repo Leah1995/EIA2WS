@@ -353,23 +353,23 @@ var Aufgabe9;
         function drawFlocke(_x, _y) {
             // gerade Linie
             crc2.beginPath();
-            crc2.moveTo(_x, _y - 15);
-            crc2.lineTo(_x, _y + 10);
+            crc2.moveTo(_x, _y - 12);
+            crc2.lineTo(_x, _y + 7);
             crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
+            crc2.lineWidth = 2;
             crc2.stroke();
             // schiefe Linien
             crc2.beginPath();
-            crc2.moveTo(_x - 12, _y + 5);
-            crc2.lineTo(_x + 12, _y - 10);
+            crc2.moveTo(_x - 7, _y + 3);
+            crc2.lineTo(_x + 7, _y - 7);
             crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
+            crc2.lineWidth = 2;
             crc2.stroke();
             crc2.beginPath();
-            crc2.moveTo(_x + 12, _y + 5);
-            crc2.lineTo(_x - 12, _y - 10);
+            crc2.moveTo(_x + 7, _y + 3);
+            crc2.lineTo(_x - 7, _y - 7);
             crc2.strokeStyle = "white";
-            crc2.lineWidth = 5;
+            crc2.lineWidth = 2;
             crc2.stroke();
         } // Ende function drawFlocke
         // B�ume zuf�llig hinstellen
@@ -386,7 +386,7 @@ var Aufgabe9;
             }
         } // Ende for Schleife
         // Schneeflocken zuf�llig platzieren
-        for (let i = 0; i < 200; i++) {
+        for (let i = 0; i < 300; i++) {
             let randomX = (Math.random() * (400 - 1)) + 1;
             let randomY = (Math.random() * (600 - 1)) + 1;
             let randomFlocke = Math.floor((Math.random() * 2)) + 1;
