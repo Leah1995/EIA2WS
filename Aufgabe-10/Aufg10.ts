@@ -13,8 +13,14 @@ namespace Aufgabe10 {
         console.log("setTimeout");
 
         //Schleife Rodler
-        for (let i: number = 0; i < 10; i++) {
+        for (let i: number = 0; i < 5; i++) {
             let s: Rodler = new Rodler(Math.random() * canvas.width - 0.1, +50); // Startpunkt
+            object.push(s);
+        } // Ende for Schleife
+
+        //Schleife Rodler2
+        for (let i: number = 0; i < 5; i++) {
+            let s: Rodler2 = new Rodler2(Math.random() * canvas.width - 0.1, +200); // Startpunkt
             object.push(s);
         } // Ende for Schleife
 
@@ -203,7 +209,7 @@ namespace Aufgabe10 {
 
 
         // Geschwindigkeit
-        window.setTimeout(animate, 50);
+        window.setTimeout(animate, 100);
     } // Ende function animate
 
 } // Namespace
