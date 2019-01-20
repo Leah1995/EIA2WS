@@ -12,12 +12,12 @@ var Aufgabe10;
         console.log("setTimeout");
         //Schleife Rodler
         for (let i = 0; i < 5; i++) {
-            let s = new Aufgabe10.Rodler(Math.random() * canvas.width - 0.1, +50); // Startpunkt
+            let s = new Aufgabe10.Rodler(Math.random() * canvas.width - 0.1, +80); // Startpunkt
             object.push(s);
         } // Ende for Schleife
         //Schleife Rodler2
         for (let i = 0; i < 5; i++) {
-            let s = new Aufgabe10.Rodler2(Math.random() * canvas.width - 0.1, +200); // Startpunkt
+            let s = new Aufgabe10.Rodler2(Math.random() * canvas.width - 0.1, +300); // Startpunkt
             object.push(s);
         } // Ende for Schleife
         //Schleife Schneeflocken 

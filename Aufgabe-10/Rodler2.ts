@@ -14,18 +14,16 @@ namespace Aufgabe10 {
             this.draw();
         }
 
-         moving(): void {
-            this.x += Math.random() * 20 - 20;
-            this.y += Math.random() * 10 - 10;
+        moving(): void {
+            this.x += Math.random() * 10 - 40;
+            this.y += Math.random() * 30 - 40;
         }
 
         return(): void {
-            if (this.x > 300) { // Endpunkt
-                this.x = -150;  // Startpunkt
-                if (this.y > +20) { // Endpunkt
-                    this.y = -600;  // Startpunkt
-                }
+            if (this.y > 500) { // Endpunkt
+                this.y = 150; // Startpunkt
             }
+
         } // Ende return
 
         // Rodler zeichnen

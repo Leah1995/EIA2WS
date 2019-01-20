@@ -10,15 +10,12 @@ var Aufgabe10;
             this.draw();
         }
         moving() {
-            this.x += Math.random() * 20 - 20;
-            this.y += Math.random() * 10 - 10;
+            this.x += Math.random() * 10 - 40;
+            this.y += Math.random() * 30 - 40;
         }
         return() {
-            if (this.x > 300) {
-                this.x = -150; // Startpunkt
-                if (this.y > +20) {
-                    this.y = -600; // Startpunkt
-                }
+            if (this.y > 500) {
+                this.y = 150; // Startpunkt
             }
         } // Ende return
         // Rodler zeichnen

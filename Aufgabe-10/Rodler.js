@@ -15,8 +15,8 @@ var Aufgabe10;
         }
         return() {
             if (this.x > 400) {
-                this.x = -150; // Startpunkt
-                if (this.y > -600) {
+                this.x = -10; // Startpunkt
+                if (this.y > -100) {
                     this.y = +20; // Startpunkt
                 }
             }

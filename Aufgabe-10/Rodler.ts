@@ -21,8 +21,8 @@ namespace Aufgabe10 {
 
         return(): void {
             if (this.x > 400) { // Endpunkt
-                this.x = -150;  // Startpunkt
-                if (this.y > -600) { // Endpunkt
+                this.x = -10;  // Startpunkt
+                if (this.y > -100) { // Endpunkt
                     this.y = +20;  // Startpunkt
                 }
             }
