@@ -14,14 +14,14 @@ var Aufgabe10;
         // Geschwindigkeit
         moving() {
             this.y += Math.random() * 5;
-        }
+        } // Ende moving
         // Schneeflocken tauchen wieder auf
         return() {
             if (this.y > 600) {
                 this.y = 0;
-            }
-        }
-        // Schneeflocken zeichnen
+            } // Ende if Bedingung
+        } // Ende return
+        // Schneeflocken
         // gerade Linie
         draw() {
             Aufgabe10.crc2.beginPath();
@@ -46,6 +46,6 @@ var Aufgabe10;
             Aufgabe10.crc2.closePath();
         } // Ende draw()
     }
-    Aufgabe10.Schnee = Schnee; // exportiert
-})(Aufgabe10 || (Aufgabe10 = {})); // Namespace
+    Aufgabe10.Schnee = Schnee; // Ende export class
+})(Aufgabe10 || (Aufgabe10 = {})); // Ende Namespace
 //# sourceMappingURL=Schnee.js.map

@@ -1,0 +1,20 @@
+canvas {
+	width: 100%;
+}
+
+@media screen and (min-width: 35em) {
+	canvas {
+		width: 100%;
+	}
+	@media screen and (min-width: 48em) {
+		canvas {
+			width: 100%;
+		}
+		@media screen and (min-width: 64em) {
+			canvas {
+				height: 100%;
+				width: 30%;
+			}
+		}
+	}
+}

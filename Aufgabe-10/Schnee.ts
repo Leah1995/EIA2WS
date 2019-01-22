@@ -17,17 +17,17 @@ namespace Aufgabe10 {
         // Geschwindigkeit
         moving(): void {
             this.y += Math.random() * 5;
-        }
+        } // Ende moving
 
         // Schneeflocken tauchen wieder auf
         return(): void {
             if (this.y > 600) {
                 this.y = 0;
-            }
-        }
+            } // Ende if Bedingung
+        } // Ende return
 
-        // Schneeflocken zeichnen
-        
+        // Schneeflocken
+
         // gerade Linie
         draw(): void {
             crc2.beginPath();
@@ -51,9 +51,8 @@ namespace Aufgabe10 {
             crc2.strokeStyle = "white";
             crc2.lineWidth = 2;
             crc2.stroke();
-
             crc2.closePath();
         } // Ende draw()
 
-    } // exportiert
-} // Namespace
+    } // Ende export class
+} // Ende Namespace
