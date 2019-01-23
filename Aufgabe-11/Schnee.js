@@ -11,9 +11,10 @@ var Aufgabe11;
         update() {
             this.draw();
         }
+        // Richtung des Schnees
         moving() {
-            this.yD = 5;
-            this.xD = Math.random() * 5;
+            this.yD = 2;
+            this.xD = Math.random() * 0;
             this.xP += this.xD;
             this.yP += this.yD;
             if (this.yP > 600) {

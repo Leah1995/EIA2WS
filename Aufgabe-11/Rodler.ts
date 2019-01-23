@@ -24,8 +24,8 @@ namespace Aufgabe11 {
         } // Ende moving
 
         driveDown(): void {
-            this.xD = 6; // Veränderung in x-Richtung
-            this.yD = 3; // Veränderung in y-Richtung
+            this.xD = 5; // Veränderung in x-Richtung
+            this.yD = 2; // Veränderung in y-Richtung
 
             this.xP += this.xD;
             this.yP += this.yD;
@@ -37,16 +37,18 @@ namespace Aufgabe11 {
 
         driveUp(): void {
 
-            this.xD = Math.random() * (-6);
-            this.yD = Math.random() * (-3);
+            this.xD = Math.random() * (-5);
+            this.yD = Math.random() * (-2);
 
             this.xP += this.xD;
             this.yP += this.yD;
 
-            if (this.xP < 10) {
+            if (this.xP < 15) {
                 this.movedown = true;
             } // Ende if Bedingung
+            
             this.draw();
+            
         } // Ende driveUp
 
         draw(): void {

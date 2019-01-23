@@ -17,8 +17,8 @@ var Aufgabe11;
             }
         } // Ende moving
         driveDown() {
-            this.xD = 6; // Ver�nderung in x-Richtung
-            this.yD = 3; // Ver�nderung in y-Richtung
+            this.xD = 5; // Ver�nderung in x-Richtung
+            this.yD = 2; // Ver�nderung in y-Richtung
             this.xP += this.xD;
             this.yP += this.yD;
             if (this.xP > 300) {
@@ -26,11 +26,11 @@ var Aufgabe11;
             } // Ende if Bedingung
         } // Ende driveDown
         driveUp() {
-            this.xD = Math.random() * (-6);
-            this.yD = Math.random() * (-3);
+            this.xD = Math.random() * (-5);
+            this.yD = Math.random() * (-2);
             this.xP += this.xD;
             this.yP += this.yD;
-            if (this.xP < 10) {
+            if (this.xP < 15) {
                 this.movedown = true;
             } // Ende if Bedingung
             this.draw();
