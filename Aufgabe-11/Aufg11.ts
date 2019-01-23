@@ -16,6 +16,9 @@ namespace Aufgabe11 {
         drawSchneelandschaft();
         drawSonne();
         drawWolke();
+        drawBaum1(100, 500, "#cc9966", "#44d271");
+        drawBaum2(400, 500, "#4c2e0a", "#00514c");
+
 
         // Generiere bewegende Objekte
         generateSchnee();
@@ -32,7 +35,7 @@ namespace Aufgabe11 {
                 let object: MovingObject = objects[i];
                 object.draw();
                 object.moving();
-                
+
             } // Ende for Schleife
         } // Ende function update
 
@@ -46,9 +49,9 @@ namespace Aufgabe11 {
         function generateRodler(): void {
             for (let i: number = 0; i < 10; i++) {
                 let child: Child = new Child();
-                objects.push(child);                
+                objects.push(child);
             } // Ende for Schleife
-            
+
         } // Ende generateChild
 
         // Bäume zufällig hinstellen
@@ -168,6 +171,7 @@ namespace Aufgabe11 {
             crc2.fill();
         } // Ende function drawSonne
 
+
         // Baum 1
         function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
             // Stamm
@@ -218,6 +222,6 @@ namespace Aufgabe11 {
         } // Ende function animate
 
         // Geschwindigkeit
-        window.setTimeout(animate, 100);
+        window.setTimeout(animate, 25);
     } // Ende init
 } // Ende namespace

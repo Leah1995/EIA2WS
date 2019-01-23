@@ -13,6 +13,8 @@ var Aufgabe11;
         drawSchneelandschaft();
         drawSonne();
         drawWolke();
+        drawBaum1(100, 500, "#cc9966", "#44d271");
+        drawBaum2(400, 500, "#4c2e0a", "#00514c");
         // Generiere bewegende Objekte
         generateSchnee();
         generateRodler();
@@ -195,7 +197,7 @@ var Aufgabe11;
             Aufgabe11.crc2.clearRect(0, 0, 400, 600);
         } // Ende function animate
         // Geschwindigkeit
-        window.setTimeout(animate, 100);
+        window.setTimeout(animate, 25);
     } // Ende init
 })(Aufgabe11 || (Aufgabe11 = {})); // Ende namespace
 //# sourceMappingURL=Aufg11.js.map
