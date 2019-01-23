@@ -3,16 +3,16 @@ var Aufgabe10;
     class Rodler extends Aufgabe10.MovingObject {
         constructor(_x, _y) {
             super(_x, _y);
-        }
+        } // Ende constructor
         update() {
             this.moving();
             this.return();
             this.draw();
-        }
+        } // Ende update
         moving() {
             this.x += Math.random() * 10 + 10;
             this.y += Math.random() * 10 + 10;
-        }
+        } // Ende moving
         return() {
             if (this.x > 400) {
                 this.x = -10; // Startpunkt
@@ -71,11 +71,12 @@ var Aufgabe10;
             Aufgabe10.crc2.stroke();
             Aufgabe10.crc2.fill();
             Aufgabe10.crc2.closePath();
-        }
+        } // Ende draw
+        // zuf�llige Farbe
         setRandomColor() {
             this.color = "hsl(" + Math.random() * 250 + ", 90%, 50%)";
-        }
+        } // Ende setRandomColor
     }
-    Aufgabe10.Rodler = Rodler;
-})(Aufgabe10 || (Aufgabe10 = {}));
+    Aufgabe10.Rodler = Rodler; // Ende export class
+})(Aufgabe10 || (Aufgabe10 = {})); // Ende namespace
 //# sourceMappingURL=Rodler.js.map

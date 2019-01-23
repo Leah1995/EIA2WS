@@ -6,18 +6,18 @@ namespace Aufgabe10 {
 
         constructor(_x: number, _y: number) {
             super(_x, _y);
-        }
+        } // Ende constructor
 
         update(): void {
             this.moving();
             this.return();
             this.draw();
-        }
+        } // Ende update
 
         moving(): void {
             this.x += Math.random() * 10 + 10;
             this.y += Math.random() * 10 + 10;
-        }
+        } // Ende moving
 
         return(): void {
             if (this.x > 400) { // Endpunkt
@@ -82,11 +82,12 @@ namespace Aufgabe10 {
             crc2.stroke();
             crc2.fill();
             crc2.closePath();
-        }
+        } // Ende draw
 
+        // zufällige Farbe
         setRandomColor(): void {
             this.color = "hsl(" + Math.random() * 250 + ", 90%, 50%)";
-        }
+        } // Ende setRandomColor
 
-    }
-}
+    } // Ende export class
+} // Ende namespace

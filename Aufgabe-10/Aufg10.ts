@@ -20,7 +20,7 @@ namespace Aufgabe10 {
 
         //Schleife Rodler2
         for (let i: number = 0; i < 5; i++) {
-            let s: Rodler2 = new Rodler2(Math.random() * canvas.width - 0.1, +300); // Startpunkt
+            let s: Rodler2 = new Rodler2(Math.random() * canvas.width - 0.1, +80); // Startpunkt
             object.push(s);
         } // Ende for Schleife
 
@@ -131,7 +131,7 @@ namespace Aufgabe10 {
 
         // Baumfunktionen
         drawBaum1(100, 500, "#cc9966", "#44d271");
-        drawBaum2(400, 500, "#4c2e0a", "#00514c");
+        drawBaum2(100, 500, "#4c2e0a", "#00514c");
 
         // Bäume zufällig hinstellen
         for (let i: number = 0; i < 10; i++) {

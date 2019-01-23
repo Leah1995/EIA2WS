@@ -17,7 +17,7 @@ var Aufgabe10;
         } // Ende for Schleife
         //Schleife Rodler2
         for (let i = 0; i < 5; i++) {
-            let s = new Aufgabe10.Rodler2(Math.random() * canvas.width - 0.1, +300); // Startpunkt
+            let s = new Aufgabe10.Rodler2(Math.random() * canvas.width - 0.1, +80); // Startpunkt
             object.push(s);
         } // Ende for Schleife
         //Schleife Schneeflocken 
@@ -120,7 +120,7 @@ var Aufgabe10;
         } // Ende function drawSchnee
         // Baumfunktionen
         drawBaum1(100, 500, "#cc9966", "#44d271");
-        drawBaum2(400, 500, "#4c2e0a", "#00514c");
+        drawBaum2(100, 500, "#4c2e0a", "#00514c");
         // B�ume zuf�llig hinstellen
         for (let i = 0; i < 10; i++) {
             let randomX = (Math.random() * (400 - 1)) + 1;
