@@ -20,7 +20,7 @@ namespace Aufgabe10 {
 
         //Schleife Rodler2
         for (let i: number = 0; i < 5; i++) {
-            let s: Rodler2 = new Rodler2(Math.random() * canvas.width - 0.1, +80); // Startpunkt
+            let s: Rodler2 = new Rodler2(Math.random() * canvas.width - 0.1, +200); // Startpunkt
             object.push(s);
         } // Ende for Schleife
 

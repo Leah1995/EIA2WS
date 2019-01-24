@@ -1,8 +1,8 @@
 namespace Aufgabe10 {
 
     export class Rodler extends MovingObject {
-        dx: number;
-        dy: number;
+//        dx: number;
+//        dy: number;
 
         constructor(_x: number, _y: number) {
             super(_x, _y);

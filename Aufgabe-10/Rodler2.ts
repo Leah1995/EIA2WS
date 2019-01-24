@@ -20,10 +20,10 @@ namespace Aufgabe10 {
         } // Ende moving
 
         return(): void {
-            if (this.y < 10) { // Endpunkt
-                this.y = 600; // Startpunkt
+            if (this.y < -100) { // Endpunkt
+                this.y = 300; // Startpunkt
             }
-            if (this.x < 0) {
+            if (this.x < -10) {
                 this.x = 400;
             }
 
@@ -33,28 +33,28 @@ namespace Aufgabe10 {
         draw(): void {
             // Kopf
             crc2.beginPath();
-            crc2.arc(this.x + 30, this.y + 45, 4, 0, 2 * Math.PI);
+            crc2.arc(this.x + 30, this.y + 245, 4, 0, 2 * Math.PI);
             crc2.fillStyle = "#fff7b5";
             crc2.fill();
             // Mütze
             crc2.beginPath();
-            crc2.arc(this.x + 30, this.y + 43, 4, 3, 2 * Math.PI);
+            crc2.arc(this.x + 30, this.y + 243, 4, 3, 2 * Math.PI);
             crc2.fillStyle = this.color;
             crc2.fill();
             crc2.beginPath();
-            crc2.arc(this.x + 30, this.y + 38, 2, 0, 2 * Math.PI);
+            crc2.arc(this.x + 30, this.y + 238, 2, 0, 2 * Math.PI);
             crc2.fillStyle = this.color;
             crc2.fill();
 
             // Körper
             crc2.beginPath();
             crc2.fillStyle = this.color;
-            crc2.fillRect(this.x + 26, this.y + 52, 8, 20); // Anfang, Höhe, Dicke, Länge
+            crc2.fillRect(this.x + 26, this.y + 252, 8, 20); // Anfang, Höhe, Dicke, Länge
 
             // Arm
             crc2.beginPath();
-            crc2.moveTo(this.x + 47, this.y + 55);
-            crc2.lineTo(this.x + 27, this.y + 55);
+            crc2.moveTo(this.x + 47, this.y + 255);
+            crc2.lineTo(this.x + 27, this.y + 255);
             crc2.strokeStyle = this.color;
             crc2.lineWidth = 4;
             crc2.stroke();
@@ -62,22 +62,22 @@ namespace Aufgabe10 {
 
             // Kragen
             crc2.beginPath();
-            crc2.arc(this.x + 30, this.y + 52, 5, 3, 2 * Math.PI); // x, y, Größe
+            crc2.arc(this.x + 30, this.y + 252, 5, 3, 2 * Math.PI); // x, y, Größe
             crc2.fillStyle = this.color;
             crc2.fill();
 
             // Schlitten
             crc2.beginPath();
-            crc2.moveTo(this.x + 45, this.y + 66);
-            crc2.lineTo(this.x + 70, this.y + 75);
+            crc2.moveTo(this.x + 45, this.y + 266);
+            crc2.lineTo(this.x + 70, this.y + 275);
             crc2.strokeStyle = "#AE7F36";
             crc2.lineWidth = 3;
             crc2.stroke();
             crc2.fill();
             crc2.closePath();
             crc2.beginPath();
-            crc2.moveTo(this.x + 60, this.y + 35);
-            crc2.lineTo(this.x + 45, this.y + 67);
+            crc2.moveTo(this.x + 60, this.y + 235);
+            crc2.lineTo(this.x + 45, this.y + 267);
             crc2.strokeStyle = "#AE7F36";
             crc2.lineWidth = 3;
             crc2.stroke();

@@ -1,6 +1,8 @@
 var Aufgabe10;
 (function (Aufgabe10) {
     class Rodler extends Aufgabe10.MovingObject {
+        //        dx: number;
+        //        dy: number;
         constructor(_x, _y) {
             super(_x, _y);
         } // Ende constructor
