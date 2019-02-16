@@ -59,44 +59,51 @@ input {
 }
 
 p {
-    padding: 1%;
-    margin: auto;
-    margin-top: 5%;
-    margin-bottom: 5%;
-    width: 200px;
-    text-align: center;
-    background-color: #e6e6e6;
+	padding: 1%;
+	margin: auto;
+	margin-top: 5%;
+	margin-bottom: 5%;
+	width: 200px;
+	text-align: center;
+	background-color: #e6e6e6;
 }
 
 #retry, #button, #endscore, #name, #time {
-    text-align: center;
-    width: 15%;
-    padding: 2%;
-    cursor: pointer;
-    font-weight: bold;
-    font-size: 150%;
-    background: #3366cc;
-    color: #fff;
-    border: 1px solid #3366cc;
-    border-radius: 10px;
+	text-align: center;
+	width: 15%;
+	padding: 2%;
+	cursor: pointer;
+	font-weight: bold;
+	font-size: 150%;
+	background: #3366cc;
+	color: #fff;
+	border: 1px solid #3366cc;
+	border-radius: 10px;
 }
 
 #endscore {
-    text-align: center;
-    width: 15%;
-    padding: 2%;
-    cursor: none;
-    font-weight: bold;
-    font-size: 150%;
-    background: #3366cc;
-    color: #ffffff;
-    border-radius: 10px;
-    margin: auto;
+	text-align: center;
+	width: 15%;
+	padding: 2%;
+	cursor: none;
+	font-weight: bold;
+	font-size: 150%;
+	background: #3366cc;
+	color: #ffffff;
+	border-radius: 10px;
+	margin: auto;
 }
 
 canvas {
 	width: max-width;
 	height: max-height;
+}
+
+@media screen {
+	html {
+		width: max-width;
+		height: max-height;
+	}
 }
 
 /* @media screen and (min-width: 35em) { */
