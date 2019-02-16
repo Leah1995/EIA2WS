@@ -96,6 +96,7 @@ p {
 
 canvas {
 	width: max-width;
+	height: max-height;
 }
 
 /* @media screen and (min-width: 35em) { */
