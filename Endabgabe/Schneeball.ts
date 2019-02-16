@@ -8,7 +8,7 @@ namespace Endabgabe {
         } // Ende radius
 
         moving(): void {
-            this.radius -= 7;
+            this.radius -= 3;
         } // Ende move
 
         draw(): void {

@@ -6,7 +6,7 @@ var Endabgabe;
             this.radius = 20;
         } // Ende radius
         moving() {
-            this.radius -= 7;
+            this.radius -= 3;
         } // Ende move
         draw() {
             Endabgabe.crc2.beginPath();
