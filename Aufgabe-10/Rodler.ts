@@ -86,7 +86,7 @@ namespace Aufgabe10 {
 
         // zufällige Farbe
         setRandomColor(): void {
-            this.color = "hsl(" + Math.random() * 250 + ", 90%, 50%)";
+            this.color = "hsl(" + Math.random() * 360 + ", 100%, 30%)";
         } // Ende setRandomColor
 
     } // Ende export class

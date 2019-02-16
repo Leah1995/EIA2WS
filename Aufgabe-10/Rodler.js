@@ -76,7 +76,7 @@ var Aufgabe10;
         } // Ende draw
         // zuf�llige Farbe
         setRandomColor() {
-            this.color = "hsl(" + Math.random() * 250 + ", 90%, 50%)";
+            this.color = "hsl(" + Math.random() * 360 + ", 100%, 30%)";
         } // Ende setRandomColor
     }
     Aufgabe10.Rodler = Rodler; // Ende export class

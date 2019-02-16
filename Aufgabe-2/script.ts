@@ -13,15 +13,15 @@ namespace DynHTML_Uno {
             green: number;
         }
 
-        //        // Ziehstapel
-        //        let c0: Cards = {
-        //            name: "0",
-        //            blue: 0,
-        //            yellow: 0,
-        //            red: 0,
-        //            green: 0
-        //        }
-        // console.log(Ziehkarten)
+        // Ziehstapel
+        let c0: Cards = {
+            name: "0",
+            blue: 0,
+            yellow: 0,
+            red: 0,
+            green: 0
+        };
+        //         console.log(Ziehkarten);
 
         // Karten von 1 - 9
         let c1: Cards = {

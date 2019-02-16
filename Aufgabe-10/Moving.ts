@@ -12,13 +12,13 @@ namespace Aufgabe10 {
             this.setRandomColor();
             this.x = _x;
             this.y = _y;
-        }
+        } // Ende constructor
 
         update(): void {
             this.moving();
             this.return();
             this.draw();
-        }
+        } // Ende update
 
         moving(): void {/* vorher definiert */}
         return(): void {/* vorher definiert */}
