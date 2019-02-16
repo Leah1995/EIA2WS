@@ -120,7 +120,7 @@ namespace Endabgabe {
         } // Ende if Bedingung
         crc2.putImageData(imagedata, 0, 0);
         window.setTimeout(update, 1000 / fps); // Geschwindigkeit
-        crc2.font = "40px Arial";
+        crc2.font = "100% Arial";
         crc2.fillStyle = "black";
         crc2.fillText("Points:" + " " + point + " Time:" + " " + zeit, 50, 590); // Position
         if (schneeball) {

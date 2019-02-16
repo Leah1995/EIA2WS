@@ -101,7 +101,7 @@ var Endabgabe;
         } // Ende if Bedingung
         Endabgabe.crc2.putImageData(imagedata, 0, 0);
         window.setTimeout(update, 1000 / fps); // Geschwindigkeit
-        Endabgabe.crc2.font = "40px Arial";
+        Endabgabe.crc2.font = "100% Arial";
         Endabgabe.crc2.fillStyle = "black";
         Endabgabe.crc2.fillText("Points:" + " " + Endabgabe.point + " Time:" + " " + zeit, 50, 590); // Position
         if (schneeball) {

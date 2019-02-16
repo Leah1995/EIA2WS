@@ -98,21 +98,3 @@ canvas {
 	width: max-width;
 	height: max-height;
 }
-
-
-/* @media screen and (min-width: 35em) { */
-/* 	canvas { */
-/* 		width: 10%; */
-/* 	} */
-/* 	@media screen and (min-width: 48em) { */
-/* 		canvas { */
-/* 			width: 10%; */
-/* 		} */
-/* 		@media screen and (min-width: 64em) { */
-/* 			canvas { */
-/* 				height: 10%; */
-/* 				width: 10%; */
-/* 			} */
-/* 		} */
-/* 	} */
-/* } */
