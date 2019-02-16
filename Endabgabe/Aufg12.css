@@ -109,7 +109,7 @@ canvas {
 		@media screen and (min-width: 64em) {
 			canvas {
 				height: 100%;
-				width: 30%;
+				width: 100%;
 			}
 		}
 	}
