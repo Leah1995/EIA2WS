@@ -4,11 +4,11 @@ namespace Endabgabe {
         radius: number;
         constructor() {
             super();
-            this.radius = 25;
+            this.radius = 20;
         } // Ende radius
 
         moving(): void {
-            this.radius -= 5;
+            this.radius -= 7;
         } // Ende move
 
         draw(): void {

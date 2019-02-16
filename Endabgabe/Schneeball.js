@@ -3,10 +3,10 @@ var Endabgabe;
     class Schneeball extends Endabgabe.MovingObject {
         constructor() {
             super();
-            this.radius = 25;
+            this.radius = 20;
         } // Ende radius
         moving() {
-            this.radius -= 5;
+            this.radius -= 7;
         } // Ende move
         draw() {
             Endabgabe.crc2.beginPath();
