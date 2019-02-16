@@ -99,12 +99,6 @@ canvas {
 	height: max-height;
 }
 
-@media screen {
-	html {
-		width: max-width;
-		height: max-height;
-	}
-}
 
 /* @media screen and (min-width: 35em) { */
 /* 	canvas { */
