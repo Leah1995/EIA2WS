@@ -99,7 +99,6 @@ namespace Endabgabe {
 
     // Schneeball
     function throwSnowball(_event: TouchEvent): void {
-        _event.preventDefault();
         if (!schneeball) {
             schneeball = new Schneeball();
             schneeball.xP = _event.touches[0].pageX;

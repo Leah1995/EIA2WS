@@ -11,7 +11,7 @@ var Endabgabe;
         draw() {
             Endabgabe.crc2.beginPath();
             Endabgabe.crc2.arc(this.xP, this.yP, this.radius, 0, 2 * Math.PI, false);
-            Endabgabe.crc2.fillStyle = "#FFFFFF";
+            Endabgabe.crc2.fillStyle = "#D1DFDE";
             Endabgabe.crc2.fill();
         } // Ende draw
     }

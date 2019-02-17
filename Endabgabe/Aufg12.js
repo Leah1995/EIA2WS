@@ -80,7 +80,6 @@ var Endabgabe;
     canvas.addEventListener("touchstart", throwSnowball);
     // Schneeball
     function throwSnowball(_event) {
-        _event.preventDefault();
         if (!schneeball) {
             schneeball = new Endabgabe.Schneeball();
             schneeball.xP = _event.touches[0].pageX;
