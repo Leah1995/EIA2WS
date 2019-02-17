@@ -15,15 +15,16 @@ namespace Endabgabe {
     function resultscreen(): void {
         document.getElementById("endscore").innerText = point.toString();
         document.getElementById("endscore").setAttribute("value", point.toString());
-        document.getElementById("retry").style.display = "initial";
-        document.getElementById("retry").addEventListener("click", game);
+        let spielstartButton: HTMLElement = document.getElementById("myButton");
+        spielstartButton.addEventListener("touchstart", game);
+
     } // Ende resultscreen
-    
+
     // Init
     function init(): void {
         document.getElementById("Endbildschirm").hidden = true;
         let spielstartButton: HTMLElement = document.getElementById("myButton");
-        spielstartButton.addEventListener("click", game);
+        spielstartButton.addEventListener("touchstart", game);
     } // Ende init
 
     // beim Spielstart Anzeigen vom Anfang verstecken
@@ -39,7 +40,7 @@ namespace Endabgabe {
 
             let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
             crc2 = canvas.getContext("2d");
-            canvas.addEventListener("click", throwSnowball);
+            canvas.addEventListener("touchstart", throwSnowball);
 
             // Funktionen
             drawSky();
@@ -94,18 +95,15 @@ namespace Endabgabe {
     } // Ende rodlerHit
 
     let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
-    canvas.addEventListener("click", throwSnowball);
-    
+    canvas.addEventListener("touchstart", throwSnowball);
+
     // Schneeball
-    function throwSnowball(_event: MouseEvent): void {
+    function throwSnowball(_event: TouchEvent): void {
         _event.preventDefault();
         if (!schneeball) {
-            let x: number = _event.clientX;
-            let y: number = _event.clientY;
             schneeball = new Schneeball();
-//            schneeball.xP = 
-//            schneeball.yP = _event.clientY;
-//            schneeball.x = x;
+            schneeball.xP = _event.touches[0].pageX;
+            schneeball.yP = _event.touches[0].pageY;
             console.log(schneeball);
             objects.push(schneeball);
         }  // Ende if Bedingung
@@ -119,13 +117,14 @@ namespace Endabgabe {
         document.getElementsByTagName("header")[0].hidden = true;
         crc2 = canvas.getContext("2d");
         document.getElementById("endscore").innerText = point.toString();
-//        (point);
+        //        (point);
     } // Ende Game
 
     // Punkteanzeige
     function update(): void {
         if (fps == 0) {
             zeit--;
+            fps = 26;
         } // Ende if Bedingung
         crc2.putImageData(imagedata, 0, 0);
         window.setTimeout(update, 1000 / fps); // Geschwindigkeit
@@ -144,7 +143,7 @@ namespace Endabgabe {
         } // Ende for Schleife
     } // Endeupdate
 
-     // Himmel
+    // Himmel
     function drawSky(): void {
         crc2.fillStyle = "#4E8FF7";
         crc2.fillRect(0, 0, 400, 600);
@@ -249,7 +248,7 @@ namespace Endabgabe {
         crc2.fillStyle = "#F4F74B";
         crc2.fill();
     } // Ende Sonne
-    
+
     // Baum 1
     function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
         // Stamm

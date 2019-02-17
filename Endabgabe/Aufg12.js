@@ -11,14 +11,14 @@ var Endabgabe;
     function resultscreen() {
         document.getElementById("endscore").innerText = Endabgabe.point.toString();
         document.getElementById("endscore").setAttribute("value", Endabgabe.point.toString());
-        document.getElementById("retry").style.display = "initial";
-        document.getElementById("retry").addEventListener("click", game);
+        let spielstartButton = document.getElementById("myButton");
+        spielstartButton.addEventListener("touchstart", game);
     } // Ende resultscreen
     // Init
     function init() {
         document.getElementById("Endbildschirm").hidden = true;
         let spielstartButton = document.getElementById("myButton");
-        spielstartButton.addEventListener("click", game);
+        spielstartButton.addEventListener("touchstart", game);
     } // Ende init
     // beim Spielstart Anzeigen vom Anfang verstecken
     function game(_event) {
@@ -31,7 +31,7 @@ var Endabgabe;
             document.getElementById("myButton").hidden = true;
             let canvas = document.getElementsByTagName("canvas")[0];
             Endabgabe.crc2 = canvas.getContext("2d");
-            canvas.addEventListener("click", throwSnowball);
+            canvas.addEventListener("touchstart", throwSnowball);
             // Funktionen
             drawSky();
             drawSchneelandschaft();
@@ -77,17 +77,14 @@ var Endabgabe;
         } // Ende if Bedingung
     } // Ende rodlerHit
     let canvas = document.getElementsByTagName("canvas")[0];
-    canvas.addEventListener("click", throwSnowball);
+    canvas.addEventListener("touchstart", throwSnowball);
     // Schneeball
     function throwSnowball(_event) {
         _event.preventDefault();
         if (!schneeball) {
-            let x = _event.clientX;
-            let y = _event.clientY;
             schneeball = new Endabgabe.Schneeball();
-            //            schneeball.xP = 
-            //            schneeball.yP = _event.clientY;
-            //            schneeball.x = x;
+            schneeball.xP = _event.touches[0].pageX;
+            schneeball.yP = _event.touches[0].pageY;
             console.log(schneeball);
             objects.push(schneeball);
         } // Ende if Bedingung
@@ -106,6 +103,7 @@ var Endabgabe;
     function update() {
         if (fps == 0) {
             zeit--;
+            fps = 26;
         } // Ende if Bedingung
         Endabgabe.crc2.putImageData(imagedata, 0, 0);
         window.setTimeout(update, 1000 / fps); // Geschwindigkeit
