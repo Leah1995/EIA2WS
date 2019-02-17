@@ -31,7 +31,7 @@ var Endabgabe;
             document.getElementById("myButton").hidden = true;
             let canvas = document.getElementsByTagName("canvas")[0];
             Endabgabe.crc2 = canvas.getContext("2d");
-            canvas.addEventListener("touchstart", throwSnowball);
+            canvas.addEventListener("click", throwSnowball);
             // Funktionen
             drawSky();
             drawSchneelandschaft();
@@ -55,7 +55,7 @@ var Endabgabe;
                 if (objects[i] instanceof Endabgabe.Rodler) {
                     if (hiddenRodler(i)) {
                         objects[i].hitRodler = true;
-                        Endabgabe.point += 100;
+                        Endabgabe.point -= 100;
                         break;
                     } // Ende if Bedingung
                 } // Ende if Bedingung
@@ -76,13 +76,19 @@ var Endabgabe;
             } // Ende if Bedingung
         } // Ende if Bedingung
     } // Ende rodlerHit
+    let canvas = document.getElementsByTagName("canvas")[0];
+    canvas.addEventListener("click", throwSnowball);
     // Schneeball
     function throwSnowball(_event) {
         _event.preventDefault();
         if (!schneeball) {
+            let x = _event.clientX;
+            let y = _event.clientY;
             schneeball = new Endabgabe.Schneeball();
-            schneeball.xP = _event.touches[0].pageX;
-            schneeball.yP = _event.touches[0].pageY;
+            //            schneeball.xP = 
+            //            schneeball.yP = _event.clientY;
+            //            schneeball.x = x;
+            console.log(schneeball);
             objects.push(schneeball);
         } // Ende if Bedingung
     } // Ende Schneeball
@@ -91,8 +97,10 @@ var Endabgabe;
         let canvas = document.getElementsByTagName("canvas")[0];
         canvas.hidden = true;
         document.getElementById("Endbildschirm").hidden = false;
-        document.getElementsByTagName("h1")[0].hidden = true;
+        document.getElementsByTagName("header")[0].hidden = true;
         Endabgabe.crc2 = canvas.getContext("2d");
+        document.getElementById("endscore").innerText = Endabgabe.point.toString();
+        //        (point);
     } // Ende Game
     // Punkteanzeige
     function update() {
@@ -114,74 +122,6 @@ var Endabgabe;
             object.moving();
         } // Ende for Schleife
     } // Endeupdate
-    // Baum 1
-    function drawBaum1(_x, _y, _trunkColor, _topColor) {
-        // Stamm
-        Endabgabe.crc2.beginPath();
-        Endabgabe.crc2.moveTo(_x, _y);
-        Endabgabe.crc2.lineTo(_x + 15, _y + 160);
-        Endabgabe.crc2.lineTo(_x - 15, _y + 160);
-        Endabgabe.crc2.closePath();
-        Endabgabe.crc2.fillStyle = _trunkColor;
-        Endabgabe.crc2.fillRect(_x - 5, _y + 310, 8, 23);
-        // Baumkrone
-        Endabgabe.crc2.beginPath();
-        Endabgabe.crc2.moveTo(_x + 15, _y + 320);
-        Endabgabe.crc2.lineTo(_x - 15, _y + 320);
-        Endabgabe.crc2.lineTo(_x, _y + 290);
-        Endabgabe.crc2.closePath();
-        Endabgabe.crc2.fillStyle = _topColor;
-        Endabgabe.crc2.fill();
-    } // Ende function drawBaum1
-    // Baum 2
-    function drawBaum2(_x, _y, _trunkColor, _topColor) {
-        // Stamm
-        Endabgabe.crc2.beginPath();
-        Endabgabe.crc2.moveTo(_x, _y);
-        Endabgabe.crc2.lineTo(_x + 30, _y - 135);
-        Endabgabe.crc2.lineTo(_x - 30, _y - 135);
-        Endabgabe.crc2.fillStyle = _trunkColor;
-        Endabgabe.crc2.fillRect(_x - 4, _y + 300, 5, 15);
-        Endabgabe.crc2.closePath();
-        // Baumkrone
-        Endabgabe.crc2.beginPath();
-        Endabgabe.crc2.moveTo(_x + 10, _y + 300);
-        Endabgabe.crc2.lineTo(_x - 10, _y + 300);
-        Endabgabe.crc2.lineTo(_x, _y + 260);
-        Endabgabe.crc2.closePath();
-        Endabgabe.crc2.fillStyle = _topColor;
-        Endabgabe.crc2.fill();
-    } // Ende function drawBaum2
-    console.log(drawBaum1);
-    // B�ume zuf�llig hinstellen
-    function generateBaum() {
-        for (let i = 0; i < 10; i++) {
-            let randomX = (Math.random() * (400 - 1)) + 1;
-            let randomY = (Math.random() * (250 - 150)) + 150;
-            let randomBaum1 = Math.floor((Math.random() * 2)) + 1;
-            console.log("X is " + randomX, "Y is " + randomY, randomBaum1);
-            if (randomBaum1 == 1) {
-                drawBaum1(randomX, randomY, "#cc9966", "#44d271");
-            } // Ende if Bedingung
-            else {
-                drawBaum2(randomX, randomY, "#4c2e0a", "#00514c");
-            }
-        } // Ende for Schleife
-    } // Ende function generateBaum
-    // Schneeflocken
-    function generateSchnee() {
-        for (let i = 0; i < 50; i++) {
-            let snowflake = new Endabgabe.Snow();
-            objects.push(snowflake);
-        } // Ende for Schleife
-    } // Ende generateSnow
-    // Rodler
-    function generateRodler() {
-        for (let i = 0; i < 10; i++) {
-            let child = new Endabgabe.Rodler();
-            objects.push(child);
-        } // Ende for Schleife
-    } // Ende generateChild
     // Himmel
     function drawSky() {
         Endabgabe.crc2.fillStyle = "#4E8FF7";
@@ -283,6 +223,74 @@ var Endabgabe;
         Endabgabe.crc2.fillStyle = "#F4F74B";
         Endabgabe.crc2.fill();
     } // Ende Sonne
+    // Baum 1
+    function drawBaum1(_x, _y, _trunkColor, _topColor) {
+        // Stamm
+        Endabgabe.crc2.beginPath();
+        Endabgabe.crc2.moveTo(_x, _y);
+        Endabgabe.crc2.lineTo(_x + 15, _y + 160);
+        Endabgabe.crc2.lineTo(_x - 15, _y + 160);
+        Endabgabe.crc2.closePath();
+        Endabgabe.crc2.fillStyle = _trunkColor;
+        Endabgabe.crc2.fillRect(_x - 5, _y + 310, 8, 23);
+        // Baumkrone
+        Endabgabe.crc2.beginPath();
+        Endabgabe.crc2.moveTo(_x + 15, _y + 320);
+        Endabgabe.crc2.lineTo(_x - 15, _y + 320);
+        Endabgabe.crc2.lineTo(_x, _y + 290);
+        Endabgabe.crc2.closePath();
+        Endabgabe.crc2.fillStyle = _topColor;
+        Endabgabe.crc2.fill();
+    } // Ende function drawBaum1
+    // Baum 2
+    function drawBaum2(_x, _y, _trunkColor, _topColor) {
+        // Stamm
+        Endabgabe.crc2.beginPath();
+        Endabgabe.crc2.moveTo(_x, _y);
+        Endabgabe.crc2.lineTo(_x + 30, _y - 135);
+        Endabgabe.crc2.lineTo(_x - 30, _y - 135);
+        Endabgabe.crc2.fillStyle = _trunkColor;
+        Endabgabe.crc2.fillRect(_x - 4, _y + 300, 5, 15);
+        Endabgabe.crc2.closePath();
+        // Baumkrone
+        Endabgabe.crc2.beginPath();
+        Endabgabe.crc2.moveTo(_x + 10, _y + 300);
+        Endabgabe.crc2.lineTo(_x - 10, _y + 300);
+        Endabgabe.crc2.lineTo(_x, _y + 260);
+        Endabgabe.crc2.closePath();
+        Endabgabe.crc2.fillStyle = _topColor;
+        Endabgabe.crc2.fill();
+    } // Ende function drawBaum2
+    console.log(drawBaum1);
+    // B�ume zuf�llig hinstellen
+    function generateBaum() {
+        for (let i = 0; i < 10; i++) {
+            let randomX = (Math.random() * (400 - 1)) + 1;
+            let randomY = (Math.random() * (250 - 150)) + 150;
+            let randomBaum1 = Math.floor((Math.random() * 2)) + 1;
+            console.log("X is " + randomX, "Y is " + randomY, randomBaum1);
+            if (randomBaum1 == 1) {
+                drawBaum1(randomX, randomY, "#cc9966", "#44d271");
+            } // Ende if Bedingung
+            else {
+                drawBaum2(randomX, randomY, "#4c2e0a", "#00514c");
+            }
+        } // Ende for Schleife
+    } // Ende function generateBaum
+    // Schneeflocken
+    function generateSchnee() {
+        for (let i = 0; i < 50; i++) {
+            let snowflake = new Endabgabe.Snow();
+            objects.push(snowflake);
+        } // Ende for Schleife
+    } // Ende generateSnow
+    // Rodler
+    function generateRodler() {
+        for (let i = 0; i < 10; i++) {
+            let child = new Endabgabe.Rodler();
+            objects.push(child);
+        } // Ende for Schleife
+    } // Ende generateChild
     // Animation
     function animate() {
         console.log("Timeout");

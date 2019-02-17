@@ -39,7 +39,7 @@ namespace Endabgabe {
 
             let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
             crc2 = canvas.getContext("2d");
-            canvas.addEventListener("touchstart", throwSnowball);
+            canvas.addEventListener("click", throwSnowball);
 
             // Funktionen
             drawSky();
@@ -69,7 +69,7 @@ namespace Endabgabe {
                 if (objects[i] instanceof Rodler) {
                     if (hiddenRodler(i)) {
                         objects[i].hitRodler = true;
-                        point += 100;
+                        point -= 100;
                         break;
                     } // Ende if Bedingung
                 } // Ende if Bedingung
@@ -93,13 +93,20 @@ namespace Endabgabe {
         } // Ende if Bedingung
     } // Ende rodlerHit
 
+    let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
+    canvas.addEventListener("click", throwSnowball);
+    
     // Schneeball
-    function throwSnowball(_event: TouchEvent): void {
+    function throwSnowball(_event: MouseEvent): void {
         _event.preventDefault();
         if (!schneeball) {
+            let x: number = _event.clientX;
+            let y: number = _event.clientY;
             schneeball = new Schneeball();
-            schneeball.xP = _event.touches[0].pageX;
-            schneeball.yP = _event.touches[0].pageY;
+//            schneeball.xP = 
+//            schneeball.yP = _event.clientY;
+//            schneeball.x = x;
+            console.log(schneeball);
             objects.push(schneeball);
         }  // Ende if Bedingung
     } // Ende Schneeball
@@ -109,8 +116,10 @@ namespace Endabgabe {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         canvas.hidden = true;
         document.getElementById("Endbildschirm").hidden = false;
-        document.getElementsByTagName("h1")[0].hidden = true;
+        document.getElementsByTagName("header")[0].hidden = true;
         crc2 = canvas.getContext("2d");
+        document.getElementById("endscore").innerText = point.toString();
+//        (point);
     } // Ende Game
 
     // Punkteanzeige
@@ -135,81 +144,7 @@ namespace Endabgabe {
         } // Ende for Schleife
     } // Endeupdate
 
-    // Baum 1
-    function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
-        // Stamm
-        crc2.beginPath();
-        crc2.moveTo(_x, _y);
-        crc2.lineTo(_x + 15, _y + 160);
-        crc2.lineTo(_x - 15, _y + 160);
-        crc2.closePath();
-        crc2.fillStyle = _trunkColor;
-        crc2.fillRect(_x - 5, _y + 310, 8, 23);
-        // Baumkrone
-        crc2.beginPath();
-        crc2.moveTo(_x + 15, _y + 320);
-        crc2.lineTo(_x - 15, _y + 320);
-        crc2.lineTo(_x, _y + 290);
-        crc2.closePath();
-        crc2.fillStyle = _topColor;
-        crc2.fill();
-    } // Ende function drawBaum1
-
-    // Baum 2
-    function drawBaum2(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
-        // Stamm
-        crc2.beginPath();
-        crc2.moveTo(_x, _y);
-        crc2.lineTo(_x + 30, _y - 135);
-        crc2.lineTo(_x - 30, _y - 135);
-        crc2.fillStyle = _trunkColor;
-        crc2.fillRect(_x - 4, _y + 300, 5, 15);
-        crc2.closePath();
-        // Baumkrone
-        crc2.beginPath();
-        crc2.moveTo(_x + 10, _y + 300);
-        crc2.lineTo(_x - 10, _y + 300);
-        crc2.lineTo(_x, _y + 260);
-        crc2.closePath();
-        crc2.fillStyle = _topColor;
-        crc2.fill();
-    } // Ende function drawBaum2
-
-    console.log(drawBaum1);
-
-    // Bäume zufällig hinstellen
-    function generateBaum(): void {
-        for (let i: number = 0; i < 10; i++) {
-            let randomX: number = (Math.random() * (400 - 1)) + 1;
-            let randomY: number = (Math.random() * (250 - 150)) + 150;
-            let randomBaum1: number = Math.floor((Math.random() * 2)) + 1;
-            console.log("X is " + randomX, "Y is " + randomY, randomBaum1);
-            if (randomBaum1 == 1) {
-                drawBaum1(randomX, randomY, "#cc9966", "#44d271");
-            } // Ende if Bedingung
-            else {
-                drawBaum2(randomX, randomY, "#4c2e0a", "#00514c");
-            }
-        } // Ende for Schleife
-    } // Ende function generateBaum
-
-    // Schneeflocken
-    function generateSchnee(): void {
-        for (let i: number = 0; i < 50; i++) {
-            let snowflake: Snow = new Snow();
-            objects.push(snowflake);
-        } // Ende for Schleife
-    } // Ende generateSnow
-
-    // Rodler
-    function generateRodler(): void {
-        for (let i: number = 0; i < 10; i++) {
-            let child: Rodler = new Rodler();
-            objects.push(child);
-        } // Ende for Schleife
-    } // Ende generateChild
-
-    // Himmel
+     // Himmel
     function drawSky(): void {
         crc2.fillStyle = "#4E8FF7";
         crc2.fillRect(0, 0, 400, 600);
@@ -314,6 +249,80 @@ namespace Endabgabe {
         crc2.fillStyle = "#F4F74B";
         crc2.fill();
     } // Ende Sonne
+    
+    // Baum 1
+    function drawBaum1(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
+        // Stamm
+        crc2.beginPath();
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x + 15, _y + 160);
+        crc2.lineTo(_x - 15, _y + 160);
+        crc2.closePath();
+        crc2.fillStyle = _trunkColor;
+        crc2.fillRect(_x - 5, _y + 310, 8, 23);
+        // Baumkrone
+        crc2.beginPath();
+        crc2.moveTo(_x + 15, _y + 320);
+        crc2.lineTo(_x - 15, _y + 320);
+        crc2.lineTo(_x, _y + 290);
+        crc2.closePath();
+        crc2.fillStyle = _topColor;
+        crc2.fill();
+    } // Ende function drawBaum1
+
+    // Baum 2
+    function drawBaum2(_x: number, _y: number, _trunkColor: string, _topColor: string): void {
+        // Stamm
+        crc2.beginPath();
+        crc2.moveTo(_x, _y);
+        crc2.lineTo(_x + 30, _y - 135);
+        crc2.lineTo(_x - 30, _y - 135);
+        crc2.fillStyle = _trunkColor;
+        crc2.fillRect(_x - 4, _y + 300, 5, 15);
+        crc2.closePath();
+        // Baumkrone
+        crc2.beginPath();
+        crc2.moveTo(_x + 10, _y + 300);
+        crc2.lineTo(_x - 10, _y + 300);
+        crc2.lineTo(_x, _y + 260);
+        crc2.closePath();
+        crc2.fillStyle = _topColor;
+        crc2.fill();
+    } // Ende function drawBaum2
+
+    console.log(drawBaum1);
+
+    // Bäume zufällig hinstellen
+    function generateBaum(): void {
+        for (let i: number = 0; i < 10; i++) {
+            let randomX: number = (Math.random() * (400 - 1)) + 1;
+            let randomY: number = (Math.random() * (250 - 150)) + 150;
+            let randomBaum1: number = Math.floor((Math.random() * 2)) + 1;
+            console.log("X is " + randomX, "Y is " + randomY, randomBaum1);
+            if (randomBaum1 == 1) {
+                drawBaum1(randomX, randomY, "#cc9966", "#44d271");
+            } // Ende if Bedingung
+            else {
+                drawBaum2(randomX, randomY, "#4c2e0a", "#00514c");
+            }
+        } // Ende for Schleife
+    } // Ende function generateBaum
+
+    // Schneeflocken
+    function generateSchnee(): void {
+        for (let i: number = 0; i < 50; i++) {
+            let snowflake: Snow = new Snow();
+            objects.push(snowflake);
+        } // Ende for Schleife
+    } // Ende generateSnow
+
+    // Rodler
+    function generateRodler(): void {
+        for (let i: number = 0; i < 10; i++) {
+            let child: Rodler = new Rodler();
+            objects.push(child);
+        } // Ende for Schleife
+    } // Ende generateChild
 
     // Animation
     function animate(): void {
