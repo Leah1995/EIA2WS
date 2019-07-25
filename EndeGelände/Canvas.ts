@@ -7,14 +7,13 @@ namespace Ende {
     export let point: number = 0;
 
 
-
     // Initialisierung
     function init(): void {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
         document.getElementById("Endbildschirm").hidden = true;
         window.setTimeout(timer, 60000); // ~ 1 Min
-
+        
 
         // Bewegte Objekte
         //Schleife Spielerfisch
@@ -25,13 +24,13 @@ namespace Ende {
 
         //Schleife Fisch
         for (let i: number = 0; i < 5; i++) {
-            let s: Fisch = new Fisch(Math.random() * canvas.width - 0.1, Math.random() * canvas.height); // Startpunkt
+            let s: Fisch = new Fisch(Math.random() * canvas.width - 0.1, Math.random()*0.7 * canvas.height+50); // Startpunkt
             object.push(s);
         } // Ende for Schleife
 
         //Schleife Fisch2
         for (let i: number = 0; i < 5; i++) {
-            let s: Fisch2 = new Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height); // Startpunkt
+            let s: Fisch2 = new Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height-75); // Startpunkt
             object.push(s);
         } // Ende for Schleife
 

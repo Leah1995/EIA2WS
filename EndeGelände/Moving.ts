@@ -7,7 +7,8 @@ namespace Ende {
         color: string;
         dx: number;
         dy: number;
-
+        exists: boolean = true;
+        
         constructor(_x: number, _y: number) {
             this.setRandomColor();
             this.x = _x;

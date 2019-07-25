@@ -15,6 +15,7 @@ namespace Ende {
         } // Ende update
 
         moving(): void {
+            
             this.x += Math.random() * 5 + 10;
             this.y += Math.random() * 0;
         } // Ende moving

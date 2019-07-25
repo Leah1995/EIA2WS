@@ -18,12 +18,12 @@ var Ende;
         } // Ende for Schleife
         //Schleife Fisch
         for (let i = 0; i < 5; i++) {
-            let s = new Ende.Fisch(Math.random() * canvas.width - 0.1, Math.random() * canvas.height); // Startpunkt
+            let s = new Ende.Fisch(Math.random() * canvas.width - 0.1, Math.random() * 0.7 * canvas.height + 50); // Startpunkt
             Ende.object.push(s);
         } // Ende for Schleife
         //Schleife Fisch2
         for (let i = 0; i < 5; i++) {
-            let s = new Ende.Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height); // Startpunkt
+            let s = new Ende.Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height - 75); // Startpunkt
             Ende.object.push(s);
         } // Ende for Schleife
         //Schleife Blasen 

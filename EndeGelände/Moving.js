@@ -2,6 +2,7 @@ var Ende;
 (function (Ende) {
     class MovingObject {
         constructor(_x, _y) {
+            this.exists = true;
             this.setRandomColor();
             this.x = _x;
             this.y = _y;

@@ -3,7 +3,7 @@ namespace Ende {
     export class Mainfish extends MovingObject {
         dx: number;
         dy: number;
-        size: number = 0;
+        size: number = 10;
         fischElement: Fisch;
         constructor(_x: number, _y: number) {
             super(_x, _y);
@@ -22,10 +22,10 @@ namespace Ende {
             else if (leftKey == true && object[0].x > 0) {
                 this.x -= 10;
             }
-            else if (upKey == true && object[0].y > 0 && object[0].y - 1 < crc2.canvas.height) { // GRENZEN FUNKTIONIEREN NOCH NCHT
+            else if (upKey == true && object[0].y > 0) { // GRENZEN FUNKTIONIEREN NOCH NCHT
                 this.y -= 10;
             }
-            else if (downKey == true && object[0].y > 0 && object[0].y - 8 < crc2.canvas.height) {
+            else if (downKey == true && object[0].y - 8 < crc2.canvas.height) {
                 this.y += 10;
             }
             this.collision();
@@ -37,21 +37,36 @@ namespace Ende {
 
                 if (element instanceof Fisch)
                     if ((Math.abs(element.x - object[0].x) < 100) && (Math.abs(element.y - object[0].y) < 100)) {
-                        //alert("BBB");
-                        //                    document.getElementById("Endbildschirm").hidden = true;
-                        //                    return;
+                        //alert("AAA");
+                        //this.removeAlle();
+                        document.getElementById("Endbildschirm").hidden = false;
+                        return;
                     }
 
                 if (element instanceof Fisch2)
                     if ((Math.abs(element.x - object[0].x) < 100) && (Math.abs(element.y - object[0].y) < 100)) {
-                        //object.splice(object.indexOf(element));
+                        element.exists = false;
+                        object.splice(object.indexOf(element), 1);
                         object[0].size += 1;
+                        point += 1;
+                        console.log(point);
+
+                        document.getElementById("endscore").innerHTML = point.toString();
                         return;
                     }
             });
             return;
         }
-
+//        removeAlle(): void {
+//            //            alert("CCC");
+//            object.forEach(function(element: MovingObject) {
+//                if (!(element instanceof Bubbles)) {
+//                    alert(element.exists);
+//                    object.splice(object.indexOf(element), 1);
+//                }
+//            });
+//            return;
+//        }
         return(): void {
             if (this.y < 90) { // Endpunkt
             }
@@ -64,25 +79,25 @@ namespace Ende {
         draw(): void {
 
             crc2.beginPath();
-            crc2.arc(this.x + 53, this.y + 45, 40, 0, 2 * Math.PI);
+            crc2.arc(this.x + 53, this.y + 45, 4 * this.size, 0, 2 * Math.PI);
             crc2.fillStyle = "#AC0603";
             crc2.fill();
             crc2.beginPath();
             crc2.moveTo(30, 20);
             //Auge
             crc2.beginPath();
-            crc2.arc(this.x + 25, this.y + 38, 10, 0, 2 * Math.PI);
+            crc2.arc(this.x + 25, this.y + 38, 1 * this.size, 0, 2 * Math.PI);
             crc2.fillStyle = "#ffffff";
             crc2.fill();
             crc2.beginPath();
-            crc2.arc(this.x + 23, this.y + 40, 7, 0, 2 * Math.PI);
+            crc2.arc(this.x + 23, this.y + 40, 0.7 * this.size, 0, 2 * Math.PI);
             crc2.fillStyle = "#000000";
             crc2.fill();
 
             crc2.beginPath();
-            crc2.moveTo(this.x + 130, this.y + 70);
-            crc2.lineTo(this.x + 75, this.y + 45);
-            crc2.lineTo(this.x + 130, this.y + 10);
+            crc2.moveTo(this.x + 60 + this.size * 5, this.y + 70); //unten
+            crc2.lineTo(this.x + 45 + this.size * 4, this.y + 45); // links
+            crc2.lineTo(this.x + 60 + this.size * 5, this.y + 10); //oben 
             crc2.fillStyle = "#AC0603";
             crc2.fill();
 
