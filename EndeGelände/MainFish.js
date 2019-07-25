@@ -30,7 +30,7 @@ var Ende;
                 if (element instanceof Ende.Fisch)
                     if ((Math.abs(element.x - Ende.object[0].x) < 100) && (Math.abs(element.y - Ende.object[0].y) < 100)) {
                         //alert("AAA");
-                        //this.removeAlle();
+                        //this.removeAll();
                         document.getElementById("Endbildschirm").hidden = false;
                         return;
                     }
@@ -47,7 +47,7 @@ var Ende;
             });
             return;
         }
-        //        removeAlle(): void {
+        //        removeAll(): void {
         //            //            alert("CCC");
         //            object.forEach(function(element: MovingObject) {
         //                if (!(element instanceof Bubbles)) {
