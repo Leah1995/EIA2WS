@@ -53,4 +53,4 @@ function findAll(_callback) {
     }
 }
 exports.findAll = findAll;
-//# sourceMappingURL=Database.js.map
+//# sourceMappingURL=database.js.map
