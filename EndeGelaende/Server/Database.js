@@ -2,7 +2,7 @@
 /**
  * Simple database insertion and query for MongoDB
  * @author: Jirka Dell'Oro-Friedl
- * @adapted: Bastian Culig
+ * @adapted: Leah Kappelmann
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 const Mongo = require("mongodb");

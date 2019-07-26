@@ -1,7 +1,7 @@
 /**
  * Simple database insertion and query for MongoDB
  * @author: Jirka Dell'Oro-Friedl
- * @adapted: Bastian Culig
+ * @adapted: Leah Kappelmann
  */
  
 
