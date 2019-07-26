@@ -11,7 +11,7 @@ console.log("Database starting");
 let databaseURL: string = "mongodb://localhost:27017";
 let databaseName: string = "Test";
 let db: Mongo.Db;
-let players: Mongo.Collection;
+let spielerDaten: Mongo.Collection;
 
 // running on heroku?
 if (process.env.NODE_ENV == "production") {
@@ -29,13 +29,13 @@ function handleConnect(_e: Mongo.MongoError, _client: Mongo.MongoClient): void {
     else {
         console.log("Connected to database!");
         db = _client.db(databaseName);
-        players = db.collection("players");
+        spielerDaten = db.collection("spielerDaten");
     }
 }
 
 export function insert(_doc: SpielerPunkte): void {
     // try insertion then activate callback "handleInsert"
-    players.insertOne(_doc, handleInsert);
+    spielerDaten.insertOne(_doc, handleInsert);
 }
 
 // insertion-handler receives an error object as standard parameter
@@ -46,17 +46,17 @@ function handleInsert(_e: Mongo.MongoError): void {
 // try to fetch all documents from database, then activate callback
 export function findAll(_callback: Function): void {
     // cursor points to the retreived set of documents in memory
-    var cursor: Mongo.Cursor = players.find();
+    var cursor: Mongo.Cursor = spielerDaten.find();
     // try to convert to array, then activate callback "prepareAnswer"
     cursor.toArray(prepareAnswer);
 
     // toArray-handler receives two standard parameters, an error object and the array
     // implemented as inner function, so _callback is in scope
-    function prepareAnswer(_e: Mongo.MongoError, playerScoreArray: SpielerPunkte[]): void {
+    function prepareAnswer(_e: Mongo.MongoError, spielerDatenArray: SpielerPunkte[]): void {
         if (_e)
             _callback("Error" + _e);
         else
             // stringify creates a json-string, passed it back to _callback
-            _callback(JSON.stringify(playerScoreArray));
+            _callback(JSON.stringify(spielerDatenArray));
     }
 }

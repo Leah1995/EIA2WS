@@ -1,4 +1,4 @@
-interface Leaderboard {
+interface Bestenliste {
     [key: string]: string;
 }
 

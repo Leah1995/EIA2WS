@@ -254,20 +254,20 @@ var EndeGelaende;
     function handleFindResponse(_event) {
         let xhr = _event.target;
         if (xhr.readyState == XMLHttpRequest.DONE) {
-            let allPlayersArray = JSON.parse(xhr.response);
-            for (let i = 0; i < allPlayersArray.length; i++) {
-                allPlayersArray.sort(sortPlayers);
+            let bestenlisteArray = JSON.parse(xhr.response);
+            for (let i = 0; i < bestenlisteArray.length; i++) {
+                bestenlisteArray.sort(spielerSortieren);
             }
             document.getElementById("bestenliste").innerHTML = "";
             for (let i = 0; i < 10; i++) { //Div Erstellung der Bestenliste
-                let newPlayer = document.createElement("div");
-                document.getElementById("bestenliste").appendChild(newPlayer);
-                newPlayer.setAttribute("id", i.toString());
-                newPlayer.innerHTML = `${i + 1}.Platz: ${allPlayersArray[i].spielerName} : ${allPlayersArray[i].punkte}`;
+                let neuerEintrag = document.createElement("div");
+                document.getElementById("bestenliste").appendChild(neuerEintrag);
+                neuerEintrag.setAttribute("id", i.toString());
+                neuerEintrag.innerHTML = `${i + 1}.Platz ${bestenlisteArray[i].spielerName} : ${bestenlisteArray[i].punkte}`;
             }
         }
     }
-    function sortPlayers(_1, _2) {
+    function spielerSortieren(_1, _2) {
         if (_1.punkte < _2.punkte) {
             return 1;
         }
