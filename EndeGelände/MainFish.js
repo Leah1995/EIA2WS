@@ -4,7 +4,7 @@ var Ende;
         constructor(_x, _y) {
             super(_x, _y);
             this.size = 10;
-        } // Ende c onstructor
+        } // Ende constructor
         update() {
             this.moving();
             this.return();
@@ -27,15 +27,8 @@ var Ende;
         } // Ende moving
         collision() {
             Ende.object.forEach(function (element) {
-                if (element instanceof Ende.Fisch)
-                    if ((Math.abs(element.x - Ende.object[0].x) < 100) && (Math.abs(element.y - Ende.object[0].y) < 100)) {
-                        //alert("AAA");
-                        //this.removeAll();
-                        document.getElementById("Endbildschirm").hidden = false;
-                        return;
-                    }
-                if (element instanceof Ende.Fisch2)
-                    if ((Math.abs(element.x - Ende.object[0].x) < 100) && (Math.abs(element.y - Ende.object[0].y) < 100)) {
+                if (element instanceof Ende.Fisch2) {
+                    if ((Math.abs(element.x - Ende.object[0].x) < 80) && (Math.abs(element.y - Ende.object[0].y) < 80)) {
                         element.exists = false;
                         Ende.object.splice(Ende.object.indexOf(element), 1);
                         Ende.object[0].size += 1;
@@ -44,6 +37,16 @@ var Ende;
                         document.getElementById("endscore").innerHTML = Ende.point.toString();
                         return;
                     }
+                } // Ende if Bedingung
+                if (element instanceof Ende.Fisch) {
+                    if ((Math.abs(element.x - Ende.object[0].x) < 70) && (Math.abs(element.y - Ende.object[0].y) < 70)) {
+                        //alert("AAA");
+                        //this.removeAll();
+                        document.getElementById("Endbildschirm").hidden = false;
+                        document.getElementById("myCanvas").hidden = true;
+                        return;
+                    }
+                } // Ende if Bedingung
             });
             return;
         }
@@ -88,9 +91,9 @@ var Ende;
             Ende.crc2.fillStyle = "#AC0603";
             Ende.crc2.fill();
             // Text
-            Ende.crc2.font = "20px Arial";
+            Ende.crc2.font = "20px Staatliches";
             Ende.crc2.fillStyle = "white";
-            Ende.crc2.fillText("Du", 50, 50);
+            Ende.crc2.fillText("Du", this.x + 50, this.y + 50);
         } // Ende draw
     }
     Ende.Mainfish = Mainfish; // Ende export class

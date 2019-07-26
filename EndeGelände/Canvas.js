@@ -22,7 +22,7 @@ var Ende;
             Ende.object.push(s);
         } // Ende for Schleife
         //Schleife Fisch2
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 10; i++) {
             let s = new Ende.Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height - 75); // Startpunkt
             Ende.object.push(s);
         } // Ende for Schleife
@@ -171,6 +171,7 @@ var Ende;
         // Geschwindigkeit
         window.setTimeout(animate, 100);
     } // Ende function animate
+    // Tastenfunktionen 
     Ende.rightKey = false;
     Ende.leftKey = false;
     Ende.upKey = false;
@@ -181,10 +182,12 @@ var Ende;
     document.addEventListener("keyright", handleKeyPress, false);
     document.addEventListener("keyleft", handleKeyRelease, false);
     document.addEventListener("DOMContentLoaded", function () {
+        // Namensprompt
         var name;
         name = prompt("Dein Name bitte", "Anonym");
         console.log("Name:", name);
     });
+    // Tastenbedingungen
     function handleKeyPress(_event) {
         if (_event.keyCode == 39) {
             Ende.rightKey = true;

@@ -6,14 +6,12 @@ namespace Ende {
     export let name: string;
     export let point: number = 0;
 
-
     // Initialisierung
     function init(): void {
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
         document.getElementById("Endbildschirm").hidden = true;
         window.setTimeout(timer, 60000); // ~ 1 Min
-        
 
         // Bewegte Objekte
         //Schleife Spielerfisch
@@ -24,13 +22,13 @@ namespace Ende {
 
         //Schleife Fisch
         for (let i: number = 0; i < 5; i++) {
-            let s: Fisch = new Fisch(Math.random() * canvas.width - 0.1, Math.random()*0.7 * canvas.height+50); // Startpunkt
+            let s: Fisch = new Fisch(Math.random() * canvas.width - 0.1, Math.random() * 0.7 * canvas.height + 50); // Startpunkt
             object.push(s);
         } // Ende for Schleife
 
         //Schleife Fisch2
-        for (let i: number = 0; i < 5; i++) {
-            let s: Fisch2 = new Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height-75); // Startpunkt
+        for (let i: number = 0; i < 10; i++) {
+            let s: Fisch2 = new Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height - 75); // Startpunkt
             object.push(s);
         } // Ende for Schleife
 
@@ -198,12 +196,11 @@ namespace Ende {
 
     } // Ende function animate
 
-
+    // Tastenfunktionen 
     export let rightKey: boolean = false;
     export let leftKey: boolean = false;
     export let upKey: boolean = false;
     export let downKey: boolean = false;
-
 
     window.addEventListener("load", init);
     document.addEventListener("keydown", handleKeyPress, false);
@@ -212,14 +209,15 @@ namespace Ende {
     document.addEventListener("keyleft", handleKeyRelease, false);
     document.addEventListener("DOMContentLoaded", function(): void {
 
-
-
+        
+        // Namensprompt
         var name: string;
         name = prompt("Dein Name bitte", "Anonym");
         console.log("Name:", name);
     });
 
-    function handleKeyPress(_event: KeyboardEvent) {
+    // Tastenbedingungen
+    function handleKeyPress(_event: KeyboardEvent): void {
         if (_event.keyCode == 39) {//right
             rightKey = true;
             //            console.log("rightKey: " + rightKey);
@@ -245,18 +243,18 @@ namespace Ende {
 
 
     //Key is released
-    function handleKeyRelease(_event: KeyboardEvent) {
-        if (_event.keyCode == 39) {//right
+    function handleKeyRelease(_event: KeyboardEvent): void {
+        if (_event.keyCode == 39) { //right
             rightKey = false;
         }
-        else if (_event.keyCode == 37) {//left
+        else if (_event.keyCode == 37) { //left
             leftKey = false;
         }
 
-        else if (_event.keyCode == 38) {//up
+        else if (_event.keyCode == 38) { //up
             upKey = false;
         }
-        else if (_event.keyCode == 40) {//down
+        else if (_event.keyCode == 40) { //down
             downKey = false;
         }
 

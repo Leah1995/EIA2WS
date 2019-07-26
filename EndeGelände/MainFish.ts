@@ -5,9 +5,10 @@ namespace Ende {
         dy: number;
         size: number = 10;
         fischElement: Fisch;
+
         constructor(_x: number, _y: number) {
             super(_x, _y);
-        } // Ende c onstructor
+        } // Ende constructor
 
         update(): void {
             this.moving();
@@ -33,18 +34,11 @@ namespace Ende {
         } // Ende moving
 
         collision(): void { // Testet ob eine Kolision vorliegt und vergrößert den Fisch oder Bricht das Spiel ab 
-            object.forEach(function(element: MovingObject) {
+            object.forEach(function(element: MovingObject): void {
 
-                if (element instanceof Fisch)
-                    if ((Math.abs(element.x - object[0].x) < 100) && (Math.abs(element.y - object[0].y) < 100)) {
-                        //alert("AAA");
-                        //this.removeAll();
-                        document.getElementById("Endbildschirm").hidden = false;
-                        return;
-                    }
 
-                if (element instanceof Fisch2)
-                    if ((Math.abs(element.x - object[0].x) < 100) && (Math.abs(element.y - object[0].y) < 100)) {
+                if (element instanceof Fisch2) {
+                    if ((Math.abs(element.x - object[0].x) < 80) && (Math.abs(element.y - object[0].y) < 80)) {
                         element.exists = false;
                         object.splice(object.indexOf(element), 1);
                         object[0].size += 1;
@@ -54,19 +48,30 @@ namespace Ende {
                         document.getElementById("endscore").innerHTML = point.toString();
                         return;
                     }
+                } // Ende if Bedingung
+
+                if (element instanceof Fisch) {
+                    if ((Math.abs(element.x - object[0].x) < 70) && (Math.abs(element.y - object[0].y) < 70)) {
+                        //alert("AAA");
+                        //this.removeAll();
+                        document.getElementById("Endbildschirm").hidden = false;
+                        document.getElementById("myCanvas").hidden = true;
+                        return;
+                    }
+                } // Ende if Bedingung
             });
             return;
         }
-//        removeAll(): void {
-//            //            alert("CCC");
-//            object.forEach(function(element: MovingObject) {
-//                if (!(element instanceof Bubbles)) {
-//                    alert(element.exists);
-//                    object.splice(object.indexOf(element), 1);
-//                }
-//            });
-//            return;
-//        }
+        //        removeAll(): void {
+        //            //            alert("CCC");
+        //            object.forEach(function(element: MovingObject) {
+        //                if (!(element instanceof Bubbles)) {
+        //                    alert(element.exists);
+        //                    object.splice(object.indexOf(element), 1);
+        //                }
+        //            });
+        //            return;
+        //        }
         return(): void {
             if (this.y < 90) { // Endpunkt
             }
@@ -102,9 +107,9 @@ namespace Ende {
             crc2.fill();
 
             // Text
-            crc2.font = "20px Arial";
+            crc2.font = "20px Staatliches";
             crc2.fillStyle = "white";
-            crc2.fillText("Du", 50, 50);
+            crc2.fillText("Du", this.x + 50, this.y + 50);
 
         } // Ende draw
 
