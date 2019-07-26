@@ -41,51 +41,30 @@ namespace EndeGelaende {
                         element.exists = false;
                         object.splice(object.indexOf(element), 1);
                         object[0].size += 1;
-                        point += 1;
+                        point += 10;
                         console.log(point);
 
                         document.getElementById("endscore").innerHTML = point.toString();
                         return;
                     }
                 } // Ende if Bedingung
-
+ 
                 if (element instanceof Fisch) {
-                    if ((Math.abs(element.x - object[0].x) < 70) && (Math.abs(element.y - object[0].y) < 70)) {
+                    if ((Math.abs(element.x - object[0].x) < 70) && (Math.abs(element.y - object[0].y) < 70)&&spielLaueft==true) {
                         //alert("AAA");
                         //this.removeAll();
                         document.getElementById("Endbildschirm").hidden = false;
                         document.getElementById("myCanvas").hidden = true;
+                        insert();
+                        refresh();
+                        spielLaueft=false;
                         return;
                     }
                 } // Ende if Bedingung
             });
             return;
         }
-/*             object.forEach(function(element: MovingObject) {
-                var distance:number=Math.sqrt( ( (element.x - this.x) * (element.x - this.x) ) + ( (element.y - this.y) * (element.y - this.y) ) ); 
-                var fishsize:number=4*element.size+70;
-                if (element instanceof Fisch)
-                    if (distance < fishsize) {
-                        //alert("AAA");
-                        //this.removeAll();
-                        document.getElementById("Endbildschirm").hidden = false;
-                        return;
-                    }
 
-                if (element instanceof Fisch2)
-                    if (distance < fishsize) {
-                        element.exists = false;
-                        object.splice(object.indexOf(element), 1);
-                        object[0].size += 1;
-                        point += 1;
-                        console.log(point);
-
-                        document.getElementById("endscore").innerHTML = point.toString();
-                        insert();
-                        refresh();
-                        return;
-                    }
-            }); */
 //        removeAll(): void {
 //            //            alert("CCC");
 //            object.forEach(function(element: MovingObject) {

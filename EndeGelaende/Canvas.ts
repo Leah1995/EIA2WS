@@ -6,6 +6,8 @@ namespace EndeGelaende {
     export let name: string;
     export let point: number = 0;
 
+    export let spielLaueft:boolean =true;
+
     interface SpielerPunkte {
         spielerName: string;
         punkte: number;
@@ -15,7 +17,7 @@ namespace EndeGelaende {
 
     // Initialisierung
     function init(): void {
-        refresh();
+        //refresh();
         let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
         crc2 = canvas.getContext("2d");
         //document.getElementById("Endbildschirm").hidden = true;
@@ -178,7 +180,7 @@ namespace EndeGelaende {
         function timer(): void {
             let canvas: HTMLCanvasElement = document.getElementsByTagName("canvas")[0];
             //canvas.hidden = true;
-            document.getElementById("Endbildschirm").hidden = false;
+            //document.getElementById("Endbildschirm").hidden = false;
             document.getElementById("endscore").innerText = point.toString();
             crc2 = canvas.getContext("2d");
         } // Ende Game
@@ -219,11 +221,6 @@ namespace EndeGelaende {
     document.addEventListener("keyleft", handleKeyRelease, false);
     document.addEventListener("DOMContentLoaded", function(): void {
 
-
-
-        var name: string;
-        name = prompt("Dein Name bitte", "Anonym");
-        console.log("Name:", name);
     });
 
     function handleKeyPress(_event: KeyboardEvent) {
@@ -271,11 +268,17 @@ namespace EndeGelaende {
 
     let serverAddress: string = "https://eia2ws.herokuapp.com/";
 
-    export function insert(): void {  // Make 2 Inserts!!!
+    export function insert(): void {
+
+        var name: string;
+        name = prompt("Dein Name bitte", "Anonym");
+        console.log("Name:", name);
+
         let query: string = "command=insert";
             query += "&spieler=" + name;
             query += "&punktzahl=" + point;
         console.log(query);
+        console.log(name);
         sendRequest(query, handleInsertResponse);
     }
 
@@ -309,15 +312,12 @@ namespace EndeGelaende {
 
             document.getElementById("bestenliste").innerHTML = "";
 
-            for (let i: number = 0; i < 10; i++) {
+            for (let i: number = 0; i < 10; i++) { //Div Erstellung der Bestenliste
                 let newPlayer = document.createElement("div");
                 document.getElementById("bestenliste").appendChild(newPlayer);
                 newPlayer.setAttribute("id", i.toString());
                 newPlayer.innerHTML = `${i + 1}.Platz: ${allPlayersArray[i].spielerName} : ${allPlayersArray[i].punkte}`;
             }
-            document.getElementById("bestenliste").innerHTML = xhr.response;
-            let responseAsJson: JSON = JSON.parse(xhr.response);
-            console.log(responseAsJson);
         }
     }
     function sortPlayers(_1: SpielerPunkte, _2: SpielerPunkte): number {

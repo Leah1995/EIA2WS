@@ -4,9 +4,10 @@ var EndeGelaende;
     let image;
     let zeit = 60;
     EndeGelaende.point = 0;
+    EndeGelaende.spielLaueft = true;
     // Initialisierung
     function init() {
-        refresh();
+        //refresh();
         let canvas = document.getElementsByTagName("canvas")[0];
         EndeGelaende.crc2 = canvas.getContext("2d");
         //document.getElementById("Endbildschirm").hidden = true;
@@ -152,7 +153,7 @@ var EndeGelaende;
         function timer() {
             let canvas = document.getElementsByTagName("canvas")[0];
             //canvas.hidden = true;
-            document.getElementById("Endbildschirm").hidden = false;
+            //document.getElementById("Endbildschirm").hidden = false;
             document.getElementById("endscore").innerText = EndeGelaende.point.toString();
             EndeGelaende.crc2 = canvas.getContext("2d");
         } // Ende Game
@@ -182,9 +183,6 @@ var EndeGelaende;
     document.addEventListener("keyright", handleKeyPress, false);
     document.addEventListener("keyleft", handleKeyRelease, false);
     document.addEventListener("DOMContentLoaded", function () {
-        var name;
-        name = prompt("Dein Name bitte", "Anonym");
-        console.log("Name:", name);
     });
     function handleKeyPress(_event) {
         if (_event.keyCode == 39) { //right
@@ -225,10 +223,14 @@ var EndeGelaende;
     } //handleKeyRelease
     let serverAddress = "https://eia2ws.herokuapp.com/";
     function insert() {
+        var name;
+        name = prompt("Dein Name bitte", "Anonym");
+        console.log("Name:", name);
         let query = "command=insert";
-        query += "&spieler=" + EndeGelaende.name;
+        query += "&spieler=" + name;
         query += "&punktzahl=" + EndeGelaende.point;
         console.log(query);
+        console.log(name);
         sendRequest(query, handleInsertResponse);
     }
     EndeGelaende.insert = insert;
@@ -257,15 +259,12 @@ var EndeGelaende;
                 allPlayersArray.sort(sortPlayers);
             }
             document.getElementById("bestenliste").innerHTML = "";
-            for (let i = 0; i < 10; i++) {
+            for (let i = 0; i < 10; i++) { //Div Erstellung der Bestenliste
                 let newPlayer = document.createElement("div");
                 document.getElementById("bestenliste").appendChild(newPlayer);
                 newPlayer.setAttribute("id", i.toString());
                 newPlayer.innerHTML = `${i + 1}.Platz: ${allPlayersArray[i].spielerName} : ${allPlayersArray[i].punkte}`;
             }
-            document.getElementById("bestenliste").innerHTML = xhr.response;
-            let responseAsJson = JSON.parse(xhr.response);
-            console.log(responseAsJson);
         }
     }
     function sortPlayers(_1, _2) {
