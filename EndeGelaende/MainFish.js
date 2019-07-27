@@ -96,7 +96,7 @@ var EndeGelaende;
             // Text
             EndeGelaende.crc2.font = "20px Arial";
             EndeGelaende.crc2.fillStyle = "white";
-            EndeGelaende.crc2.fillText("Du", 50, 50);
+            EndeGelaende.crc2.fillText("Du", this.x + 50, this.y + 50);
         } // Ende draw
     } // Ende export class
     EndeGelaende.Mainfish = Mainfish;
