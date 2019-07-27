@@ -19,9 +19,9 @@ fieldset {
 	height: 200%;
 }
 
-/* Canvas {
+Canvas {
 	float: left;
-}*/
+}
 
 p {
 	padding: 1%;
@@ -33,9 +33,9 @@ p {
 	background-color: #e6e6e6;
 }
 
-#Endbildschirm {
+/* #Endbildschirm {
 	float: left;
-}
+} */
 
 #endscore, #name {
 	text-align: center;
