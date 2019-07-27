@@ -19,9 +19,9 @@ fieldset {
 	height: 200%;
 }
 
-Canvas {
+/* Canvas {
 	float: left;
-}
+}*/
 
 p {
 	padding: 1%;
@@ -61,6 +61,10 @@ p {
 	color: #ffffff;
 	border-radius: 10px;
 	margin: auto;
+}
+
+#bestenliste {
+	text-align: center;
 }
 
 canvas {
