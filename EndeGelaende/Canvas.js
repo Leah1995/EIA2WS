@@ -10,7 +10,7 @@ var EndeGelaende;
         //refresh();
         let canvas = document.getElementsByTagName("canvas")[0];
         EndeGelaende.crc2 = canvas.getContext("2d");
-        //document.getElementById("Endbildschirm").hidden = true;
+        document.getElementById("Endbildschirm").hidden = true;
         window.setTimeout(timer, 60000); // ~ 1 Min
         // Bewegte Objekte
         //Schleife Spielerfisch
