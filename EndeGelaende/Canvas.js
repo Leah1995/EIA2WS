@@ -24,7 +24,7 @@ var EndeGelaende;
             EndeGelaende.object.push(s);
         } // Ende for Schleife
         //Schleife Fisch2
-        for (let i = 0; i < 5; i++) {
+        for (let i = 0; i < 10; i++) {
             let s = new EndeGelaende.Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height - 75); // Startpunkt
             EndeGelaende.object.push(s);
         } // Ende for Schleife
