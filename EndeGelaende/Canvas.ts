@@ -38,7 +38,7 @@ namespace EndeGelaende {
         } // Ende for Schleife
 
         //Schleife Fisch2
-        for (let i: number = 0; i < 10; i++) {
+        for (let i: number = 0; i < 15; i++) {
             let s: Fisch2 = new Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height-75); // Startpunkt
             object.push(s);
         } // Ende for Schleife
@@ -80,7 +80,7 @@ namespace EndeGelaende {
             crc2.fill();
         } // Ende function drawKiesel1
 
-        // Kiesel zuf�llig hinstellen
+        // Kiesel zufällig hinstellen
         for (let i: number = 0; i < 70; i++) {
             let randomX: number = (Math.random() * (900 - 1)) + 1;
             let randomY: number = (Math.random() * (400 - 200)) + 220;
