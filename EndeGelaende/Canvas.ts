@@ -38,7 +38,7 @@ namespace EndeGelaende {
         } // Ende for Schleife
 
         //Schleife Fisch2
-        for (let i: number = 0; i < 5; i++) {
+        for (let i: number = 0; i < 10; i++) {
             let s: Fisch2 = new Fisch2(Math.random() * canvas.width - 0.1, Math.random() * canvas.height-75); // Startpunkt
             object.push(s);
         } // Ende for Schleife
