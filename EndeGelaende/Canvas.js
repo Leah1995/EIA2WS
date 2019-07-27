@@ -12,6 +12,8 @@ var EndeGelaende;
         EndeGelaende.crc2 = canvas.getContext("2d");
         document.getElementById("Endbildschirm").hidden = true;
         window.setTimeout(timer, 60000); // ~ 1 Min
+        
+        alert("Steuere mit den Pfeiltasten deinen Fisch, friss kleinere Fische und werd nicht von größeren Fischen gefressen!);
         // Bewegte Objekte
         //Schleife Spielerfisch
         for (let i = 0; i < 1; i++) {
@@ -163,7 +165,7 @@ var EndeGelaende;
     } //Ende der Init-Funktion
     // Animation
     function animate() {
-        // Zur�cksetzen und neu erstellen
+        // Zurücksetzen und neu erstellen
         EndeGelaende.crc2.clearRect(0, 0, 900, 600);
         EndeGelaende.crc2.putImageData(image, 0, 0);
         for (let i = 0; i < EndeGelaende.object.length; i++) {
