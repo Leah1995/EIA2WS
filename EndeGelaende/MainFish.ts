@@ -112,7 +112,7 @@ namespace EndeGelaende {
             // Text
             crc2.font = "20px Arial";
             crc2.fillStyle = "white";
-            crc2.fillText("Du", 50, 50);
+            crc2.fillText("Du", this.x + 50, this.y + 50);
 
         } // Ende draw
 
