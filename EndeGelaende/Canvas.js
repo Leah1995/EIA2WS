@@ -7,6 +7,8 @@ var EndeGelaende;
     EndeGelaende.spielLaueft = true;
     // Initialisierung
     function init() {
+        alert("AAA");
+        console.log("Test");
         //refresh();
         let canvas = document.getElementsByTagName("canvas")[0];
         EndeGelaende.crc2 = canvas.getContext("2d");
