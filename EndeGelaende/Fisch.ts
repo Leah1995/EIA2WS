@@ -54,9 +54,9 @@ namespace EndeGelaende {
             crc2.fillStyle = this.color;
             crc2.fill();
             crc2.beginPath();
-            crc2.moveTo(this.x - 90, this.y + 150);
-            crc2.lineTo(this.x - 65, this.y + 100);
-            crc2.lineTo(this.x - 90, this.y + 50);
+            crc2.moveTo(this.x - 50, this.y + 170);
+            crc2.lineTo(this.x + 15, this.y + 100);
+            crc2.lineTo(this.x - 50, this.y + 30);
             crc2.closePath();
             crc2.fillStyle = this.color;
             crc2.fill();
