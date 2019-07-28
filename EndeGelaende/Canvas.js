@@ -15,7 +15,6 @@ var EndeGelaende;
         document.getElementById("Endbildschirm").hidden = true;
         window.setTimeout(timer, 60000); // ~ 1 Min
         
-        alert("Steuere mit den Pfeiltasten deinen Fisch, friss kleinere Fische und werd nicht von größeren Fischen gefressen!);
         // Bewegte Objekte
         //Schleife Spielerfisch
         for (let i = 0; i < 1; i++) {
